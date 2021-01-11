@@ -23,6 +23,10 @@ git merge upstream/main
 - Create a new branch for each exercise and create a Pull Request back to your main branch **on your own repository**. Make sure to assign your instructor(s) and ask for a review on the Pull Request. Submit the Pull Request URL to the Quiz.
 The URL should look like this: `https://github.com/kostasx/FrontEndCourseExercises/pull/1` where `kostasx` will be your GitHub username.
 
+```diff
+! IMPORTANT: You will need to create a Pull Request merging back into your own repository's main branch and NOT the main repository (SocialHackersAcademy).
+```
+
 - If you get stuck, don't hesitate to ask for help.
 
 You can check out this [video](https://www.youtube.com/watch?v=UGmEE-UDgWI) that walks you through the process of forking the exercises repo, working on a branch and doing a PR.
