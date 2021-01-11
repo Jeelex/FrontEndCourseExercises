@@ -24,8 +24,7 @@ git merge upstream/main
 The URL should look like this: `https://github.com/kostasx/FrontEndCourseExercises/pull/1` where `kostasx` will be your GitHub username.
 
 ```diff
-! IMPORTANT: You will need to create a Pull Request merging back into your own repository's.
-main branch and NOT the main repository (SocialHackersAcademy).
+! IMPORTANT: You will need to create a Pull Request merging back into your own repository's main branch and NOT the main repository (SocialHackersAcademy).
 ```
 
 - If you get stuck, don't hesitate to ask for help.
