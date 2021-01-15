@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="A minimal web page providing a path to the Bing search engine">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Engine form</title>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap"
+      rel="stylesheet"
+    />
+    <!-- google fonts -->
+
+    <style>
+      body {
+        background-image: url(/images/search-engine-bg.jpg);
+        background-position: center;
+        background-size: cover;
+        background-color: rgb(126, 124, 124);
+        background-blend-mode: multiply;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+
+        font-family: 'Yusei Magic', sans-serif;
+      }
+
+      form {
+        text-align: center;
+        margin-top: 10em;
+        padding: 1em;
+        width: 90%;
+      }
+
+      h1 {
+        font-size: 6rem;
+        color: #fff;
+      }
+
+      .input-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #search-bar {
+        padding: 1em 1em;
+        max-width: 600px;
+        width: 50%;
+        border-radius: 16px;
+        font-size: 1rem;
+        margin: 0 1em;
+      }
+
+      #search-bar:focus {
+        outline: none;
+        border: 2px solid rgb(68, 194, 68);
+        border-radius: 16px;
+        box-shadow: 0 0 0 3px rgb(68, 194, 68);
+      }
+
+      #btn {
+        font-size: 1.5rem;
+        border-radius: 20px;
+        padding: 0.3em 0.8em;
+        font-family: 'Yusei Magic', sans-serif;
+      }
+
+      #btn:hover,
+      #btn:focus {
+        cursor: pointer;
+        color: #fff;
+        background-color: rgb(117, 31, 31);
+      }
+    </style>
+  </head>
+
+  <body>
+    <form target="_blank" method="get" action="https://www.bing.com/search">
+      <h1>Search the web</h1>
+      <div class="input-div">
+        <label for="search-bar" aria-label="Search bar"></label>
+        <input id="search-bar" name="q" type="text" />
+        <input id="btn" type="submit" value="Search!" aria-label="Search button" />
+      </div>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="A generic form to create an account into a web service">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+
+    <style>
+      body {
+        background-color: #f26724;
+        color: #ffece9;
+        margin: 0;
+        padding: 0;
+        box-sizing: content-box;
+        display: flex;
+        justify-content: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      h1{
+        margin: 0 0 1em;
+        align-self: flex-start;
+      }
+
+      .form-container {
+        margin-top: 10em;
+        width: 80%;
+        max-width: 600px;
+        height: 50%;
+        border-radius: 5px;
+        border-top: 4px double white;
+        border-bottom: 4px double white;
+        padding: 3em;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;    
+      }
+
+      .form {
+        display: grid;
+        grid-template-columns: 1fr 150px 150px;
+        grid-template-areas: 
+                            "name-label name ."
+                            "email-label email ."
+                            "username-label username ."
+                            "password-label password ."
+                            "confirm-password-label confirm-password ."
+                            ". clear-btn submit-btn"
+                            ;
+        grid-gap: 1em 1em;
+        width: 90%;             
+      }
+
+      #name-label{grid-area: name-label; align-self:center;}
+      #name {grid-area: name;}
+      #email-label {grid-area: email-label; align-self:center;}
+      #email {grid-area: email;}
+      #username-label {grid-area: username-label; align-self:center;}
+      #username {grid-area: username;}
+      #password-label {grid-area: password-label; align-self:center;}
+      #password {grid-area: password;}
+      #confirm-password-label {grid-area: confirm-password-label; align-self:center;}
+      #confirm-password {grid-area: confirm-password;}
+      #clear-btn {grid-area: clear-btn;}
+      #submit-btn {grid-area: submit-btn;}
+
+      label {
+        text-align: right;
+        font-size: 1.125rem;
+      }
+
+      .label-color {
+        color: #fff4e0;
+      }
+
+      #clear-btn,
+      #submit-btn {
+        width: 160px;
+      }
+
+      .btn{
+        padding: .5em;
+        color: #f26724; 
+        font-size: 1rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .btn:hover,
+      .btn:focus {
+        background-color: #f26724;
+        color:#ffece9;
+        cursor: pointer;
+        font-size: 1.1rem;
+        font-weight: 700;
+        padding: 0;
+      }
+
+      .input-field {
+        width: 200px;
+        padding: .5em 3em .5em .2em;
+        font-size: .9rem;
+        text-align: left;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <form class="form-container" action="get">
+      <h1>Create Your Account</h1>
+
+      <div class="form">
+        
+          <label id="name-label" for="name">Enter Name :</label>
+          <input class="input-field" placeholder="Enter user here" id="name" type="text" />
+        
+          <label id="email-label" for="email">Enter Email ID :</label>
+          <input class="input-field" placeholder="Enter Email ID here" id="email" type="email" />
+        
+          <label id="username-label" for="username">Enter Username :</label>
+          <input class="input-field" placeholder="Enter Username here" id="username" type="text" />
+        
+          <label id="password-label" for="password">Enter Password :</label>
+          <input class="input-field" placeholder="Enter Password here" id="password" type="password" />
+        
+          <label id="confirm-password-label" for="confirm-password">Enter Confirm  Password :</label>
+          <input class="input-field" placeholder="Enter Password here" id="confirm-password" type="password" />
+        
+          <button id="clear-btn" class="btn" type="reset" value="Clear Form" aria-label="Clear Form Button">Clear Form</button>
+          <button id="submit-btn" class="btn" type="submit" value="Create Account" aria-label="Create Account Button">Create Account</button>       
+        
+      </div>
+      
+      
+    </form>
+  </body>
+</html>

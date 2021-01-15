@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="A table representing the top 10 countries which create the most pollution across the globe">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World's biggest polluters</title>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@400;800&family=Cardo:wght@400;700&display=swap" rel="stylesheet"> 
+    <!-- google fonts -->
+
+    <style>
+
+      * {
+        box-sizing: content-box;
+      }
+      body {
+        background-image: url(/images/table-bg.jpg);
+        background-position: center;
+        background-size: cover;
+        background-color: rgb(30, 27, 36);
+        background-blend-mode:  ;
+
+        color: #ffffff;
+        margin: 0;
+        padding: 1em 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+
+        font-family: 'Baloo Bhaina 2', cursive;
+        font-size: 1.125em;
+      }
+
+      h1 {
+        text-align: center;
+        font-family: 'Cardo', serif;
+        font-size: 3.3rem;
+        letter-spacing: 2px;
+      }
+
+      th {
+        font-family: 'Cardo', serif;
+        font-size: 2rem;
+        padding: .5em 0;
+        margin-bottom: 2em;
+      }
+
+      td {
+        padding: 0 .5em;
+        letter-spacing: 1px;
+        border: 2px solid #ccbcac;
+      }
+
+      td:nth-of-type(2) {
+        text-align: center;
+      }
+
+      p {
+        margin: 1.5em 0 2em;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+      }
+
+      p > a {
+        color: #fffb00;
+        text-decoration: none;
+      }
+
+      p > a:hover,
+      p > a:focus {
+        color: #d615e7;
+      }
+    </style>
+  </head>
+  
+  <body>
+
+    <h1>World's biggest polluters</h1>
+
+    <table>
+      <tr>
+        <th style="text-align: left;">Country</th>
+        <th>Metric tons per year</th>
+      </tr>
+      <tr>
+        <td>China</td>
+        <td>10,357 million</td>
+      </tr>
+      <tr>
+        <td>USA</td>
+        <td>5,414 million</td>
+      </tr>
+      <tr>
+        <td>India</td>
+        <td>2,274 million</td>
+      </tr>
+      <tr>
+        <td>The Russian Federation</td>
+        <td>1,617 million</td>
+      </tr>
+      <tr>
+        <td>Japan</td>
+        <td>1,237 million</td>
+      </tr>
+      <tr>
+        <td>Germany</td>
+        <td>798 million</td>
+      </tr>
+      <tr>
+        <td>Iran</td>
+        <td>648 million</td>
+      </tr>
+      <tr>
+        <td>Saudi Arabia</td>
+        <td>601 million</td>
+      </tr>
+      <tr>
+        <td>South Korea</td>
+        <td>592 million</td>
+      </tr>
+      <tr>
+        <td>Canada</td>
+        <td>557 million</td>
+      </tr>
+    </table>
+
+    <p>
+      Visit <a target="_blank" rel="noreferrer" href="http://www.globalcarbonatlas.org/en/CO2-emissions">this website</a>
+      for more information.
+    </p>
+  </body>
+</html>
