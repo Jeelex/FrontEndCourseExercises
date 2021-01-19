@@ -25,6 +25,20 @@ footer {
   /* border: 2px solid magenta; */
 }
 
+a {
+  text-decoration: none;
+  color: unset;
+  padding: .5em auto;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+
+/* ? ////////    nav section  */
+
 nav {
   display: flex;
   justify-content: flex-end;
@@ -40,40 +54,95 @@ nav {
 
 .nav-link {
   margin: 0 0.5em;
+  padding: .5em;
+}
+
+.app {
+  font-size: 18px;
+  opacity: .55;
+  /* margin: auto .2em; */
+}
+
+.app:hover,
+.app:focus {
+  opacity: 1;
+}
+
+
+/*  ?   ///////      main   */
+
+main {
+  margin-bottom: 350px;
 }
 
 .search-bar {
   width: 500px;
   padding: 1em;
-  margin: 1em;
-  border: ;
+  margin: 1.5em;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 0 5px #c0c0c0;
   border-radius: 50px;
   outline-style: none;
+  font-size: 1rem;
 }
 
+
+/* ? ////  Buttons  */
 .btn {
-  padding: 1em;
-  margin: 1em 0.5em;
+  padding: .5em 1em;
+  
   font-size: 14px;
-  background-color: #f2f2f2;
-  color: #70757a;
-  border: none;
+  background-color: #f8f9fa;
+  color: #3c4043;
+  border: 1px solid #f8f9fa ;
+  border-radius: 4px;
+  user-select: none;
 }
 
-.btn:hover,
-.btn:focus {
-  cursor: pointer;
+.search-btn{
+  margin: .5em 0.5em;
 }
+
+.search-btn:hover,
+.search-btn:focus {
+  cursor: pointer;
+  border: 1px solid #dadce0;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+
+.sign-in {
+  background-color: #4285f4;
+  color: white;
+  font-weight: bold;
+  border: 1px solid #4285f4;
+  border-radius: 2px;
+  cursor: default;
+}
+
+.sign-in:hover,
+.sign-in:focus {
+  cursor: default;
+}
+
+.cursor-default {
+  cursor: default;
+}
+
+
+/* ? /////   footer              */
 
 footer {
   background-color: #f2f2f2;
   color: #70757a;
 
   display: flex;
-  /* flex-direction: column; */
   justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
   width: 100%;
-  /* margin: 0 1em; */
+  /* padding: .5em 0; */
+  margin-bottom: 0;
   border-top: 1px solid #dadce0;
   border-bottom: 1px solid #dadce0;
 }
@@ -90,7 +159,7 @@ footer {
   justify-content: center;
   align-items: center;
 
-  padding: 0.5em 1em;
+  padding: 1em 1em;
   /* border: 2px solid magenta; */
 }
 

@@ -5,45 +5,58 @@
     <meta name="description" content="A google main page clone" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Google Clone</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      crossorigin="anonymous"
+    />
+    <!-- font awesome -->
   </head>
   <body>
     <nav>
       <ul class="nav-list">
-        <li class="nav-link">Gmail</li>
-        <li class="nav-link">Images</li>
-        <li class="nav-link">APPS-ICON</li>
-        <li class="nav-link"><button>Sign In</button></li>
+        <a href="#"><li class="nav-link">Gmail</li></a>
+        <a href="#"><li class="nav-link">Images</li></a>
+        <a href="#"
+          ><li class="nav-link"><i class="fas fa-th app"></i></li
+        ></a>
+        <a class="cursor-default" href="#"
+          ><li class="nav-link"><button class="btn sign-in">Sign In</button></li></a
+        >
       </ul>
     </nav>
 
     <main>
       <img
+        class="logo"
         src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
         alt="Google logo"
       />
       <form action="https://www.google.com/search" method="get">
-        <input class="search-bar" name="q" type="text" />
-        <br>
-        <button class="btn" type="submit">Google Search</button>
-        <button class="btn" type="submit">I'm Feeling Lucky</button>
+        <input class="search-bar" name="q" type="text" aria-label="search-bar" />
+        <br />
+        <button class="btn search-btn" type="submit">Google Search</button>
+        <button class="btn search-btn" type="submit">I'm Feeling Lucky</button>
       </form>
     </main>
 
     <footer>
       <div class="ftr-div-left">
         <ul class="ftr-list">
-          <li class="ftr-item">Advertising</li>
-          <li class="ftr-item">Business</li>
-          <li class="ftr-item">About</li>
-          <li class="ftr-item">How Search works</li>
+          <a href="#"><li class="ftr-item">Advertising</li></a>
+          <a href="#"><li class="ftr-item">Business</li></a>
+          <a href="#"><li class="ftr-item">About</li></a>
+          <a href="#"><li class="ftr-item">How Search works</li></a>
         </ul>
       </div>
       <div class="ftr-div-right">
         <ul class="ftr-list">
-          <li class="ftr-item">Privacy</li>
-          <li class="ftr-item">Terms</li>
-          <li class="ftr-item">Settings</li>
+          <a href="#"><li class="ftr-item">Privacy</li></a>
+          <a href="#"><li class="ftr-item">Terms</li></a>
+          <a href="#"><li class="ftr-item">Settings</li></a>
         </ul>
       </div>
     </footer>
