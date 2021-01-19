@@ -5,6 +5,7 @@
     <meta name="description" content="A google main page clone" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Google Clone</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <nav>
@@ -22,26 +23,27 @@
         alt="Google logo"
       />
       <form action="https://www.google.com/search" method="get">
-        <input name="q" type="text" />
-        <button type="submit">Google Search</button>
-        <button type="submit">I'm Feeling Lucky</button>
+        <input class="search-bar" name="q" type="text" />
+        <br>
+        <button class="btn" type="submit">Google Search</button>
+        <button class="btn" type="submit">I'm Feeling Lucky</button>
       </form>
     </main>
 
     <footer>
-      <div class="footer-div-left">
-        <ul class="ftr-list-left">
-          <li class="ftr-left-item">Advertizing</li>
-          <li class="ftr-left-item">Business</li>
-          <li class="ftr-left-item">About</li>
-          <li class="ftr-left-item">How Search works</li>
+      <div class="ftr-div-left">
+        <ul class="ftr-list">
+          <li class="ftr-item">Advertising</li>
+          <li class="ftr-item">Business</li>
+          <li class="ftr-item">About</li>
+          <li class="ftr-item">How Search works</li>
         </ul>
       </div>
-      <div class="footer-div-right">
-        <ul class="ftr-list-right">
-          <li class="ftr-right-item">Privacy</li>
-          <li class="ftr-right-item">Terms</li>
-          <li class="ftr-right-item">Settings</li>
+      <div class="ftr-div-right">
+        <ul class="ftr-list">
+          <li class="ftr-item">Privacy</li>
+          <li class="ftr-item">Terms</li>
+          <li class="ftr-item">Settings</li>
         </ul>
       </div>
     </footer>

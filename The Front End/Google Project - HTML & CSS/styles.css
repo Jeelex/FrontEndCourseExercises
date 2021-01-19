@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+  list-style: none;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+
+  text-align: center;
+  font-size: 14px;
+}
+
+nav,
+footer {
+  margin: 1em;
+  width: 100%;
+
+  /* border: 2px solid magenta; */
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+
+  font-size: 13px;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-link {
+  margin: 0 0.5em;
+}
+
+.search-bar {
+  width: 500px;
+  padding: 1em;
+  margin: 1em;
+  border: ;
+  border-radius: 50px;
+  outline-style: none;
+}
+
+.btn {
+  padding: 1em;
+  margin: 1em 0.5em;
+  font-size: 14px;
+  background-color: #f2f2f2;
+  color: #70757a;
+  border: none;
+}
+
+.btn:hover,
+.btn:focus {
+  cursor: pointer;
+}
+
+footer {
+  background-color: #f2f2f2;
+  color: #70757a;
+
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-between;
+  width: 100%;
+  /* margin: 0 1em; */
+  border-top: 1px solid #dadce0;
+  border-bottom: 1px solid #dadce0;
+}
+
+/* todo Could only use 1 div  called "ftr-dvs" instead of left + right.... */
+.ftr-div-left,
+.ftr-div-right {
+  margin: 0 1em;
+  /* padding: 1em; */
+}
+
+.ftr-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0.5em 1em;
+  /* border: 2px solid magenta; */
+}
+
+.ftr-item {
+  margin: 0 0.5em;
+}
