@@ -28,14 +28,13 @@ footer {
 a {
   text-decoration: none;
   color: unset;
-  padding: .5em auto;
+  padding: 0.5em auto;
 }
 
 a:hover,
 a:focus {
   text-decoration: underline;
 }
-
 
 /* ? ////////    nav section  */
 
@@ -54,13 +53,20 @@ nav {
 
 .nav-link {
   margin: 0 0.5em;
-  padding: .5em;
+  padding: 0.5em;
 }
 
 .app {
   font-size: 18px;
-  opacity: .55;
+  opacity: 0.55;
   /* margin: auto .2em; */
+}
+
+.app-icon {
+  color: magenta;
+  background-color: blue;
+  font-size: 18px;
+  /* opacity: 0.55; */
 }
 
 .app:hover,
@@ -68,52 +74,72 @@ nav {
   opacity: 1;
 }
 
-
 /*  ?   ///////      main   */
 
 main {
   margin-bottom: 350px;
+  width: 100%;
+}
+
+.magnifying-glass-icon {
+  position: relative;
+  left: 65px;
+  top: 5px;
+  width: 20px;
+  color: #9aa0a6;
+  opacity: 0.45;
+}
+
+.microphone-icon {
+  position: relative;
+  right: 70px;
+  top: 7px;
+  width: 24px;
 }
 
 .search-bar {
-  width: 500px;
-  padding: 1em;
+  width: 70%;
+  max-width: 484px;
+  padding: 0.8em;
   margin: 1.5em;
   border: 1px solid #e0e0e0;
-  box-shadow: 0 0 5px #c0c0c0;
   border-radius: 50px;
   outline-style: none;
   font-size: 1rem;
 }
 
+.search-bar:hover,
+.search-bar:focus {
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+}
 
 /* ? ////  Buttons  */
 .btn {
-  padding: .5em 1em;
-  
-  font-size: 14px;
   background-color: #f8f9fa;
   color: #3c4043;
-  border: 1px solid #f8f9fa ;
+  border: 1px solid #f8f9fa;
   border-radius: 4px;
   user-select: none;
 }
 
-.search-btn{
-  margin: .5em 0.5em;
+.search-btn {
+  margin: 0.5em 0.5em;
+  padding: 0.5em 1em;
+  font-size: 14px;
 }
 
 .search-btn:hover,
 .search-btn:focus {
   cursor: pointer;
   border: 1px solid #dadce0;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 
-
 .sign-in {
+  font-size: 13px;
+  padding: 0.5em 1em;
   background-color: #4285f4;
-  color: white;
+  color: #ffffff;
   font-weight: bold;
   border: 1px solid #4285f4;
   border-radius: 2px;
@@ -128,7 +154,6 @@ main {
 .cursor-default {
   cursor: default;
 }
-
 
 /* ? /////   footer              */
 
@@ -159,7 +184,7 @@ footer {
   justify-content: center;
   align-items: center;
 
-  padding: 1em 1em;
+  padding: .8em 1em;
   /* border: 2px solid magenta; */
 }
 
