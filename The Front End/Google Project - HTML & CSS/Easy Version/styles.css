@@ -162,15 +162,12 @@ footer {
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
-  /* padding: .5em 0; */
   margin-bottom: 0;
   border-top: 1px solid #dadce0;
   border-bottom: 1px solid #dadce0;
 }
 
-/* todo Could only use 1 div  called "ftr-dvs" instead of left + right.... */
-.ftr-div-left,
-.ftr-div-right {
+.ftr-div {
   margin: 0 1em;
 }
 
