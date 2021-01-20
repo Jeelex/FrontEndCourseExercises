@@ -39,7 +39,7 @@ a:focus {
 nav {
   display: flex;
   justify-content: flex-end;
-
+  align-items: center;
   font-size: 13px;
 }
 
@@ -55,7 +55,7 @@ nav {
 }
 
 .app-icon {
-  width: 18px;
+  width: 17px;
   opacity: 0.6;
 }
 
