@@ -26,7 +26,6 @@ footer {
 a {
   text-decoration: none;
   color: unset;
-  padding: 0.5em auto;
 }
 
 a:hover,
@@ -144,10 +143,6 @@ main {
 
 .sign-in:hover,
 .sign-in:focus {
-  cursor: default;
-}
-
-.cursor-default {
   cursor: default;
 }
 
