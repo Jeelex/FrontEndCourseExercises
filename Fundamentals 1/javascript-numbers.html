@@ -196,6 +196,16 @@
       const yearOfEstablishment = 2005
       const currentYear = new Date().getFullYear()
       let yearsOfExperience = currentYear - yearOfEstablishment
+
+      const webDesignOriginalPrice = 667
+      const softwareAppOriginalPrice = 534
+      const mobileAppOriginalPrice = 467
+      const specialOffer = 25
+      let specialOfferPercentage = (100 - specialOffer) / 100
+      let webDesignSpecialOfferPrice = ~~(webDesignOriginalPrice * specialOfferPercentage)
+      let softwareAppSpecialOfferPrice = ~~(softwareAppOriginalPrice * specialOfferPercentage)
+      let mobileAppSpecialOfferPrice = ~~(mobileAppOriginalPrice * specialOfferPercentage)
+      let fullPackagePrice = mobileAppSpecialOfferPrice + softwareAppSpecialOfferPrice + webDesignSpecialOfferPrice
     </script>
     <header>
       <h1><span>Social Hackers</span>Company</h1>
@@ -224,7 +234,16 @@
               Duis neque leo cursus ac libero ac imperdiet bibendum nisl mauris neque diam vulputate
               nem.
             </p>
-            <span class="box__more">Special offer 25% off: &euro; 500</span></a
+            <span class="box__more"
+              >Special offer
+              <script>
+                document.write(specialOffer)
+              </script>
+              % off: &euro;
+              <script>
+                document.write(webDesignSpecialOfferPrice)
+              </script></span
+            ></a
           >
         </article>
         <article class="box">
@@ -235,7 +254,16 @@
               Duis neque leo cursus ac libero ac imperdiet bibendum nisl mauris neque diam vulputate
               nem.
             </p>
-            <span class="box__more">Special offer 25% off: &euro; 400</span></a
+            <span class="box__more"
+              >Special offer
+              <script>
+                document.write(specialOffer)
+              </script>
+              % off: &euro;
+              <script>
+                document.write(softwareAppSpecialOfferPrice)
+              </script></span
+            ></a
           >
         </article>
         <article class="box">
@@ -246,7 +274,16 @@
               Duis neque leo cursus ac libero ac imperdiet bibendum nisl mauris neque diam vulputate
               nem.
             </p>
-            <span class="box__more">Special offer 25% off: &euro; 350</span></a
+            <span class="box__more"
+              >Special offer
+              <script>
+                document.write(specialOffer)
+              </script>
+              % off: &euro;
+              <script>
+                document.write(mobileAppSpecialOfferPrice)
+              </script></span
+            ></a
           >
         </article>
       </div>
@@ -259,7 +296,16 @@
           Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Maecenas faucibus mollis
           interdum. Curabitur blandit tempus porttitor.
         </p>
-        <a class="btn" href="#">Special offer 25% off: &euro;1250</a>
+        <a class="btn" href="#"
+          >Special offer
+          <script>
+            document.write(specialOffer)
+          </script>
+          % off: &euro;
+          <script>
+            document.write(fullPackagePrice)
+          </script></a
+        >
       </div>
     </section>
     <footer>
