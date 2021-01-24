@@ -192,11 +192,20 @@
     </style>
   </head>
   <body>
+    <script>
+      const yearOfEstablishment = 2005
+      const currentYear = new Date().getFullYear()
+      let yearsOfExperience = currentYear - yearOfEstablishment
+    </script>
     <header>
       <h1><span>Social Hackers</span>Company</h1>
       <h2>
-        We are a competitive firm with over 15 years of experience in the field of computer
-        generated probabilistic maintenance hybrid datasets.
+        We are a competitive firm with over
+        <script>
+          document.write(yearsOfExperience)
+        </script>
+        years of experience in the field of computer generated probabilistic maintenance hybrid
+        datasets.
       </h2>
     </header>
 
