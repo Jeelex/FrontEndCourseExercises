@@ -197,15 +197,12 @@
       const currentYear = new Date().getFullYear()
       let yearsOfExperience = currentYear - yearOfEstablishment
 
-      const webDesignOriginalPrice = 667
-      const softwareAppOriginalPrice = 534
-      const mobileAppOriginalPrice = 467
       const specialOffer = 25
-      let specialOfferPercentage = (100 - specialOffer) / 100
-      let webDesignSpecialOfferPrice = ~~(webDesignOriginalPrice * specialOfferPercentage)
-      let softwareAppSpecialOfferPrice = ~~(softwareAppOriginalPrice * specialOfferPercentage)
-      let mobileAppSpecialOfferPrice = ~~(mobileAppOriginalPrice * specialOfferPercentage)
-      let fullPackagePrice = mobileAppSpecialOfferPrice + softwareAppSpecialOfferPrice + webDesignSpecialOfferPrice
+      const specialOfferPercentage = (100 - specialOffer) / 100
+      const webDesignSpecialOfferPrice = ~~(500 * specialOfferPercentage)
+      const softwareAppSpecialOfferPrice = ~~(400 * specialOfferPercentage)
+      const mobileAppSpecialOfferPrice = ~~(350 * specialOfferPercentage)
+      const fullPackagePrice = mobileAppSpecialOfferPrice + softwareAppSpecialOfferPrice + webDesignSpecialOfferPrice
     </script>
     <header>
       <h1><span>Social Hackers</span>Company</h1>
