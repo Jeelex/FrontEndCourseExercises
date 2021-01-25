@@ -10,7 +10,7 @@ Try to finish the following tasks. Make sure to checkout the hints section.
 
 **Download the initial code** from [this link](javascript-numbers.html).
 
-**IMPORTANT:** Make sure to zip (compress) the HTML file before submitting your assignment. The zip file **must also contain a web page named `javascript-numbers-practice.html`** with the code you created from the `Practice!` section above.
+**IMPORTANT:** Make sure to zip (compress) the HTML file before submitting your assignment. The zip file **must also contain a web page named `javascript-numbers-practice.html`** with the code you created from the [`Practice!` section](https://athena.socialhackersacademy.org/topic/fundamentals-part-1/#practice).
 
 1. Convert any generic HTML elements (e.g. div, span) with semantic [HTML Elements](http://www-db.deis.unibo.it/courses/TW/DOCS/w3schools/html/html5_semantic_elements.asp.html). For example, if you find something like this:
 
