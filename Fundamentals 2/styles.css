@@ -5,14 +5,14 @@
 }
 
 body {
-  background-image: url(images/bg-js-for-web-designers.jpg);
-  background-color: hsl(242deg 5% 30%);
-  background-blend-mode: multiply;
-  background-position: center;
-  background-size: 5px;
+  /* background-image: url(images/bg-js-for-web-designers.jpg); */
+  /* background-color: hsl(242deg 5% 30%); */
+  /* background-blend-mode: multiply; */
+  /* background-position: center; */
+  /* background-size: 5px; */
   font-family: Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   font-size: 1rem;
-  color: whitesmoke;
+  /* color: whitesmoke; */
 }
 
 h1 {
@@ -78,11 +78,13 @@ a {
   padding: 0.5em 0;
   text-decoration: none;
   font-weight: 700;
+  color: hotpink;
 }
 
 a:hover,
 a:focus {
   text-decoration: underline;
+  color: teal;
 }
 
 /* ? ////////  media queries */
@@ -115,5 +117,10 @@ a:focus {
     max-width: 500px;
     border: 2px ridge rgb(168, 168, 168);
     padding: 1em;
+  }
+
+  tr:nth-child(even){
+      background-color: rgb(214, 214, 214);
+      /* color: whitesmoke; */
   }
 }
