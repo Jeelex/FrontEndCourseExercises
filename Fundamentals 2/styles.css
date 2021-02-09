@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+body {
+  background-color: #131313f0;
+  background-image: url(images/joshua-sortino-LqKhnDzSF-8-unsplash.jpg);
+  background-blend-mode: color-burn;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  color: white;
+  padding: 2em;
+}
+
+h1 {
+  margin: 1.5em 1em 1em;
+  font-size: 2rem;
+  text-align: center;
+}
+
+table {
+  margin: 1em auto 4em;
+}
+
+tr {
+  padding: 0.5em;
+  margin: 1em 2em;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid rgb(168, 168, 168);
+}
+
+tr:first-child {
+  display: none;
+}
+
+tr:last-child {
+  margin-bottom: 3em;
+}
+
+th {
+  margin: 0.3em;
+  font-size: 1.25rem;
+  font-weight: normal;
+  font-style: italic;
+}
+
+th:last-child {
+  margin-bottom: 1em;
+}
+
+td {
+  padding: 0.5em 0;
+}
+
+td:first-child {
+  font-weight: 700;
+  font-size: 1.175rem;
+  text-align: center;
+}
+
+td:last-child {
+  margin-bottom: 1em;
+}
+
+code {
+  background-color: #f5f2f0;
+  color: #333333;
+  font-size: 15px;
+  padding: 0 4px;
+  border-radius: 2px;
+}
+
+a {
+  padding: 0.5em 0;
+  text-decoration: none;
+  font-weight: 700;
+  color: hotpink;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+  color: teal;
+  cursor: pointer;
+}
+
+.unsplash {
+  color: burlywood;
+  margin-bottom: 4em;
+}
+
+/* ? ////////  media queries */
+@media (min-width: 650px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h1 {
+    margin: 0.8em;
+  }
+
+  tr,
+  tr:first-child {
+    display: table-row;
+  }
+
+  th {
+    font-weight: 700;
+    font-style: initial;
+    padding: 1em;
+  }
+
+  td {
+    max-width: 500px;
+    border: 2px ridge rgb(168, 168, 168);
+    padding: 1em;
+  }
+
+  tr:nth-child(even) {
+    background-color: rgb(204 204 204);
+    color: black;
+  }
+}
