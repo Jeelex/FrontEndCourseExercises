@@ -1,6 +1,6 @@
 ![](README.jpg)
 
-# JAVASCRIPT BASICS | ETCH-A-SKETCH
+# JAVASCRIPT BASICS | ROCK PAPER SCISSORS
 
 [**Submission Instructions (Ctrl+Click to open in a new Tab)**](https://github.com/SocialHackersAcademy/FrontEndCourseExercises/#instructions)
 
