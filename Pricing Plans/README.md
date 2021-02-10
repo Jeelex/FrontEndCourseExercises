@@ -28,3 +28,9 @@ Recreate the following Pricing Plans mockup using HTML and CSS:
 
 Good luck!
 
+:movie_camera: Today's recordings of the Live session
+
+Part I: https://www.youtube.com/watch?v=rJTvhQem1PU&list=PLwnRAxFwLPiDItr-uRuy0UL-ouNsNv5Y2&index=19
+Part II: https://www.youtube.com/watch?v=qiGZVbbGZpA&list=PLwnRAxFwLPiDItr-uRuy0UL-ouNsNv5Y2&index=20
+Session Notes: https://docs.google.com/document/d/1zPmYNDAM7YSgiTOtp6hRSttR6nDEFd-oiSc-defe9NY/edit?usp=sharing
+
