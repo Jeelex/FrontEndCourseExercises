@@ -2,9 +2,45 @@ const playerSelection = 'RoCK'
 const computerSelection = computerPlay()
 console.log(playRound(playerSelection, computerSelection))
 
+
+function game() {
+  // use playRound()
+  // play the game 5 times
+  // keep score
+  // announce winner at the end
+  let playerScore = 0
+  let computerScore = 0
+
+  playRound()
+  if (
+    result === `You Win! ${playerSelectionLowerCase} beats ${computerSelection}` ||
+    result === `You Win! ${playerSelectionLowerCase} beats ${computerSelection}` ||
+    result === `You Win! ${playerSelectionLowerCase} beats ${computerSelection}`
+  ) {
+    playerScore++
+    console.log(playerScore)
+    console.log(computerScore)
+  } else if ((result = "It's a draw")) {
+    playerScore++
+    computerScore++
+    console.log(playerScore)
+    console.log(computerScore)
+  } else {
+    computerScore++
+    console.log(playerScore)
+    console.log(computerScore)
+  }
+
+  // for (let i = 0; i < 5; i++) {
+  //   playRound()
+  //   i;
+  // }
+}
+game()
+
 function playRound(playerSelection, computerSelection) {
-  playerSelectionLowerCase = playerSelection.toLowerCase()
   // debugger
+  playerSelectionLowerCase = playerSelection.toLowerCase()
   console.log(`User: ${playerSelectionLowerCase}`)
 
   //   need to determine win or lose.
@@ -33,13 +69,8 @@ function playRound(playerSelection, computerSelection) {
     result = `You Lose! ${computerSelection} beats ${playerSelectionLowerCase}`
   }
 
-
   // might be easier to turn it into a switch statement???
-
-  
-
   //   switch ((playerSelection, computerSelection)) {
-  //     //   debugger
   //     case 'rock', 'paper':
   //       console.log('lose')
   //       break
