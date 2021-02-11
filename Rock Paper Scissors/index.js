@@ -1,7 +1,9 @@
 function computerPlay() {
-  num = Math.floor(Math.random() * 3 + 1)
+  // creating random number from 1 to 3
+  randomNum = Math.floor(Math.random() * 3 + 1)
 
-  switch (num) {
+  //   switch statement to determine what the above random number represents
+  switch (randomNum) {
     case 1:
       console.log('Rock')
       break
@@ -13,4 +15,5 @@ function computerPlay() {
       break
   }
 }
+// calling the above function
 computerPlay()
