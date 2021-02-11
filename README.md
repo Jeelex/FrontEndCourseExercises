@@ -49,5 +49,7 @@ You can check out this [video](https://www.youtube.com/watch?v=UGmEE-UDgWI) that
   - Answer: **Yes, that's correct. You will have to work on the exercise(s) you are instructed to on each lesson.**
 
 ---
+Updated: 11.02.2021
+---
 
 _Image by Kelly Sikkema on Unsplash_
