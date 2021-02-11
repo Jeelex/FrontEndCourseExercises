@@ -33,6 +33,11 @@ function playRound(playerSelection, computerSelection) {
     result = `You Lose! ${computerSelection} beats ${playerSelectionLowerCase}`
   }
 
+
+  // might be easier to turn it into a switch statement???
+
+  
+
   //   switch ((playerSelection, computerSelection)) {
   //     //   debugger
   //     case 'rock', 'paper':
