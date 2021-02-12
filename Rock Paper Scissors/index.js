@@ -1,7 +1,8 @@
-const playerSelection = 'RoCK'
+const playerSelection = ''
 const computerSelection = computerPlay()
-console.log(playRound(playerSelection, computerSelection))
-
+// const computerChoice = ''
+// console.log(playRound(playerSelection, computerSelection))
+let result
 
 function game() {
   // use playRound()
@@ -10,63 +11,76 @@ function game() {
   // announce winner at the end
   let playerScore = 0
   let computerScore = 0
-
-  playRound()
+// debugger
+  playRound(playerSelection, computerSelection)
+  // playRound()
+  // playRound()
+  // playRound()
+  // playRound()
+  // debugger
   if (
-    result === `You Win! ${playerSelectionLowerCase} beats ${computerSelection}` ||
-    result === `You Win! ${playerSelectionLowerCase} beats ${computerSelection}` ||
-    result === `You Win! ${playerSelectionLowerCase} beats ${computerSelection}`
+    result === `You Win! ${playerSelection} beats ${computerSelection}` ||
+    result === `You Win! ${playerSelection} beats ${computerSelection}` ||
+    result === `You Win! ${playerSelection} beats ${computerSelection}`
   ) {
     playerScore++
-    console.log(playerScore)
-    console.log(computerScore)
-  } else if ((result = "It's a draw")) {
+    console.log(`Player: ${playerScore}`)
+    console.log(`Computer: ${computerScore}`)
+  } else if ((result = `It's a draw!`)) {
     playerScore++
     computerScore++
-    console.log(playerScore)
-    console.log(computerScore)
+    console.log(`Player: ${playerScore}`)
+    console.log(`Computer: ${computerScore}`)
   } else {
     computerScore++
-    console.log(playerScore)
-    console.log(computerScore)
+    console.log(`Player: ${playerScore}`)
+    console.log(`Computer: ${computerScore}`)
   }
-
+  // console.log(playerScore, computerScore)
+// return playerScore, computerScore
   // for (let i = 0; i < 5; i++) {
   //   playRound()
   //   i;
   // }
+
 }
 game()
 
 function playRound(playerSelection, computerSelection) {
   // debugger
-  playerSelectionLowerCase = playerSelection.toLowerCase()
-  console.log(`User: ${playerSelectionLowerCase}`)
-
+  playerSelection = prompt('User Choice: ')
+  playerSelection = playerSelection.toLowerCase()
+  computerPlay()
+  // let computerChoice = computerSelection
+  console.log(`User: ${playerSelection}`)
+  console.log(`Computer: ${computerSelection}`)
   //   need to determine win or lose.
   // if statement?
   // rock > scissors  |   scissors > paper  | paper > rock
 
-  let result
+  // probably don't need this declaration in here. did a global scope
+  // let result
 
-  if (playerSelectionLowerCase === 'rock' && computerSelection === 'paper') {
-    result = `You Lose! ${computerSelection} beats ${playerSelectionLowerCase}`
-  } else if (playerSelectionLowerCase === 'paper' && computerSelection === 'paper') {
-    result = "It's a draw"
-  } else if (playerSelectionLowerCase === 'scissors' && computerSelection === 'paper') {
-    result = `You Win! ${playerSelectionLowerCase} beats ${computerSelection}`
-  } else if (playerSelectionLowerCase === 'rock' && computerSelection === 'scissors') {
-    result = `You Win! ${playerSelectionLowerCase} beats ${computerSelection}`
-  } else if (playerSelectionLowerCase === 'paper' && computerSelection === 'scissors') {
-    result = `You Lose! ${computerSelection} beats ${playerSelectionLowerCase}`
-  } else if (playerSelectionLowerCase === 'scissors' && computerSelection === 'scissors') {
-    result = "It's a draw"
-  } else if (playerSelectionLowerCase === 'rock' && computerSelection === 'rock') {
-    result = "It's a draw"
-  } else if (playerSelectionLowerCase === 'paper' && computerSelection === 'rock') {
-    result = `You Win! ${playerSelectionLowerCase} beats ${computerSelection}`
-  } else if (playerSelectionLowerCase === 'scissors' && computerSelection === 'rock') {
-    result = `You Lose! ${computerSelection} beats ${playerSelectionLowerCase}`
+  if (playerSelection === 'rock' && computerSelection === 'paper') {
+    result = `You Lose! ${computerSelection} beats ${playerSelection}`
+  } else if (playerSelection === 'paper' && computerSelection === 'paper') {
+    result = `It's a draw!`
+  } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+    result = `You Win! ${playerSelection} beats ${computerSelection}`
+  } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
+    result = `You Win! ${playerSelection} beats ${computerSelection}`
+  } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+    result = `You Lose! ${computerSelection} beats ${playerSelection}`
+  } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
+    result = `It's a draw!`
+  } else if (playerSelection === 'rock' && computerSelection === 'rock') {
+    result = `It's a draw!`
+  } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+    result = `You Win! ${playerSelection} beats ${computerSelection}`
+  } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
+    result = `You Lose! ${computerSelection} beats ${playerSelection}`
+  } else {
+    console.log("Sorry! You can only choose between 'rock', 'paper' or 'scissors' !")
   }
 
   // might be easier to turn it into a switch statement???
@@ -85,29 +99,33 @@ function playRound(playerSelection, computerSelection) {
   //   }
   //   return `You Win! ${playerSelection} beats ${computerSelection}`
   //   return 'You Lose! Paper beats Rock'
+
   return result
+  // console.log(result)
 }
+// playRound(playerSelection, computerSelection)
 
 function computerPlay() {
   // creating random number from 1 to 3
   randomNum = Math.floor(Math.random() * 3 + 1)
 
-  //   let computerRound
   //   switch statement to determine what the above random number represents
+  let computerChoice
   switch (randomNum) {
     case 1:
-      console.log('Computer: rock')
-      return 'rock'
+      // console.log('Computer: rock')
+      computerChoice = 'rock'
+      return computerChoice
       break
     case 2:
-      console.log('Computer: paper')
-      return 'paper'
+      // console.log('Computer: paper')
+      computerChoice = 'paper'
+      return computerChoice
       break
     case 3:
-      console.log('Computer: scissors')
-      return 'scissors'
+      // console.log('Computer: scissors')
+      computerChoice = 'scissors'
+      return computerChoice
       break
   }
-
-  //   return computerRound
 }
