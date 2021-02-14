@@ -1,114 +1,109 @@
 const playerSelection = ''
 const computerSelection = computerPlay()
-// const computerChoice = ''
 // console.log(playRound(playerSelection, computerSelection))
 let result
+let playerScore = 0
+let computerScore = 0
+let playerScoreTotal = 0
+let computerScoreTotal = 0
 
 function game() {
   // use playRound()
   // play the game 5 times
   // keep score
   // announce winner at the end
-  let playerScore = 0
-  let computerScore = 0
-  let playerScoreTotal = 0
-  let computerScoreTotal = 0
 
   playRound(playerSelection, computerSelection)
-  // debugger
-  if (result === 'You Win!') {
-    ++playerScore
-    playerScoreTotal += playerScore
-    console.log(`Player: ${playerScore}`)
-    console.log(`Computer: ${computerScore}`)
-    console.log(`Player Total: ${playerScoreTotal}`)
-    console.log(`Computer Total: ${computerScoreTotal}`)
-  } else if ((result === `It's a draw!`)) {
-    ++playerScore
-    ++computerScore
-    playerScoreTotal += playerScore
-    computerScoreTotal += computerScore
-    console.log(`Player: ${playerScore}`)
-    console.log(`Computer: ${computerScore}`)
-    console.log(`Player Total: ${playerScoreTotal}`)
-    console.log(`Computer Total: ${computerScoreTotal}`)
-  } else {
-    ++computerScore
-    playerScoreTotal += playerScore
-    computerScoreTotal += computerScore
-    console.log(`Player: ${playerScore}`)
-    console.log(`Computer: ${computerScore}`)
-    console.log(`Player Total: ${playerScoreTotal}`)
-    console.log(`Computer Total: ${computerScoreTotal}`)
-  }
+
 
   // TODO if statement for TOTAL score
 
-
+  console.log(`Player: ${playerScore}`, `Computer: ${computerScore}`)
 }
-// game()
+game()
 
 function playRound(playerSelection, computerSelection) {
-  debugger
+  // debugger
   playerSelection = prompt('User Choice: ')
   playerSelection = playerSelection.toLowerCase()
   // computerPlay()
-  // let computerChoice = computerSelection
   console.log(`User: ${playerSelection}`)
   console.log(`Computer: ${computerSelection}`)
-  //   need to determine win or lose.
-  // if statement?
-  // rock > scissors  |   scissors > paper  | paper > rock
-
-  // probably don't need this declaration in here. did a global scope
-  // let result
 
   if (playerSelection === 'rock' && computerSelection === 'paper') {
-    result = `You Lose! ${computerSelection} beats ${playerSelection}`
+    ++computerScore
+    playerScoreTotal += playerScore
+    computerScoreTotal += computerScore
+    console.log(`Player: ${playerScore}`)
+    console.log(`Computer: ${computerScore}`)
+    result = "You Lose!"
   } else if (playerSelection === 'paper' && computerSelection === 'paper') {
-    result = `It's a draw!`
+    ++playerScore
+    ++computerScore
+    playerScoreTotal += playerScore
+    computerScoreTotal += computerScore
+    console.log(`Player: ${playerScore}`)
+    console.log(`Computer: ${computerScore}`)
+    result = "It's a draw!"
   } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+    ++playerScore
+    playerScoreTotal += playerScore
+    console.log(`Player: ${playerScore}`)
+    console.log(`Computer: ${computerScore}`)
     result = 'You Win!'
-    // ${playerSelection} beats ${computerSelection}`
   } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
+    ++playerScore
+    playerScoreTotal += playerScore
+    console.log(`Player: ${playerScore}`)
+    console.log(`Computer: ${computerScore}`)
     result = 'You Win!'
-    // ${playerSelection} beats ${computerSelection}`
   } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-    result = `You Lose! ${computerSelection} beats ${playerSelection}`
+    ++computerScore
+    playerScoreTotal += playerScore
+    computerScoreTotal += computerScore
+    console.log(`Player: ${playerScore}`)
+    console.log(`Computer: ${computerScore}`)
+    result = "You Lose!"
   } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
-    result = `It's a draw!`
+    ++playerScore
+    ++computerScore
+    playerScoreTotal += playerScore
+    computerScoreTotal += computerScore
+    console.log(`Player: ${playerScore}`)
+    console.log(`Computer: ${computerScore}`)
+    result = "It's a draw!"
   } else if (playerSelection === 'rock' && computerSelection === 'rock') {
-    result = `It's a draw!`
+    ++playerScore
+    ++computerScore
+    playerScoreTotal += playerScore
+    computerScoreTotal += computerScore
+    console.log(`Player: ${playerScore}`)
+    console.log(`Computer: ${computerScore}`)
+    result = "It's a draw!"
   } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+    ++playerScore
+    playerScoreTotal += playerScore
+    console.log(`Player: ${playerScore}`)
+    console.log(`Computer: ${computerScore}`)
     result = 'You Win!'
-    // ${playerSelection} beats ${computerSelection}`
   } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-    result = `You Lose! ${computerSelection} beats ${playerSelection}`
+    ++computerScore
+    playerScoreTotal += playerScore
+    computerScoreTotal += computerScore
+    console.log(`Player: ${playerScore}`)
+    console.log(`Computer: ${computerScore}`)
+    result = "You Lose!"
   } else {
     console.log("Sorry! You can only choose between 'rock', 'paper' or 'scissors' !")
   }
 
-  // might be easier to turn it into a switch statement???
-  //   switch ((playerSelection, computerSelection)) {
-  //     case 'rock', 'paper':
-  //       console.log('lose')
-  //       break
-  //     // case 2:
-  //     //   // computerRound = 'Paper'
-  //     //   console.log('Computer: Paper')
-  //     //   break
-  //     // case 3:
-  //     //   // computerRound = 'Scissors'
-  //     //   console.log('Computer: Scissors')
-  //     //   break
-  //   }
-  //   return `You Win! ${playerSelection} beats ${computerSelection}`
-  //   return 'You Lose! Paper beats Rock'
+  // might be better to turn it into a switch statement???
 
   console.log(result)
-  return result
+  // return result
+  return playerScoreTotal, computerScoreTotal
 }
-playRound(playerSelection, computerSelection)
+// playRound(playerSelection, computerSelection)
 
 function computerPlay() {
   // creating random number from 1 to 3
