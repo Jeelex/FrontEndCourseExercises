@@ -11,46 +11,48 @@ function game() {
   // announce winner at the end
   let playerScore = 0
   let computerScore = 0
-// debugger
+  let playerScoreTotal = 0
+  let computerScoreTotal = 0
+
   playRound(playerSelection, computerSelection)
-  // playRound()
-  // playRound()
-  // playRound()
-  // playRound()
   // debugger
-  if (
-    result === `You Win! ${playerSelection} beats ${computerSelection}` ||
-    result === `You Win! ${playerSelection} beats ${computerSelection}` ||
-    result === `You Win! ${playerSelection} beats ${computerSelection}`
-  ) {
-    playerScore++
+  if (result === 'You Win!') {
+    ++playerScore
+    playerScoreTotal += playerScore
     console.log(`Player: ${playerScore}`)
     console.log(`Computer: ${computerScore}`)
-  } else if ((result = `It's a draw!`)) {
-    playerScore++
-    computerScore++
+    console.log(`Player Total: ${playerScoreTotal}`)
+    console.log(`Computer Total: ${computerScoreTotal}`)
+  } else if ((result === `It's a draw!`)) {
+    ++playerScore
+    ++computerScore
+    playerScoreTotal += playerScore
+    computerScoreTotal += computerScore
     console.log(`Player: ${playerScore}`)
     console.log(`Computer: ${computerScore}`)
+    console.log(`Player Total: ${playerScoreTotal}`)
+    console.log(`Computer Total: ${computerScoreTotal}`)
   } else {
-    computerScore++
+    ++computerScore
+    playerScoreTotal += playerScore
+    computerScoreTotal += computerScore
     console.log(`Player: ${playerScore}`)
     console.log(`Computer: ${computerScore}`)
+    console.log(`Player Total: ${playerScoreTotal}`)
+    console.log(`Computer Total: ${computerScoreTotal}`)
   }
-  // console.log(playerScore, computerScore)
-// return playerScore, computerScore
-  // for (let i = 0; i < 5; i++) {
-  //   playRound()
-  //   i;
-  // }
+
+  // TODO if statement for TOTAL score
+
 
 }
-game()
+// game()
 
 function playRound(playerSelection, computerSelection) {
-  // debugger
+  debugger
   playerSelection = prompt('User Choice: ')
   playerSelection = playerSelection.toLowerCase()
-  computerPlay()
+  // computerPlay()
   // let computerChoice = computerSelection
   console.log(`User: ${playerSelection}`)
   console.log(`Computer: ${computerSelection}`)
@@ -66,9 +68,11 @@ function playRound(playerSelection, computerSelection) {
   } else if (playerSelection === 'paper' && computerSelection === 'paper') {
     result = `It's a draw!`
   } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-    result = `You Win! ${playerSelection} beats ${computerSelection}`
+    result = 'You Win!'
+    // ${playerSelection} beats ${computerSelection}`
   } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-    result = `You Win! ${playerSelection} beats ${computerSelection}`
+    result = 'You Win!'
+    // ${playerSelection} beats ${computerSelection}`
   } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
     result = `You Lose! ${computerSelection} beats ${playerSelection}`
   } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
@@ -76,7 +80,8 @@ function playRound(playerSelection, computerSelection) {
   } else if (playerSelection === 'rock' && computerSelection === 'rock') {
     result = `It's a draw!`
   } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-    result = `You Win! ${playerSelection} beats ${computerSelection}`
+    result = 'You Win!'
+    // ${playerSelection} beats ${computerSelection}`
   } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
     result = `You Lose! ${computerSelection} beats ${playerSelection}`
   } else {
@@ -100,10 +105,10 @@ function playRound(playerSelection, computerSelection) {
   //   return `You Win! ${playerSelection} beats ${computerSelection}`
   //   return 'You Lose! Paper beats Rock'
 
+  console.log(result)
   return result
-  // console.log(result)
 }
-// playRound(playerSelection, computerSelection)
+playRound(playerSelection, computerSelection)
 
 function computerPlay() {
   // creating random number from 1 to 3
