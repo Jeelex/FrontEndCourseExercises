@@ -1,4 +1,4 @@
-const playerSelection = ''
+const playerSelection = playerPlay()
 const computerSelection = computerPlay()
 // console.log(playRound(playerSelection, computerSelection))
 let result
@@ -6,6 +6,13 @@ let playerScore = 0
 let computerScore = 0
 let playerScoreTotal = 0
 let computerScoreTotal = 0
+
+function playerPlay(playerSelection) {
+  playerSelection = prompt('User Choice: ')
+  playerSelection = playerSelection.toLowerCase()
+  console.log(`User: ${playerSelection}`)
+  return playerSelection
+}
 
 function game() {
   // use playRound()
@@ -15,7 +22,6 @@ function game() {
 
   playRound(playerSelection, computerSelection)
 
-
   // TODO if statement for TOTAL score
 
   console.log(`Player: ${playerScore}`, `Computer: ${computerScore}`)
@@ -23,9 +29,8 @@ function game() {
 game()
 
 function playRound(playerSelection, computerSelection) {
-  // debugger
-  playerSelection = prompt('User Choice: ')
-  playerSelection = playerSelection.toLowerCase()
+  // playerSelection = prompt('User Choice: ')
+  // playerSelection = playerSelection.toLowerCase()
   // computerPlay()
   console.log(`User: ${playerSelection}`)
   console.log(`Computer: ${computerSelection}`)
@@ -36,7 +41,7 @@ function playRound(playerSelection, computerSelection) {
     computerScoreTotal += computerScore
     console.log(`Player: ${playerScore}`)
     console.log(`Computer: ${computerScore}`)
-    result = "You Lose!"
+    result = 'You Lose!'
   } else if (playerSelection === 'paper' && computerSelection === 'paper') {
     ++playerScore
     ++computerScore
@@ -63,7 +68,7 @@ function playRound(playerSelection, computerSelection) {
     computerScoreTotal += computerScore
     console.log(`Player: ${playerScore}`)
     console.log(`Computer: ${computerScore}`)
-    result = "You Lose!"
+    result = 'You Lose!'
   } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
     ++playerScore
     ++computerScore
@@ -92,7 +97,7 @@ function playRound(playerSelection, computerSelection) {
     computerScoreTotal += computerScore
     console.log(`Player: ${playerScore}`)
     console.log(`Computer: ${computerScore}`)
-    result = "You Lose!"
+    result = 'You Lose!'
   } else {
     console.log("Sorry! You can only choose between 'rock', 'paper' or 'scissors' !")
   }
