@@ -7,12 +7,7 @@ let computerScore = 0
 let playerScoreTotal = 0
 let computerScoreTotal = 0
 
-function playerPlay(playerSelection) {
-  playerSelection = prompt('User Choice: ')
-  playerSelection = playerSelection.toLowerCase()
-  console.log(`User: ${playerSelection}`)
-  return playerSelection
-}
+
 
 function game() {
   // use playRound()
@@ -21,17 +16,22 @@ function game() {
   // announce winner at the end
 
   playRound(playerSelection, computerSelection)
+  playRound(playerSelection, computerSelection)
+  // playRound(playerSelection, computerSelection)
+  // playRound(playerSelection, computerSelection)
+  // playRound(playerSelection, computerSelection)
 
   // TODO if statement for TOTAL score
 
-  console.log(`Player: ${playerScore}`, `Computer: ${computerScore}`)
+  console.log(`Player: ${playerScoreTotal}`, `Computer: ${computerScoreTotal}`)
 }
 game()
 
 function playRound(playerSelection, computerSelection) {
   // playerSelection = prompt('User Choice: ')
   // playerSelection = playerSelection.toLowerCase()
-  // computerPlay()
+  playerPlay()
+  computerPlay()
   console.log(`User: ${playerSelection}`)
   console.log(`Computer: ${computerSelection}`)
 
@@ -109,6 +109,14 @@ function playRound(playerSelection, computerSelection) {
   return playerScoreTotal, computerScoreTotal
 }
 // playRound(playerSelection, computerSelection)
+
+// created this separate playerPlay() function but it's a bit annoying as it prompts 1 extra time (the first one) than actually needed
+function playerPlay(userChoice) {
+  userChoice = prompt('User Choice: ')
+  userChoice = userChoice.toLowerCase()
+  // console.log(`User: ${userChoice}`)
+  return userChoice
+}
 
 function computerPlay() {
   // creating random number from 1 to 3
