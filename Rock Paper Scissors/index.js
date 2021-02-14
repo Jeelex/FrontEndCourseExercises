@@ -33,9 +33,9 @@ function playRound(playerSelection, computerSelection) {
   playerScore = 0
   computerScore = 0
 
-  playerSelection = prompt('User Choice: ')
+  computerSelection = computerPlay()
+  playerSelection = prompt("PLEASE TYPE:  rock, paper or scissors")
   playerSelection = playerSelection.toLowerCase()
-  computerPlay()
   console.log(`Player: ${playerSelection}`)
   console.log(`Computer: ${computerSelection}`)
 
