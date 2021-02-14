@@ -8,14 +8,12 @@ let playerScoreTotal = 0
 let computerScoreTotal = 0
 
 function game() {
-  //        TODO could try to use for loop
+  // *                     5 round game using for loop
+  for (let i = 0; i < 5; i++) {
+    playRound(playerSelection, computerSelection)
+  }
 
-  playRound(playerSelection, computerSelection)
-  playRound(playerSelection, computerSelection)
-  playRound(playerSelection, computerSelection)
-  playRound(playerSelection, computerSelection)
-  playRound(playerSelection, computerSelection)
-
+  // !                   colors in console work ONLY in Google Chrome
   console.log(
     '\x1b[35m%s\x1b[0m',
     `Player Total: ${playerScoreTotal}, Computer Total: ${computerScoreTotal}`
@@ -40,6 +38,9 @@ function playRound(playerSelection, computerSelection) {
   computerPlay()
   console.log(`Player: ${playerSelection}`)
   console.log(`Computer: ${computerSelection}`)
+
+  // TODO            might be better to turn the if statement below into a switch statement???
+
   if (playerSelection === 'rock' && computerSelection === 'paper') {
     computerScore++
     result = 'You Lose!'
@@ -83,8 +84,6 @@ function playRound(playerSelection, computerSelection) {
     console.log("Sorry! You can only choose between 'rock', 'paper' or 'scissors' !")
   }
 
-  // TODO  might be better to turn it into a switch statement???
-
   playerScoreTotal += playerScore
   computerScoreTotal += computerScore
 }
@@ -97,13 +96,13 @@ function computerPlay() {
   let computerChoice
   switch (randomNum) {
     case 1:
-      return computerChoice = 'rock'
+      return (computerChoice = 'rock')
       break
     case 2:
-      return computerChoice = 'paper'
+      return (computerChoice = 'paper')
       break
     case 3:
-      return computerChoice = 'scissors'
+      return (computerChoice = 'scissors')
       break
   }
 }
