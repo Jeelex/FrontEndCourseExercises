@@ -13,29 +13,33 @@ function game() {
     playRound(playerSelection, computerSelection)
   }
 
-  // !                   colors in console work ONLY in Google Chrome
+  // !                   colors in console currently working ONLY in Google Chrome
   console.log(
     '\x1b[35m%s\x1b[0m',
     `Player Total: ${playerScoreTotal}, Computer Total: ${computerScoreTotal}`
   )
 
+  return checkWinner(playerScoreTotal, computerScoreTotal)
+}
+game()
+
+// TODO          need to use generic parameters to make function generally usable
+function checkWinner(playerScoreTotal, computerScoreTotal) {
   if (playerScoreTotal > computerScoreTotal) {
     console.log('\x1b[42m%s\x1b[0m', "You're the WINNER!")
   } else if (playerScoreTotal === computerScoreTotal) {
     console.log('\x1b[33m%s\x1b[0m', "It's a DRAW!")
   } else {
     console.log('\x1b[31m%s\x1b[0m', 'You LOSE!')
-  }
+  } 
 }
-game()
 
 function playRound(playerSelection, computerSelection) {
   playerScore = 0
   computerScore = 0
 
   computerSelection = computerPlay()
-  playerSelection = prompt("PLEASE TYPE:  rock, paper or scissors")
-  playerSelection = playerSelection.toLowerCase()
+  playerSelection = prompt("PLEASE TYPE:  rock, paper or scissors").toLowerCase()
   console.log(`Player: ${playerSelection}`)
   console.log(`Computer: ${computerSelection}`)
 
