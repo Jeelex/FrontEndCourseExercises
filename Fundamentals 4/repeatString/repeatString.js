@@ -5,9 +5,8 @@ const repeatString = function (str, times) {
     } else if (times === 0) {
         result = '';
     } else {
-        result = 'ERROR';
+        return 'ERROR';
     }
-    console.log(result);
     return result;
 };
 
