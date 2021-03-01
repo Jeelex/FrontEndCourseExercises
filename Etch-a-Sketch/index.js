@@ -35,11 +35,15 @@ function addDivs(squareSizeNumber) {
 
 function createMouseTrail() {
     squares.forEach(square => square.addEventListener('mouseover', () => {
-        square.style.backgroundColor = 'black';
+        square.style.backgroundColor = choosingRandomColor();
     }) )
 }
 
 function setGridDimensions(userChoice) {
     grid.style.width = 30 * userChoice + 'px';
     grid.style.height = grid.style.width;
+}
+
+function choosingRandomColor() {
+    return 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
 }
