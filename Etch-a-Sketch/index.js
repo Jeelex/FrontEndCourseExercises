@@ -35,7 +35,7 @@ function addDivs(squareSizeNumber) {
 
 function createMouseTrail() {
     squares.forEach(square => square.addEventListener('mouseover', () => {
-        square.style.backgroundColor = 'gray';
+        square.style.backgroundColor = 'black';
     }) )
 }
 

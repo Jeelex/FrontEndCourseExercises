@@ -23,13 +23,13 @@ body {
 .square {
 	width: 30px;
 	/* height: 30px; */
-	background-color: green;
+	/* background-color: green; */
 }
 
 #clearBtn {
     border-radius: 8px;
     padding: .5em .8em;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     letter-spacing: 1px;
     transition: .3s ease;
     font-family: monospace;
@@ -39,7 +39,7 @@ body {
 #clearBtn:hover,
 #clearBtn:focus {
     cursor: pointer;
-    
+	outline: none;
 }
 
 #clearBtn:hover {
