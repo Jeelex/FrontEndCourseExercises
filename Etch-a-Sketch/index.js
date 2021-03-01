@@ -3,14 +3,6 @@ let squares = [];
 const clearBtn = document.getElementById('clearBtn');
 let userSelection = 16;
 
-function addDivs(squareNo) {
-	for (let i = 0; i < (squareNo*squareNo) ; i++) {
-		const square = document.createElement('div');
-		square.classList.add('square');
-		grid.appendChild(square);
-		squares.push(square);
-	}
-}
 addDivs(userSelection);
 
 
@@ -20,12 +12,28 @@ squares.forEach(square => square.addEventListener('mouseover', () => {
 }) )
 
 clearBtn.addEventListener('click', () => {
-    squares.forEach(square => square.style.backgroundColor = 'initial');
-    console.log("BEFORE " + squares.length);
-    squares.splice(0);
-    console.log("AFTER " + squares.length);
+    squares.forEach(square => square.remove())
+    // squares.forEach(square => square.style.backgroundColor = 'red');
     userSelection = parseInt(prompt('How many squares per side would you like?'));
-    // console.log(userSelection + ' is a ' + typeof userSelection);
-    // console.log('squares is clean!');
     addDivs(userSelection);
 })
+
+function addDivs(squareNo) {
+    for (let i = 0; i < (squareNo*squareNo) ; i++) {
+        const square = document.createElement('div');
+        square.classList.add('square');
+        grid.appendChild(square);
+        squares.push(square);
+    }
+}
+
+// function removeDivs(squareNo) {
+//     for (let i = 0; i < (squareNo*squareNo) ; i++) {
+//         const square = document.getElementsByClassName('square');
+//         square.remove();
+//         // grid.removeChild(square);
+//         squares.pop(square);
+//         // squares.length = [];
+//     }
+// }
+// removeDivs(userSelection);
