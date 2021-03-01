@@ -2,38 +2,44 @@ const grid = document.querySelector('.grid');
 let squares = [];
 const clearBtn = document.getElementById('clearBtn');
 let userSelection = 16;
+const square = document.querySelector('.square');
 
 addDivs(userSelection);
 
 
-// Event Listeners
-squares.forEach(square => square.addEventListener('mouseover', () => {
-    square.style.backgroundColor = 'gray';
-}) )
+
+
+
+//   Event Listeners
 
 clearBtn.addEventListener('click', () => {
-    squares.forEach(square => square.remove())
-    // squares.forEach(square => square.style.backgroundColor = 'red');
+    squares.forEach(square => square.remove());
     userSelection = parseInt(prompt('How many squares per side would you like?'));
     addDivs(userSelection);
+    createMouseTrail();
+    setGridDimensions(userSelection);
 })
 
-function addDivs(squareNo) {
-    for (let i = 0; i < (squareNo*squareNo) ; i++) {
+
+//   Functions
+
+function addDivs(squareSizeNumber) {
+    for (let i = 0; i < (squareSizeNumber*squareSizeNumber) ; i++) {
         const square = document.createElement('div');
         square.classList.add('square');
         grid.appendChild(square);
         squares.push(square);
     }
+    createMouseTrail()
 }
 
-// function removeDivs(squareNo) {
-//     for (let i = 0; i < (squareNo*squareNo) ; i++) {
-//         const square = document.getElementsByClassName('square');
-//         square.remove();
-//         // grid.removeChild(square);
-//         squares.pop(square);
-//         // squares.length = [];
-//     }
-// }
-// removeDivs(userSelection);
+function createMouseTrail() {
+    squares.forEach(square => square.addEventListener('mouseover', () => {
+        square.style.backgroundColor = 'gray';
+    }) )
+}
+
+function setGridDimensions(userChoice) {
+    grid.style.width = 30 * userChoice + 'px';
+    grid.style.height = grid.style.width;
+}

@@ -1,17 +1,9 @@
-html,
-body {
-	/* padding: 20px; */
-	/* margin: 20px; */
+* {
 	margin: 0;
-	/* box-sizing: border-box; */
+	padding: 0;
 }
 
-/* html {
-    background-color: chartreuse;
-} */
-
 body {
-	/* background-color: hotpink; */
 	display: flex;
     flex-direction: column;
 	justify-content: center;
@@ -20,19 +12,17 @@ body {
 }
 
 .grid {
-    margin: 2em;
 	width: 480px;
 	height: 480px;
 	border: 4px solid black;
 
 	display: flex;
-	/* flex-direction: row; */
 	flex-wrap: wrap;
 }
 
 .square {
 	width: 30px;
-	height: 30px;
+	/* height: 30px; */
 	background-color: green;
 }
 
@@ -43,6 +33,7 @@ body {
     letter-spacing: 1px;
     transition: .3s ease;
     font-family: monospace;
+	margin: 2em;
 }
 
 #clearBtn:hover,
