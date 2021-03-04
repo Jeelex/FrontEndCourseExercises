@@ -17,8 +17,10 @@ function sum (array) {
 		// return result;
 }
 
-function multiply () {
-	
+function multiply (array) {
+	return array.reduce((total, num) => {
+		return total * num;
+	}, 1);
 }
 
 function power() {

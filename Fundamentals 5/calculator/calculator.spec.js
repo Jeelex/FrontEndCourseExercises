@@ -39,11 +39,11 @@ describe('sum', function() {
 });
 
 describe('multiply', function() {
-	xit('multiplies two numbers', function() {
+	it('multiplies two numbers', function() {
 		expect(calculator.multiply([2,4])).toEqual(8);
 	});
 
-	xit('multiplies several numbers', function() {
+	it('multiplies several numbers', function() {
 		expect(calculator.multiply([2,4,6,8,10,12,14])).toEqual(645120);
 	});
 });
