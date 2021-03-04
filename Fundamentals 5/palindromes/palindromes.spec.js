@@ -4,7 +4,7 @@ describe('palindromes', function() {
   it('works with single words', function() {
     expect(palindromes('racecar')).toEqual(true);
   });
-  xit('works with punctuation ', function() {
+  it('works with punctuation ', function() {
     expect(palindromes('racecar!')).toEqual(true);
   });
   xit('works with upper-case letters ', function() {
