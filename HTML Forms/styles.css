@@ -1,0 +1,40 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ECEEF1;
+    font-family: Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+
+header {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border: 2px solid magenta;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo-list {
+    list-style: none;
+}
+
+.other-logos{
+    color: #6b6c72;
+    margin: 0 5px;
+    display: inline-block;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+.logo-img {
+    width: 20px;
+    vertical-align: middle;
+}
