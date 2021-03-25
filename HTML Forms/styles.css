@@ -13,18 +13,26 @@ body {
 header {
     margin-top: 1em;
     margin-bottom: 1em;
-    border: 2px solid magenta;
+    /* border: 2px solid magenta; */
 }
 
 a {
     text-decoration: none;
-    color: inherit;
+    color: #0077C5;
+}
+a:hover,
+a:focus {
+    text-decoration: underline;
 }
 
 .logo-list {
     list-style: none;
 }
 
+.other-logos > a {
+    text-decoration: none;
+    color: inherit;
+}
 .other-logos{
     color: #6b6c72;
     margin: 0 5px;
@@ -38,3 +46,4 @@ a {
     width: 20px;
     vertical-align: middle;
 }
+
