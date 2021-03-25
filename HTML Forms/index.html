@@ -11,7 +11,7 @@
 	<body>
 		<header>
 			<ul class="logo-list">
-				<li><img class="logo" src="images/logo.png" alt="logo" /></li>
+				<li class="logo" ><img src="images/logo.png" alt="logo" /></li>
 				<li class="other-logos mint">
 					<a target="_blank" rel="noopener noreferrer" href="https://www.mint.com/">
 						<img class="logo-img" src="images/mint-logo.png" alt="mint logo" />
@@ -36,22 +36,44 @@
 		<main>
 			<section class="section-title">
 				<h1 class="title">Create an Intuit account</h1>
-				<p class="text-description">One account for everything Intuit, including Mint.</p>
-				<a target="_blank" rel="noopener noreferrer" href="https://accounts-help.lc.intuit.com/questions/1582580-creating-an-account">Learn more</a>
-				<p class="text-description">
+				<h2 class="text-description">One account for everything Intuit, including Mint.</h2>
+				<a target="_blank" rel="noopener noreferrer" href="https://accounts-help.lc.intuit.com/questions/1582580-creating-an-account" class="text-description learn-more-link">Learn more</a>
+				<h2 class="text-description">
 					Already have an account?
 					<a
 						href="https://accounts.intuit.com/index.html?offering_id=Intuit.ifs.mint&namespace_id=50000026&redirect_url=https%3A%2F%2Fmint.intuit.com%2Foverview.event%3Futm_medium%3Ddirect%26cta%3Dhero_sign_up_free_ProspectWeb%26ivid%3Dff7dea5d-adcb-4f2a-b10e-ee118291264e%26adobe_mc%3DMCMID%253D73858714158080255052773804408215191989%257CMCORGID%253D969430F0543F253D0A4C98C6%252540AdobeOrg%257CTS%253D1607715239%26ivid%3Dff7dea5d-adcb-4f2a-b10e-ee118291264e"
 						>Sign In</a
 					>
-				</p>
+				</h2>
 			</section>
 
 			<section>
-				<fieldset></fieldset>
-			</section>
+				<form action="#">
+					<fieldset>
+						<label for="email">Email address</label>
+						<input type="email" name="email" id="email" placeholder="You'll verify this later" required aria-required="true">
+					</fieldset>	
 
-			<button class="btn">Create Account</button>
+					<fieldset>
+						<label for="phone">Phone (recommended)</label>
+						<input type="tel" name="phone" id="phone" placeholder="Helps with lost passwords and security">
+						<p class="rates-text">Standard call, messaging or data rates may apply.</p>
+					</fieldset>
+
+					<fieldset>
+						<label for="password">Password</label>
+						<input class="password-input" type="password" name="password" id="password" placeholder="Don't reuse old password" required aria-required="true">
+					</fieldset>
+					
+					<!-- <label for="confirm-password">Confirm password</label>
+					<input type="password" name="confirm-password" id="confirm-password" required aria-required="true"> -->
+					
+					<button class="btn" type="submit">
+						<img class="lock-img" src="images/lock-icon2.png" alt="lock icon">
+						Create Account
+					</button>
+				</form>
+			</section>
 			<section>
 				<p class="text-terms">
 					By clicking Create Account, you agree to our <a target="_blank" rel="noopener noreferrer" href="https://www.mint.com/terms">Terms</a> and have read and acknowledge our
@@ -66,6 +88,24 @@
             </p>
         </section>
 
-		<footer></footer>
+		<footer>
+			<section>
+				<ul>
+					<li class="legal-privacy-security-item"><a target="_blank" rel="noopener noreferrer" href="https://www.intuit.com/legal/">Legal</a></li>
+					<li class="legal-privacy-security-item"><a target="_blank" rel="noopener noreferrer" href="https://www.intuit.com/privacy/statement/">Privacy</a></li>
+					<li class="legal-privacy-security-item"><a target="_blank" rel="noopener noreferrer" href="http://security.intuit.com/">Security</a></li>
+				</ul>
+			</section>
+		
+			<section class="copyright">
+				<p>&copy; 2021 Intuit, Inc. All rights reserved. Intuit, QuickBooks, QB, TurboTax, ProConnect and Mint are registered trademarks of Intuit Inc.</p>
+				<p>Terms and conditions, features, support, pricing, and service options subject to change without notice.</p>
+			</section>
+
+			<section class="privacy-footer">
+				<a class="privacy-footer-text" rel="noopener noreferrer" href="#">Privacy Settings</a>
+			</section>
+
+		</footer>
 	</body>
 </html>
