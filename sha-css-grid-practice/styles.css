@@ -6,10 +6,8 @@
 
 body {
     text-align: center;
-    color: white;
     font-size: 1.5rem;
-    font-weight: 700;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
     padding: 1.1em;
 }
 
@@ -19,10 +17,12 @@ body {
     margin: 0 auto;
     display: grid;
     gap: .5em;
+    color: white;
+    font-weight: 700;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .grid-item {
-    /* padding: 1em 1.5em; */
     border-radius: 10px;
     display: grid;
     place-items: center;
@@ -79,3 +79,70 @@ body {
 
 
 
+/* ?            Responsive Layout                */
+
+.grid-container {
+    display: grid;
+    gap: .8em;
+}
+
+.grid-item-responsive {
+    padding: .5em;
+    text-align: left;
+    place-items: unset;
+    color: #ededee;
+    border-radius: 5px;
+    font-family: serif;
+}
+
+
+.header {
+    background-color: #838484;
+}
+
+.sidebar {
+    background-color: #393a3a;
+}
+
+.content {
+    background-color: #393a3a;
+}
+
+.sidebar-2 {
+    background-color: #b5b5b5;
+    color: #393a3a;
+}
+
+.footer {
+    background-color: #838484;
+}
+
+
+@media (min-width: 450px) {
+    .header, 
+    .sidebar-2, 
+    .footer{
+        grid-column: 1/3;
+    }
+    .sidebar{
+        grid-column: 1;
+    }
+    .content{
+        grid-column: 2;
+    }
+}
+
+@media (min-width: 700px) {
+    .grid-container{
+        max-width: 850px;
+        margin: 0 auto;
+    }
+
+    .header, 
+    .footer {
+        grid-column: 1/4;
+    }
+    .sidebar-2{
+        grid-column: 3;
+    }
+}
