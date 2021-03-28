@@ -15,6 +15,11 @@ nav {
     border-bottom: 1px solid #00000021;
 }
 
+main {
+    margin: 0 auto;
+    width: 600px;
+}
+
 img,
 button {
 	cursor: pointer;
@@ -96,14 +101,18 @@ button {
 
 
 /* ?                    title                                        */
-.title-div{
-    padding-top: 7em;
-    padding-bottom: 2em;
-    border-bottom: 1px solid #00000021;
-}
 
 .title {
+    padding-top: 3.5em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #00000021;
     font-size: 2rem;
     font-style: italic;
     width: 600px;
+}
+
+/* ?                    share links                         */
+
+.share-links{
+    margin-top: .5em;
 }
