@@ -4,7 +4,6 @@
 }
 
 body {
-    text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -39,6 +38,10 @@ button {
     align-items: center;
 }
 
+.centered{
+    margin: 0 auto;
+}
+
 
 /* ?                    navbar                                               */
 
@@ -51,6 +54,7 @@ button {
 
 .nav-link {
     width: 33%;
+    text-align: center;
 }
 
 .hamburger-search-container{
@@ -92,6 +96,14 @@ button {
 
 
 /* ?                    title                                        */
-.title{
-    padding-top: 3em;
+.title-div{
+    padding-top: 7em;
+    padding-bottom: 2em;
+    border-bottom: 1px solid #00000021;
+}
+
+.title {
+    font-size: 2rem;
+    font-style: italic;
+    width: 600px;
 }
