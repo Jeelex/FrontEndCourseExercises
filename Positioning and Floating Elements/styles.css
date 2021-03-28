@@ -16,9 +16,14 @@ nav {
     border-bottom: 1px solid #00000021;
 }
 
-/* img {
-    width: 100%;
-} */
+img,
+button {
+	cursor: pointer;
+}
+
+.cursor-pointer {
+	cursor: pointer;
+} 
 
 
 button {
@@ -34,6 +39,9 @@ button {
     align-items: center;
 }
 
+
+/* ?                    navbar                                               */
+
 .nav-list {
     list-style: none;
     display: flex;
@@ -44,15 +52,6 @@ button {
 .nav-link {
     width: 33%;
 }
-
-/* img,
-button:hover {
-	cursor: pointer;
-}
-
-.cursor-pointer {
-	cursor: pointer;
-} */
 
 .hamburger-search-container{
     justify-content: flex-start;
@@ -69,7 +68,7 @@ button:hover {
 }
 
 .logo-img {
-    width: 40%;
+    width: 189px;
 }
 
 .navbar-heading{
@@ -88,4 +87,11 @@ button:hover {
     font-size: 11px;
     border-radius: 3px;
     letter-spacing: 0.05em;
+}
+
+
+
+/* ?                    title                                        */
+.title{
+    padding-top: 3em;
 }
