@@ -195,18 +195,18 @@ a:hover {
 }
 
 .sign-up-btn {
-	padding: 0.5em .6em 0.2em;
-    width: 110px;
+	padding: 0.5em 0.6em 0.2em;
+	width: 110px;
 	font-size: 15px;
 	font-weight: 700;
-    border: 1px solid black;
-    border-radius: 2px;
-    transition: .2s ease-in-out;
+	border: 1px solid black;
+	border-radius: 2px;
+	transition: 0.2s ease-in-out;
 }
 
 .sign-up-btn:hover {
-    background-color: black;
-    color: white;
+	background-color: black;
+	color: white;
 }
 
 /* ?                    paragraph article                        */
@@ -275,4 +275,39 @@ a:hover {
 .editor-picks > article a h3 {
 	font-weight: 400;
 	font-size: 14px;
+}
+
+/* ?			inflation div				 */
+
+.inflation-div {
+	margin-top: 2em;
+	width: 70%;
+}
+
+.inflation-title {
+	font-size: 18px;
+}
+
+.inflation-subtitle {
+	margin-top: 0.5em;
+	font-size: 14px;
+}
+
+.inflation-img {
+	margin-top: 1em;
+	width: 100%;
+	position: relative;
+}
+
+.inflation-img-underline {
+	width: 50px;
+	margin-top: 1em;
+	border-bottom: 1px solid black;
+
+}
+
+.inflation-figcaption {
+	color: #333;
+	font-size: 12px;
+	margin-top: 1em;
 }
