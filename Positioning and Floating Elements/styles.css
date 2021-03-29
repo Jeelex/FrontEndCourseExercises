@@ -22,6 +22,10 @@ main {
 	margin: 0 auto;
 }
 
+h2 {
+	font-size: 18px;
+}
+
 /* section {
 	margin-bottom: 2em;
 } */
@@ -59,6 +63,10 @@ a:hover {
 .centered {
 	margin: 0 auto;
 	width: 598px;
+}
+
+.margin-top {
+	margin-top: 2em;
 }
 
 /* ?                    navbar                                               */
@@ -150,7 +158,7 @@ a:hover {
 	width: 75%;
 }
 
-.img-photographer {
+.credit-text {
 	color: #888;
 	font-size: 13px;
 }
@@ -280,7 +288,7 @@ a:hover {
 /* ?			inflation div				 */
 
 .inflation-div {
-	margin-top: 2em;
+	/* margin-top: 2em; */
 	width: 70%;
 }
 
@@ -296,18 +304,48 @@ a:hover {
 .inflation-img {
 	margin-top: 1em;
 	width: 100%;
-	position: relative;
 }
 
 .inflation-img-underline {
 	width: 50px;
 	margin-top: 1em;
 	border-bottom: 1px solid black;
-
 }
 
 .inflation-figcaption {
 	color: #333;
-	font-size: 12px;
+	font-size: 14px;
 	margin-top: 1em;
+	margin-bottom: 2em;
+}
+
+/* ?								youtube container 					 */
+
+.youtube-container {
+	margin-top: 2em;
+}
+
+.youtube-video {
+	width: 100%;
+	height: 365px;
+}
+.telescope-container {
+	width: 55%;
+}
+
+.telescope-img {
+	margin-top: 1em;
+	width: 100%;
+}
+
+
+/* ?								version	text						 */
+
+.version-text {
+	color: #333;
+	font-size: 12px;
+}
+
+.version-text a{
+	color: unset;
 }
