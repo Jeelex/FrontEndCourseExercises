@@ -254,7 +254,7 @@ a:hover {
 
 .editor-picks {
 	float: right;
-	margin-right: 5em;
+	margin-right: 12em;
 	display: flex;
 	flex-direction: column;
 	gap: 1em;
@@ -288,8 +288,8 @@ a:hover {
 /* ?			inflation div				 */
 
 .inflation-div {
-	/* margin-top: 2em; */
 	width: 70%;
+	max-width: 930px;
 }
 
 .inflation-title {
@@ -330,14 +330,13 @@ a:hover {
 	height: 365px;
 }
 .telescope-container {
-	width: 55%;
+	width: 40%;
 }
 
 .telescope-img {
 	margin-top: 1em;
 	width: 100%;
 }
-
 
 /* ?								version	text						 */
 
@@ -346,13 +345,12 @@ a:hover {
 	font-size: 12px;
 }
 
-.version-text a{
+.version-text a {
 	color: unset;
 }
 
-
 /* ? 									comments div						 */
-.commemts-div{
+.commemts-div {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
