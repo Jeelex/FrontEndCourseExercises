@@ -17,9 +17,13 @@ nav {
 }
 
 main {
-    width: 95%;
-    margin: 0 auto;
+	width: 95%;
+	margin: 0 auto;
 }
+
+/* section {
+	margin-bottom: 2em;
+} */
 
 img,
 button {
@@ -37,6 +41,14 @@ button {
 	font-family: "Roboto", sans-serif;
 }
 
+a {
+	color: #326891;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
 .flex-center {
 	display: flex;
 	justify-content: center;
@@ -45,7 +57,7 @@ button {
 
 .centered {
 	margin: 0 auto;
-	width: 600px;
+	width: 598px;
 }
 
 /* ?                    navbar                                               */
@@ -134,10 +146,111 @@ button {
 .img-figcaption {
 	color: #666666;
 	font-size: 15px;
-    width: 75%;
+	width: 75%;
 }
 
 .img-photographer {
 	color: #888;
 	font-size: 13px;
+}
+
+/* ?                journalist section               */
+
+.journalist-div {
+	margin-top: 3em;
+}
+
+.section-title {
+	font-size: 14px;
+}
+
+.journalist-name {
+	color: black;
+	text-decoration-color: #00000030;
+}
+
+.journalist-date {
+	margin-top: 2em;
+	padding-bottom: 3em;
+	border-bottom: 1px solid #00000030;
+	color: #333;
+	font-weight: 500;
+	font-size: 12px;
+}
+
+/* ?                        sign up section                         */
+.sing-up-section {
+    margin-top: 0.8em;
+	font-weight: normal;
+	display: flex;
+}
+
+/* ?                    paragraph article                        */
+
+.article-text {
+    margin-top: 1em;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+
+/* ?                            thanks-for-reading-section              */
+
+.thanks-for-reading-section {
+    margin-top: 2em;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.subscribe-text {
+    text-decoration: none;
+}
+
+.border-line-top{
+    padding: .5em 0;
+    border-top: 1px solid #00000030;
+    width: 100px;
+}
+
+.border-line-bottom{
+    padding: .5em 0;
+    border-bottom: 1px solid #00000030;
+    width: 100px;
+}
+
+/* ?         aside       editor's picks                   */
+
+.editor-picks {
+    float: right;
+    margin-right: 5em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-top: 8em;
+}
+
+.editor-picks-title {
+    padding-bottom: .5em;
+    border-bottom: 1px solid #00000030;
+}
+
+.editor-picks > article a {
+    text-decoration: none;
+    color: unset;
+    width: 220px;
+    display: flex;
+    align-items: center;
+    gap: .5em;
+}
+
+.editor-picks > article a img {
+    object-fit: cover;
+    width: 80px;
+}
+
+.editor-picks > article a h3 {
+    font-weight: 400;
+    font-size: 14px;
+
 }
