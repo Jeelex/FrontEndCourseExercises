@@ -11,7 +11,7 @@ body {
 nav {
 	padding: 5px 15px;
 	position: fixed;
-    background-color: white;
+	background-color: white;
 	width: 100%;
 	z-index: 100;
 	border-bottom: 1px solid #00000021;
@@ -47,7 +47,7 @@ a {
 }
 
 a:hover {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 .flex-center {
@@ -181,77 +181,98 @@ a:hover {
 
 /* ?                        sign up section                         */
 .sing-up-section {
-    margin-top: 0.8em;
-	font-weight: normal;
+	margin-top: 0.8em;
 	display: flex;
+}
+
+.sign-up-title {
+	font-weight: normal;
+}
+
+.sign-up-title strong {
+	text-transform: uppercase;
+	font-size: 14px;
+}
+
+.sign-up-btn {
+	padding: 0.5em .6em 0.2em;
+    width: 110px;
+	font-size: 15px;
+	font-weight: 700;
+    border: 1px solid black;
+    border-radius: 2px;
+    transition: .2s ease-in-out;
+}
+
+.sign-up-btn:hover {
+    background-color: black;
+    color: white;
 }
 
 /* ?                    paragraph article                        */
 
 .article-text {
-    margin-top: 1em;
-    font-size: 20px;
-    line-height: 30px;
+	margin-top: 1em;
+	font-size: 20px;
+	line-height: 30px;
 }
-
 
 /* ?                            thanks-for-reading-section              */
 
 .thanks-for-reading-section {
-    margin-top: 2em;
-    text-align: center;
-    font-weight: 700;
-    font-size: 14px;
+	margin-top: 2em;
+	text-align: center;
+	font-weight: 700;
+	font-size: 14px;
 }
 
 .subscribe-text {
-    text-decoration: none;
+	text-decoration: none;
 }
 
-.border-line-top{
-    padding: .5em 0;
-    border-top: 1px solid #00000030;
-    width: 100px;
+.border-line-top {
+	padding: 0.5em 0;
+	border-top: 1px solid #00000030;
+	width: 100px;
 }
 
-.border-line-bottom{
-    padding: .5em 0;
-    border-bottom: 1px solid #00000030;
-    width: 100px;
+.border-line-bottom {
+	padding: 0.5em 0;
+	border-bottom: 1px solid #00000030;
+	width: 100px;
 }
 
 /* ?         aside       editor's picks                   */
 
 .editor-picks {
-    float: right;
-    margin-right: 5em;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    margin-top: 8em;
+	float: right;
+	margin-right: 5em;
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	margin-top: 8em;
 }
 
 .editor-picks-title {
-    padding-bottom: .5em;
-    border-bottom: 1px solid #00000030;
+	padding-bottom: 0.5em;
+	border-bottom: 1px solid #00000030;
 }
 
 .editor-picks > article a {
-    text-decoration: none;
-    color: unset;
-    width: 220px;
-    display: flex;
-    align-items: center;
-    gap: .5em;
+	text-decoration: none;
+	color: unset;
+	width: 220px;
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
 }
 
 .editor-picks > article a img {
-    object-fit: cover;
-    width: 80px;
+	object-fit: cover;
+	width: 80px;
 }
 
 .editor-picks > article a h3 {
-    font-weight: 400;
-    font-size: 14px;
-
+	font-weight: 400;
+	font-size: 14px;
 }
