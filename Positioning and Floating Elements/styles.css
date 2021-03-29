@@ -349,3 +349,16 @@ a:hover {
 .version-text a{
 	color: unset;
 }
+
+
+/* ? 									comments div						 */
+.commemts-div{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.comments-btn {
+	padding: 1em 7em;
+	font-size: 12px;
+}
