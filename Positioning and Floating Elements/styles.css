@@ -11,6 +11,7 @@ body {
 nav {
 	padding: 5px 15px;
 	position: fixed;
+    background-color: white;
 	width: 100%;
 	z-index: 100;
 	border-bottom: 1px solid #00000021;
