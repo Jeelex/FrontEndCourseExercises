@@ -273,7 +273,7 @@ a:hover {
 
 .editor-picks {
 	float: right;
-	margin-right: 6em;
+	margin-right: 1%;
 	display: flex;
 	flex-direction: column;
 	gap: 1em;
@@ -382,7 +382,7 @@ a:hover {
 
 /* ? 								more links								 */
 
-.more-links-container {
+/* .more-links-container {
 	margin-top: 4em;
 	width: 85%;
 	display: grid;
@@ -392,6 +392,20 @@ a:hover {
 						"main main main aside"
 						"main main main aside"
 						"main main main aside"
+						;
+	gap: 2em;
+} */
+
+.more-links-container {
+	margin-top: 4em;
+	width: 85%;
+	display: grid;
+	grid-template-columns: 70% 30%;
+	grid-template-rows: repeat(3, 1fr);
+	grid-template-areas: 
+						"main aside"
+						"main aside"
+						"main aside"
 						;
 	gap: 2em;
 }
@@ -419,7 +433,7 @@ a:hover {
 .more-in-space-grid,
 .more-editors-picks-grid {
 	display: grid;
-	grid-template-columns: repeat(3, 275px);
+	grid-template-columns: repeat(3, 1fr);
 	grid-template-areas: 
 						"one two ."
 						"three four five"
@@ -436,7 +450,7 @@ a:hover {
 
 .more-in-space-grid-item,
 .more-editors-picks-grid-item {
-	width: 275px;
+	width: 100%;
 }
 
 .more-in-space-grid-item-img,
@@ -470,10 +484,7 @@ a:hover {
 
 
 .more-editors-picks-grid {
-	/* display: grid; */
-	/* grid-template-columns: repeat(3, 270px); */
 	grid-template-areas: "one two three";
-	/* gap: .5em; */
 }
 
 .more-editors-picks-grid-item-1  {grid-area: one;}
@@ -487,13 +498,11 @@ a:hover {
 .more-links-aside {
 	border-top: 1px solid black;
 	grid-area: aside;
-	width: 300px;
 }
 
 .more-aside-article {
 	padding: 1em 0;
 	border-top: 1px solid #00000030;
-	width: 100%;
 }
 
 .more-aside-title {
