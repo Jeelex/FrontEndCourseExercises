@@ -551,3 +551,20 @@ footer {
 .footer-bottom-nav-link a:hover {
 	text-decoration: underline;
 }
+
+
+/* ?				footer category div						 */
+
+.footer-category-title {
+	font-size: 13px;
+	text-transform: uppercase;
+}
+
+.footer-category-list {
+	list-style: none;
+}
+
+.footer-category-link {
+	margin: .5em 0;
+	font-size: 14px;
+}
