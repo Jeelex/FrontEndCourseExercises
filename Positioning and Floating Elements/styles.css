@@ -8,7 +8,7 @@ body {
 	font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-nav {
+.nav-top {
 	padding: 5px 15px;
 	position: fixed;
 	background-color: white;
@@ -17,9 +17,11 @@ nav {
 	border-bottom: 1px solid #00000021;
 }
 
-main {
+main,
+footer {
 	width: 95%;
 	margin: 0 auto;
+	max-width: 1450px;
 }
 
 h2 {
@@ -271,7 +273,7 @@ a:hover {
 
 .editor-picks {
 	float: right;
-	margin-right: 12em;
+	margin-right: 6em;
 	display: flex;
 	flex-direction: column;
 	gap: 1em;
@@ -417,13 +419,13 @@ a:hover {
 .more-in-space-grid,
 .more-editors-picks-grid {
 	display: grid;
-	grid-template-columns: repeat(3, 270px);
+	grid-template-columns: repeat(3, 275px);
 	grid-template-areas: 
 						"one two ."
 						"three four five"
 						;
 	place-items: start;
-	gap: 1em;
+	gap: 1.5em;
 }
 
 .more-in-space-grid-item-1  {grid-area: one;}
@@ -491,9 +493,52 @@ a:hover {
 .more-aside-article {
 	padding: 1em 0;
 	border-top: 1px solid #00000030;
+	width: 100%;
 }
 
 .more-aside-title {
 	font-size: 16px;
 	line-height: 24px;
+}
+
+
+
+/* ?							footer						 */
+
+footer {
+	margin-bottom: 2em;
+}
+
+
+.footer-container-div {
+	border-top: 4px double #00000030;
+	width: 85%;
+	margin: 0 auto;
+}
+
+.footer-top-div {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1em 0;
+}
+
+.footer-home-page-link {
+	font-size: 12px;
+	text-decoration: none;
+}
+
+.footer-bottom-nav-list {
+	border-top: 1px solid #00000030;
+	padding: .5em 0;
+
+}
+
+.footer-bottom-nav-link {
+	font-size: 11px;
+	color: #666666;
+}
+
+.footer-bottom-nav-link a:hover {
+	text-decoration: underline;
 }
