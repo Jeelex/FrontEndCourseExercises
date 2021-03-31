@@ -9,7 +9,9 @@
 		<link rel="stylesheet" href="styles.css" />
 	</head>
 	<body>
-		<nav class="nav-top">NAVBAR</nav>
+		<nav class="nav-top">
+            <ul id="top-nav-list"></ul>
+        </nav>
 
 		<main>
 			<section class="main-text">
@@ -44,18 +46,22 @@
 			</section>
 		</main>
 
-		<footer class="grid-bottom">
+		<footer>
 			<section class="section-photo">
 				<div class="photo photo-1"></div>
 				<div class="photo photo-2"></div>
 				<div class="photo photo-3"></div>
 				<div class="photo photo-4"></div>
 			</section>
-			<div class="shop">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, ratione.</div>
-			<div class="copyright">Lorem ipsum dolor sit amet consectetur adipisicing.</div>
-			<nav class="nav-bottom">
-				<ul></ul>
-			</nav>
+            <div class="grid-bottom">
+
+                <div class="grid-item shop">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, ratione.</div>
+                <div class="grid-item copyright">Lorem ipsum dolor sit amet consectetur adipisicing.</div>
+                <nav class="grid-item nav-bottom">
+                    <ul id="bottom-nav-list" class="nav-bottom"></ul>
+                </nav>
+            </div>
 		</footer>
+        <script src="index.js"></script>
 	</body>
 </html>
