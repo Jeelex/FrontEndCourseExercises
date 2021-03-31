@@ -3,18 +3,26 @@
 const footerGridContainer = document.getElementById("ft-grid-container");
 const topNavList = document.getElementById("top-nav-list");
 const bottomNavList = document.getElementById("bottom-nav-list");
+// const lastNavLink = document.getElementById("last-nav-link");
 
 
 const navItemsTop = ["Store", "Mac", "iPod", "iPhone", "iPad", "itunes", "Support"];
 
 const navItemsBottom = ["Site Map", "Hot New", "RSS Feeds", "Media info", "Environment", "Job Opportunities", "Contact Us"];
 
-function addCategoryLink(array, list) {
+function addTopLink(array, place) {
 	for (let i = 0; i < array.length; i++) {
 		const html = `<li class="nav-link"><a class="a-links-no-decoration" href="#">${array[i]}</a></li>`;
-		list.insertAdjacentHTML("beforeend", html);
+		place.insertAdjacentHTML("beforeend" , html);
 	}
 }
 
-addCategoryLink(navItemsTop, bottomNavList);
-addCategoryLink(navItemsBottom, topNavList);
+function addBottomLink(array, place) {
+	for (let i = 0; i < array.length; i++) {
+		const html = `<li class="nav-link"><a class="a-links-no-decoration" href="#">${array[i]}</a></li>`;
+		place.insertAdjacentHTML("afterbegin" , html);
+	}
+}
+
+addTopLink(navItemsTop, topNavList);
+addBottomLink(navItemsBottom, bottomNavList);
