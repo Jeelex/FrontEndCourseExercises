@@ -74,7 +74,7 @@ ul {
 /* ?                        footer                           */
 
 .grid-bottom {
-	/* width: 77%; */
+	width: 95%;
 	margin: 1em auto 0;
 	display: grid;
 	grid-template-rows: 1fr 1fr;

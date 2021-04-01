@@ -13,7 +13,7 @@ const navItemsBottom = ["Site Map", "Hot New", "RSS Feeds", "Media info", "Envir
 function addTopLink(array, place) {
 	for (let i = 0; i < array.length; i++) {
 		const html = `<li class="nav-link nav-top-link"><a class="a-links-no-decoration" href="#">${array[i]}</a></li>`;
-		place.insertAdjacentHTML("beforeend" , html);
+		place.insertAdjacentHTML("afterbegin" , html);
 	}
 }
 
