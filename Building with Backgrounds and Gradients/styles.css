@@ -6,8 +6,9 @@
 
 body {
 	background-image: url(images/your_verse_hero.jpg);
-	background-position: 0 150%;
+	background-position: 50% 150%;
 	background-repeat: no-repeat;
+	background-size: auto;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
@@ -19,6 +20,7 @@ body {
 main,
 footer {
 	width: 100%;
+	max-width: 1440px;
 }
 
 ul {
@@ -90,19 +92,19 @@ ul {
 
 .section-photo {
 	display: flex;
-    grid-area: photos;
+    /* grid-area: photos; */
 }
 
 .shop {
-    grid-area: shop;
+    /* grid-area: shop; */
 }
 
 .copyright {
-    grid-area: copyright;
+    /* grid-area: copyright; */
 }
 
 #bottom-nav-list {
-    grid-area: nav-bottom;
+    /* grid-area: nav-bottom; */
 }
 
 /* .grid-item {
@@ -116,6 +118,7 @@ ul {
 	height: 200px;
 	object-fit: cover;
 	background-position: center;
+	background-repeat: no-repeat;
 }
 
 .photo-1 {
