@@ -23,10 +23,6 @@ footer {
 	max-width: 1440px;
 }
 
-/* main {
-	margin-top: 10em;
-} */
-
 footer {
 	margin-bottom: 0.5em;
 }
@@ -88,7 +84,6 @@ ul {
 	margin: 1em auto 0;
 	display: grid;
 	grid-template-rows: 1fr 1fr;
-	/* grid-template-columns: 1fr 1fr; */
 	grid-template-areas:
 		"shop       nav-bottom"
 		"copyright  .   ";
@@ -115,10 +110,6 @@ ul {
 	grid-area: nav-bottom;
 }
 
-/* .grid-item {
-    
-} */
-
 .photo {
 	width: 25%;
 	height: 200px;
@@ -138,6 +129,7 @@ ul {
 .photo-3 {
 	background-image: url(images/promo_30_years.jpg);
 }
+
 .photo-4 {
 	background-image: url(images/promo_supplier_responsibility.jpg);
 }
@@ -153,7 +145,6 @@ ul {
 }
 
 .nav-link {
-	/* margin-right: 1em; */
 	padding: 0 0.5em;
 	border-right: 1px solid black;
 }
@@ -168,29 +159,17 @@ ul {
 }
 
 .nav-top {
-	/* background-image: linear-gradient(#a6b0c6, #545454); */
-	/* background-image: linear-gradient(#a6b0c6, #676767); */
-	/* background-image: linear-gradient(#a6b0c6, #565656); */
-	/* background-image: radial-gradient(#545454, #a6b0c6); */
-	/* background-image: linear-gradient(#a6b0c6 10%, #282828 89%, #7a808c); */
 	background-image: linear-gradient(#a6b0c6 10%, #323232 54%, #a6b0c6 264%);
 	border-radius: 5px;
 	box-shadow: 0px 0px 1px black;
 	color: white;
 	font-size: 0.9rem;
-	/* width: 70%; */
-	/* margin: 0 auto; */
-	/* margin-top: 5em; */
 	margin-top: 4em;
 }
 
 .nav-top a {
 	color: unset;
 }
-
-/* #top-nav-list {
-	background-image: radial-gradient(#545454, #a6b0c6);
-} */
 
 .nav-top-link {
 	padding: 0.5em 1.5em;
