@@ -6,12 +6,12 @@
 
 body {
 	background-image: url(images/your_verse_hero.jpg);
-	background-position: 50% 150%;
+	background-position: 50% 157%;
 	background-repeat: no-repeat;
 	background-size: auto;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-items: center;
 	height: 100vh;
 	font-family: sans-serif;
@@ -21,6 +21,14 @@ main,
 footer {
 	width: 100%;
 	max-width: 1440px;
+}
+
+/* main {
+	margin-top: 10em;
+} */
+
+footer {
+	margin-bottom: 0.5em;
 }
 
 ul {
@@ -35,7 +43,9 @@ ul {
 	color: white;
 	text-align: center;
 	max-width: 760px;
-	margin: 0 auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 6em;
 }
 
 .title,
@@ -158,11 +168,51 @@ ul {
 }
 
 .nav-top {
-	background-image: linear-gradient(#a6b0c6, #545454);
+	/* background-image: linear-gradient(#a6b0c6, #545454); */
+	/* background-image: linear-gradient(#a6b0c6, #676767); */
+	/* background-image: linear-gradient(#a6b0c6, #565656); */
+	/* background-image: radial-gradient(#545454, #a6b0c6); */
+	/* background-image: linear-gradient(#a6b0c6 10%, #282828 89%, #7a808c); */
+	background-image: linear-gradient(#a6b0c6 10%, #323232 54%, #a6b0c6 264%);
 	border-radius: 5px;
-	box-shadow: 0px 0px 1px;
+	box-shadow: 0px 0px 1px black;
+	color: white;
+	font-size: 0.9rem;
+	/* width: 70%; */
+	/* margin: 0 auto; */
+	/* margin-top: 5em; */
+	margin-top: 4em;
 }
 
+.nav-top a {
+	color: unset;
+}
+
+/* #top-nav-list {
+	background-image: radial-gradient(#545454, #a6b0c6);
+} */
+
 .nav-top-link {
-	padding: 0.8em 1.5em;
+	padding: 0.5em 1.5em;
+	opacity: 0.9;
+}
+
+.search-bar {
+	border-radius: 50px;
+	background-color: #676767;
+	background-color: #565656;
+	background-image: url(images/search-icon.png);
+	background-repeat: no-repeat;
+	background-size: 15px;
+	background-position: 5%;
+	padding: 0.5em;
+	outline: none;
+	border: none;
+	width: 10em;
+	padding-left: 2em;
+	color: white;
+}
+
+.apple-logo {
+	width: 20px;
 }
