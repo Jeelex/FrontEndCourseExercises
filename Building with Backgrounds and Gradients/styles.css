@@ -24,11 +24,11 @@ footer {
 }
 
 ul {
-    list-style: none;
+	list-style: none;
 }
 
-.a-links-no-decoration{
-    text-decoration: none;
+.a-links-no-decoration {
+	text-decoration: none;
 }
 
 .main-text {
@@ -71,48 +71,43 @@ ul {
 	width: 1.8em;
 }
 
-
 /* ?                        footer                           */
 
-
 .grid-bottom {
-    /* width: 77%; */
-    margin: 1em auto 0;
-    display: grid;
-    grid-template-rows: 1fr 1fr;
+	/* width: 77%; */
+	margin: 1em auto 0;
+	display: grid;
+	grid-template-rows: 1fr 1fr;
 	/* grid-template-columns: 1fr 1fr; */
-    grid-template-areas: 
-                        "shop       nav-bottom"
-                        "copyright  .   ";
-    justify-content: center;
-    align-items: center;
-    gap: .5em;
-    font-size: .7rem;
+	grid-template-areas:
+		"shop       nav-bottom"
+		"copyright  .   ";
+	justify-content: center;
+	align-items: center;
+	gap: 0.5em;
+	font-size: 0.7rem;
 }
-
 
 .section-photo {
 	display: flex;
-    grid-area: photos;
+	grid-area: photos;
 }
 
 .shop {
-    grid-area: shop;
+	grid-area: shop;
 }
 
 .copyright {
-    grid-area: copyright;
+	grid-area: copyright;
 }
 
 #bottom-nav-list {
-    grid-area: nav-bottom;
+	grid-area: nav-bottom;
 }
 
 /* .grid-item {
     
 } */
-
-
 
 .photo {
 	width: 25%;
@@ -137,37 +132,37 @@ ul {
 	background-image: url(images/promo_supplier_responsibility.jpg);
 }
 
-
-
-
-
 /* ?                            navigation                          */
 
 #top-nav-list,
 #bottom-nav-list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	flex-wrap: wrap;
 }
 
 .nav-link {
-    /* margin-right: 1em; */
-    padding: 0 .5em;
-    border-right: 1px solid black;
+	/* margin-right: 1em; */
+	padding: 0 0.5em;
+	border-right: 1px solid black;
 }
 
-#top-nav-list > li:last-child, 
+#top-nav-list > li:last-child,
 #bottom-nav-list > li:last-child {
-    border-right: none;
+	border-right: none;
 }
 
 .american-flag-img {
-    width: 15px;
+	width: 15px;
 }
 
+.nav-top {
+	background-image: linear-gradient(#a6b0c6, #545454);
+	border-radius: 5px;
+	box-shadow: 0px 0px 1px;
+}
 
-.nav-top{
-    background-image: linear-gradient(#A6B0C6, #545454);
-
+.nav-top-link {
+	padding: 0.8em 1.5em;
 }
