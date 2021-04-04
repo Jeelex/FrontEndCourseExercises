@@ -1,17 +1,13 @@
 * {
 	margin: 0;
 	padding: 0;
-	box-sizing: inherit;
+	box-sizing: border-box;
 	text-decoration: none;
 	list-style: none;
 }
 
-body,
-html {
-	background-color: #727272;
-	min-height: 1440px;
-	font-size: 62.5%;
-	overflow-x: hidden;
+body {
+	font-family: "Ubuntu";
 }
 
 h1,
@@ -23,8 +19,13 @@ small {
 	color: #fff;
 }
 
+button {
+	outline: none;
+	border: none;
+}
+
 /* General font styling */
-h1,
+/* h1,
 h2,
 h3,
 a,
@@ -32,7 +33,12 @@ a,
 .post-author,
 .community-links,
 .guide p {
-	font-family: "Fredoka One", cursive;
+} */
+
+.flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 /* MAIN SECTION */
@@ -40,7 +46,6 @@ a,
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: 8rem;
 	padding: 1rem 2em;
 	background-color: rgb(158, 155, 155);
 	text-align: center;
@@ -49,51 +54,50 @@ a,
 .header-table-content a {
 	color: #fff;
 	text-decoration: underline #666;
-	font-size: 4rem;
+	/* font-size: 4rem; */
 	text-align: center;
 	display: block;
 	line-height: 50px;
 	letter-spacing: 2px;
 	padding-bottom: 30px;
-	font-family: "Fredoka One", cursive;
 }
 
 .primary-nav {
 	display: flex;
 	list-style: none;
+	justify-content: center;
+	align-items: flex-start;
 }
 
 .main-logo {
-	height: 8rem;
 	width: 20rem;
+	margin-right: 1em;
 	transition: all 0.4s ease-in;
-	padding-top: 42px;
-	margin-left: 10px;
-	margin-right: 20px;
+	/* padding-top: 42px; */
+	/* margin-left: 10px; */
+}
+
+.main-nav-links {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
 }
 
 .main-nav-links li {
-	display: inline-block;
-	list-style: none;
 	color: #fff;
-	font-size: 18px;
-	line-height: 20px;
-	margin-top: 30px;
+	margin-right: 1em;
 }
 
 .main-nav-links a {
 	color: white;
-	font-size: 2rem;
-	margin-right: 1rem;
+	font-size: 1.3rem;
 	text-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.7);
 	font-weight: 800;
-	padding: 1rem;
 	border-radius: 0.8rem;
 }
 
 .btn-nav-links {
-	display: flex;
-	flex-direction: row;
 	background-color: #727272;
 	border-radius: 11px;
 	color: #fff;
@@ -117,47 +121,46 @@ a,
 	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
-.btn-text {
+/* .btn-text {
 	align-items: center;
 	padding-top: 6px;
 	padding-bottom: 6px;
-}
+} */
 
 .btn-nav-links img {
 	width: 3rem;
-	align-items: center;
+	/* align-items: center; */
 }
 
-.search-bar {
-	position: relative;
-	margin-left: 19px;
-}
+/* .search-bar { */
+/* position: relative; */
+/* margin-left: 19px; */
+/* } */
 
 #search-sect {
-	padding-left: 6rem;
-	background-image: url(../images/search-icon.svg);
+	background-image: url(images/search-icon.svg);
 	background-repeat: no-repeat;
 	background-size: 22px auto;
 	background-position: 0.75em 50%;
-	font-size: 2rem;
 	border-radius: 11px;
-	padding-top: 1rem;
-	padding-bottom: 1rem;
+	padding: 1em 0 1em 2.5em;
 	font-weight: 700;
 	box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(194, 61, 61, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
 	transition: all 0.2s ease-in-out;
-	margin-top: 35px;
-	margin-left: 10px;
-	margin-right: 5px;
+	font-size: 1.2rem;
+	width: 13em;
 }
 
 /* LATEST ARTICLES SECTION */
 
 .latest-articles {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	width: 95%;
+	display: grid;
+	grid-template-columns: 60% 35%;
+	align-items: start;
+	gap: 5%;
+	margin-top: 2em;
+	margin: 2em auto 0;
 }
 
 .notify-article {
@@ -172,41 +175,53 @@ a,
 }
 
 .notify-article h1 {
-	font-size: 40px;
+	/* font-size: 40px; */
 	background: #fff;
 	font-weight: 700;
 	width: fit-content;
 }
 
-.articles {
-	width: 100%;
-	display: grid;
-	grid-template-columns: 60% 40%;
-	grid-template-rows: repeat(2, 1fr);
-	align-items: center;
-}
-
 .article-wrapper {
-	height: 500px;
 	text-align: left;
-	padding: 80px;
+	padding: 2em;
 	position: relative;
 }
 
 .article1 {
 	background: #828287;
+	margin-bottom: 2em;
+	padding: 5em;
 }
 
 .article2 {
 	background: #787878;
+	margin-bottom: 2em;
 }
 
 .article3 {
 	background: #6b6b6b;
+	margin-bottom: 2em;
 }
 
-.article4 {
+.newsletter {
 	background: #727272;
+	grid-column: 2;
+	grid-row: 1/-1;
+	padding: 18em 1em;
+}
+
+.newsletter input {
+	width: 40%;
+	border-radius: 5px;
+	border: 1px solid grey;
+	background-color: rgb(46, 44, 44);
+	text-align: center;
+	padding: 20px;
+	margin-top: 50px;
+}
+.newsletter p {
+	/* font-size: 20px; */
+	text-align: center;
 }
 
 .author {
@@ -219,7 +234,6 @@ a,
 	border-radius: 8px;
 	width: 75px;
 	height: 75px;
-	-o-object-fit: cover;
 	object-fit: cover;
 	display: block;
 	transform: rotate(-20deg);
@@ -241,7 +255,7 @@ a,
 .name {
 	display: inline-flex;
 	margin-left: 10px;
-	font-size: 18px;
+	/* font-size: 18px; */
 }
 
 .name h3 {
@@ -249,9 +263,98 @@ a,
 }
 
 .article-title {
-	font-family: "Fredoka One", cursive;
 	font-weight: bold;
-	font-size: 40px;
+	/* font-size: 30px; */
 	line-height: 1.5em;
 	margin-bottom: 50px;
+}
+
+/* ?						  Guides section					 */
+
+.guides {
+	padding: 3em;
+	gap: 2em;
+}
+
+.guide {
+	background-color: green;
+	padding: 1.5em;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.guide-btn {
+	padding: 1em 1.5em;
+	border-radius: 7px;
+	align-self: center;
+}
+
+/* ?					latest posts  section							 */
+
+.latest-posts {
+	margin-top: 2em;
+	padding: 2em;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 2em;
+}
+
+.latest-post {
+	display: flex;
+	width: 48%;
+}
+
+/* ?						community section						 */
+
+.community {
+	margin-top: 2em;
+	padding: 2em;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 2em;
+}
+
+.community-btn {
+	padding: 1em 1.5em;
+	border-radius: 7px;
+}
+
+/* ?							workshops section					 */
+.workshops {
+	margin-top: 2em;
+	padding: 2em;
+	background-color: blueviolet;
+	text-align: center;
+	flex-direction: column;
+
+}
+
+.workshops-photo {
+	width: 60%;
+}
+
+
+/* ?						community-links							 */
+
+.community-links {
+	background-color: lightcoral;
+	margin-top: 2em;
+	padding: 2em;
+	flex-direction: column;
+}
+
+.person-of-week {
+	margin-top: 2em;
+	padding: 2em;
+	display: flex;
+}
+
+.person-of-week-photo {
+	width: 200px;
+	height: 200px;
 }
