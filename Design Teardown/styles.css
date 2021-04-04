@@ -3,7 +3,6 @@
 	padding: 0;
 	box-sizing: border-box;
 	text-decoration: none;
-	list-style: none;
 }
 
 body {
@@ -19,9 +18,17 @@ small {
 	color: #fff;
 }
 
+h1 {
+	display: none;
+}
+
 button {
 	outline: none;
 	border: none;
+}
+
+ul {
+	list-style: none;
 }
 
 /* General font styling */
@@ -47,7 +54,7 @@ a,
 	justify-content: space-between;
 	align-items: center;
 	padding: 1rem 2em;
-	background-color: rgb(158, 155, 155);
+	background-color: rgb(124, 124, 124);
 	text-align: center;
 }
 
@@ -331,18 +338,16 @@ a,
 	background-color: blueviolet;
 	text-align: center;
 	flex-direction: column;
-
 }
 
 .workshops-photo {
 	width: 60%;
 }
 
-
 /* ?						community-links							 */
 
 .community-links {
-	background-color: lightcoral;
+	background-color: darkolivegreen;
 	margin-top: 2em;
 	padding: 2em;
 	flex-direction: column;
@@ -357,4 +362,59 @@ a,
 .person-of-week-photo {
 	width: 200px;
 	height: 200px;
+}
+
+/* ?								footer							 */
+
+footer {
+	background-color: rgb(93, 93, 93);
+}
+
+.footer-container {
+	color: white;
+	margin-top: 2em;
+	padding: 2em;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+.footer__topics__list,
+.footer__links {
+	padding: 2em;
+	margin: 3em auto;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5em 2em;
+	list-style-type: circle;
+	list-style: initial;
+}
+
+.footer__notes {
+	margin-bottom: 3em;
+}
+
+.footer__links {
+	width: 60%;
+	margin: 0 auto;
+	list-style: none;
+}
+
+.footer__topics__list a,
+.footer__links a,
+.footer__notes p a {
+	color: white;
+}
+
+.cage-photo {
+	float: left;
+	width: 10em;
+}
+
+.back-to-top {
+	position: fixed;
+	z-index: 1000;
+	right: 1em;
+	bottom: 1em;
+	opacity: 0.8;
 }
