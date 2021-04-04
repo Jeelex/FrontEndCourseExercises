@@ -1,3 +1,14 @@
+/* 			custom properties				 */
+:root {
+	--primary-color: rgb(52, 52, 52);
+
+}
+
+
+
+
+
+
 * {
 	margin: 0;
 	padding: 0;
@@ -54,7 +65,7 @@ a,
 	justify-content: space-between;
 	align-items: center;
 	padding: 1rem 2em;
-	background-color: rgb(124, 124, 124);
+	background-color: var(--primary-color);
 	text-align: center;
 }
 
@@ -226,9 +237,15 @@ a,
 	padding: 20px;
 	margin-top: 50px;
 }
+
 .newsletter p {
 	/* font-size: 20px; */
 	text-align: center;
+}
+
+.newsletter-email {
+	background-color: var(--primary-color);
+	color: white;
 }
 
 .author {
@@ -237,7 +254,7 @@ a,
 }
 
 .photo {
-	border: solid white;
+	border: solid rgb(52, 52, 52);
 	border-radius: 8px;
 	width: 75px;
 	height: 75px;
@@ -263,6 +280,7 @@ a,
 	display: inline-flex;
 	margin-left: 10px;
 	/* font-size: 18px; */
+	background-color: var(--primary-color);
 }
 
 .name h3 {
@@ -274,6 +292,11 @@ a,
 	/* font-size: 30px; */
 	line-height: 1.5em;
 	margin-bottom: 50px;
+}
+
+.article-top-title {
+	font-size: 2.5rem;
+	background-color: var(--primary-color);
 }
 
 /* ?						  Guides section					 */
@@ -367,7 +390,7 @@ a,
 /* ?								footer							 */
 
 footer {
-	background-color: rgb(93, 93, 93);
+	background-color: var(--primary-color);
 }
 
 .footer-container {
