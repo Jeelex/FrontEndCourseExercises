@@ -31,6 +31,7 @@ button:hover {
 
 img {
 	width: 100%;
+	object-fit: cover;
 }
 
 section {
@@ -146,6 +147,11 @@ main {
 	font-size: var(--font-size-section-subtitle);
 	color: #f42;
 }
+
+/* .funding-img {
+  width: 100%;
+	object-fit: cover;
+} */
 
 /* ?                  Footer                      */
 
