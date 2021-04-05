@@ -25,6 +25,7 @@ h1 {
 button {
 	outline: none;
 	border: none;
+	color: white;
 }
 
 ul {
@@ -319,6 +320,7 @@ ul {
 .community-btn {
 	padding: 1em 1.5em;
 	border-radius: 7px;
+	background-color: var(--tertiary-color);
 }
 
 /* ?							workshops section					 */
