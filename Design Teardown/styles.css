@@ -1,13 +1,10 @@
 /* 			custom properties				 */
 :root {
 	--primary-color: rgb(52, 52, 52);
-
+	--secondary-color: rgb(98, 98, 98);
+	--tertiary-color: rgb(140, 137, 137);
+	--fourth-color: rgb(171, 169, 169);
 }
-
-
-
-
-
 
 * {
 	margin: 0;
@@ -18,14 +15,6 @@
 
 body {
 	font-family: "Ubuntu";
-}
-
-h1,
-h2,
-h3,
-p,
-sup,
-small {
 	color: #fff;
 }
 
@@ -41,17 +30,6 @@ button {
 ul {
 	list-style: none;
 }
-
-/* General font styling */
-/* h1,
-h2,
-h3,
-a,
-.post-into,
-.post-author,
-.community-links,
-.guide p {
-} */
 
 .flex-center {
 	display: flex;
@@ -72,7 +50,6 @@ a,
 .header-table-content a {
 	color: #fff;
 	text-decoration: underline #666;
-	/* font-size: 4rem; */
 	text-align: center;
 	display: block;
 	line-height: 50px;
@@ -91,8 +68,6 @@ a,
 	width: 20rem;
 	margin-right: 1em;
 	transition: all 0.4s ease-in;
-	/* padding-top: 42px; */
-	/* margin-left: 10px; */
 }
 
 .main-nav-links {
@@ -139,29 +114,18 @@ a,
 	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
-/* .btn-text {
-	align-items: center;
-	padding-top: 6px;
-	padding-bottom: 6px;
-} */
-
 .btn-nav-links img {
 	width: 3rem;
-	/* align-items: center; */
 }
 
-/* .search-bar { */
-/* position: relative; */
-/* margin-left: 19px; */
-/* } */
-
-#search-sect {
+#search-bar {
 	background-image: url(images/search-icon.svg);
 	background-repeat: no-repeat;
 	background-size: 22px auto;
 	background-position: 0.75em 50%;
 	border-radius: 11px;
 	padding: 1em 0 1em 2.5em;
+	outline: none;
 	font-weight: 700;
 	box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(194, 61, 61, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
 	transition: all 0.2s ease-in-out;
@@ -193,7 +157,6 @@ a,
 }
 
 .notify-article h1 {
-	/* font-size: 40px; */
 	background: #fff;
 	font-weight: 700;
 	width: fit-content;
@@ -206,26 +169,28 @@ a,
 }
 
 .article1 {
-	background: #828287;
+	background: var(--secondary-color);
 	margin-bottom: 2em;
 	padding: 5em;
 }
 
 .article2 {
-	background: #787878;
+	background-color: var(--tertiary-color);
 	margin-bottom: 2em;
 }
 
 .article3 {
-	background: #6b6b6b;
+	background-color: var(--tertiary-color);
 	margin-bottom: 2em;
 }
 
 .newsletter {
-	background: #727272;
+	background-color: var(--secondary-color);
 	grid-column: 2;
 	grid-row: 1/-1;
 	padding: 18em 1em;
+	display: grid;
+	place-items: center;
 }
 
 .newsletter input {
@@ -236,10 +201,10 @@ a,
 	text-align: center;
 	padding: 20px;
 	margin-top: 50px;
+	color: white;
 }
 
 .newsletter p {
-	/* font-size: 20px; */
 	text-align: center;
 }
 
@@ -279,8 +244,6 @@ a,
 .name {
 	display: inline-flex;
 	margin-left: 10px;
-	/* font-size: 18px; */
-	background-color: var(--primary-color);
 }
 
 .name h3 {
@@ -289,14 +252,12 @@ a,
 
 .article-title {
 	font-weight: bold;
-	/* font-size: 30px; */
 	line-height: 1.5em;
 	margin-bottom: 50px;
 }
 
 .article-top-title {
 	font-size: 2.5rem;
-	background-color: var(--primary-color);
 }
 
 /* ?						  Guides section					 */
@@ -307,7 +268,7 @@ a,
 }
 
 .guide {
-	background-color: green;
+	background-color: var(--tertiary-color);
 	padding: 1.5em;
 	border-radius: 5px;
 	display: flex;
@@ -319,6 +280,7 @@ a,
 	padding: 1em 1.5em;
 	border-radius: 7px;
 	align-self: center;
+	background-color: var(--secondary-color);
 }
 
 /* ?					latest posts  section							 */
@@ -335,6 +297,7 @@ a,
 .latest-post {
 	display: flex;
 	width: 48%;
+	background-color: var(--fourth-color);
 }
 
 /* ?						community section						 */
@@ -349,6 +312,10 @@ a,
 	gap: 2em;
 }
 
+.community-2 {
+	background-color: var(--secondary-color);
+}
+
 .community-btn {
 	padding: 1em 1.5em;
 	border-radius: 7px;
@@ -358,7 +325,7 @@ a,
 .workshops {
 	margin-top: 2em;
 	padding: 2em;
-	background-color: blueviolet;
+	background-color: var(--secondary-color);
 	text-align: center;
 	flex-direction: column;
 }
@@ -367,10 +334,14 @@ a,
 	width: 60%;
 }
 
+.workshops-btn {
+	background-color: var(--primary-color);
+	color: white;
+}
+
 /* ?						community-links							 */
 
 .community-links {
-	background-color: darkolivegreen;
 	margin-top: 2em;
 	padding: 2em;
 	flex-direction: column;
@@ -380,6 +351,7 @@ a,
 	margin-top: 2em;
 	padding: 2em;
 	display: flex;
+	background-color: var(--tertiary-color);
 }
 
 .person-of-week-photo {
