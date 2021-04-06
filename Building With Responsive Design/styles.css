@@ -108,7 +108,7 @@ main {
 
 .top-article-image {
 	width: 100%;
-	height: 60vw;
+	height: 300px;
 	object-fit: cover;
 }
 
@@ -266,7 +266,13 @@ footer {
 	border-bottom: 1px solid rgba(0, 0, 0, 0.096);
 }
 
-/* ?													 */
+.hard-fork-main-image {
+	width: 100%;
+	height: 60vw;
+	object-fit: cover;
+}
+
+/* ?										Latest 	Deals											 */
 
 .section-title-div {
 	display: flex;
