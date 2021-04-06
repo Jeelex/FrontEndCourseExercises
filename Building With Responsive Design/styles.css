@@ -3,6 +3,11 @@
 	--font-size-section-subtitle: 1rem;
 	--font-size-title: 0.875rem;
 	--font-size-paragraph: 0.75rem;
+
+	--font-size-sub-div-title: 0.75rem;
+	--font-size-sub-div-par: 0.85rem;
+
+	--text-color-orange: #f42;
 }
 
 * {
@@ -103,7 +108,7 @@ main {
 
 .top-article-image {
 	width: 100%;
-	height: 200px;
+	height: 230px;
 	object-fit: cover;
 }
 
@@ -111,7 +116,8 @@ main {
 
 .section-title {
 	margin: 1em 0;
-	color: #f42;
+	color: var(--text-color-orange);
+	font-weight: 900;
 }
 
 .latest-news-img {
@@ -145,30 +151,23 @@ main {
 
 .section-link {
 	font-size: var(--font-size-section-subtitle);
-	color: #f42;
+	color: var(--text-color-orange);
 }
-
-/* .funding-img {
-  width: 100%;
-	object-fit: cover;
-} */
 
 /* ?                  Footer                      */
 
 footer {
+	margin-top: 4em;
 	text-align: center;
 	position: relative;
 	z-index: 4;
-	margin: 0;
 	padding: 0;
 	border: 0;
 	display: block;
 	background-color: #131313;
 	font-family: helvetica;
 }
-li {
-	list-style: none;
-}
+
 .fa {
 	padding: 10px;
 	width: 40px;
@@ -188,9 +187,6 @@ li {
 	padding: 20px;
 	justify-content: center;
 }
-.footer-links-social li {
-	padding: 3px;
-}
 .footer-links-menu {
 	display: flex;
 	flex-wrap: wrap;
@@ -204,12 +200,17 @@ li {
 	color: #aaaaaa;
 	padding: 5px;
 }
+.footer-links-social li,
+.footer-links-menu li {
+	padding: 3px;
+	list-style: none;
+}
 .footer-legal-logoTNW {
-	width: 31, 7px;
+	width: 47px;
 	height: 9px;
 }
 .footer-legal-logoStackPath {
-	width: 65, 25px;
+	width: 75px;
 	height: 9px;
 }
 .footer-legal {
@@ -219,4 +220,62 @@ li {
 	padding: 2.5em 0;
 	text-align: center;
 	line-height: 19px;
+}
+
+/* ?					Fork */
+
+.sub-div {
+	margin-bottom: 1em;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #fff4f2;
+	color: var(--text-color-orange);
+}
+
+.sub-div-text {
+	padding: 1em;
+}
+
+.sub-div-title {
+	font-size: var(--font-size-sub-div-title);
+	font-weight: normal;
+	text-transform: uppercase;
+	margin-bottom: 0.5em;
+}
+
+.sub-div-par {
+	font-size: var(--font-size-sub-div-par);
+	font-weight: 700;
+}
+
+/* ?								hard-fork-container					 */
+
+.hard-fork-container {
+	margin-top: 2em;
+}
+
+.hard-fork-list {
+	margin: 1em;
+}
+
+.hard-ford-list-item {
+	font-size: var(--font-size-sub-div-par);
+	color: #5c5c5c;
+	padding: .8em 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.096);
+}
+
+
+/* ?													 */
+
+.section-title-div {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+}
+
+.section-subtitle {
+	color:var(--text-color-orange);
+	font-size: var(--font-size-sub-div-par);
 }
