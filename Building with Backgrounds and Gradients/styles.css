@@ -1,0 +1,197 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-image: url(images/your_verse_hero.jpg);
+	background-position: 50% 157%;
+	background-repeat: no-repeat;
+	background-size: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	height: 100vh;
+	font-family: sans-serif;
+}
+
+main,
+footer {
+	width: 100%;
+	max-width: 1440px;
+}
+
+footer {
+	margin-bottom: 0.5em;
+}
+
+ul {
+	list-style: none;
+}
+
+.a-links-no-decoration {
+	text-decoration: none;
+}
+
+.main-text {
+	color: white;
+	text-align: center;
+	max-width: 760px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 6em;
+}
+
+.title,
+.subtitle,
+.paragraph {
+	font-weight: 300;
+}
+.title,
+.subtitle {
+	margin-bottom: 0.3em;
+}
+
+.title {
+	font-size: 3rem;
+}
+
+.subtitle {
+	font-size: 2rem;
+}
+
+.paragraph-div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.paragraph {
+	font-size: 1.5rem;
+	margin-right: 0.5em;
+}
+
+.svg-play {
+	width: 1.8em;
+}
+
+/* ?                        footer                           */
+
+.grid-bottom {
+	width: 95%;
+	margin: 1em auto 0;
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	grid-template-areas:
+		"shop       nav-bottom"
+		"copyright  .   ";
+	justify-content: center;
+	align-items: center;
+	gap: 0.5em;
+	font-size: 0.7rem;
+}
+
+.section-photo {
+	display: flex;
+	grid-area: photos;
+}
+
+.shop {
+	grid-area: shop;
+}
+
+.copyright {
+	grid-area: copyright;
+}
+
+#bottom-nav-list {
+	grid-area: nav-bottom;
+}
+
+.photo {
+	width: 25%;
+	height: 200px;
+	object-fit: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.photo-1 {
+	background-image: url(images/promo_iphone5s.jpg);
+}
+
+.photo-2 {
+	background-image: url(images/promo_iphone5c.jpg);
+}
+
+.photo-3 {
+	background-image: url(images/promo_30_years.jpg);
+}
+
+.photo-4 {
+	background-image: url(images/promo_supplier_responsibility.jpg);
+}
+
+/* ?                            navigation                          */
+
+#top-nav-list,
+#bottom-nav-list {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.nav-link {
+	padding: 0 0.5em;
+	border-right: 1px solid black;
+}
+
+#top-nav-list > li:last-child,
+#bottom-nav-list > li:last-child {
+	border-right: none;
+}
+
+.american-flag-img {
+	width: 15px;
+}
+
+.nav-top {
+	background-image: linear-gradient(#a6b0c6 10%, #323232 54%, #a6b0c6 264%);
+	border-radius: 5px;
+	box-shadow: 0px 0px 1px black;
+	color: white;
+	font-size: 0.9rem;
+	margin-top: 4em;
+}
+
+.nav-top a {
+	color: unset;
+}
+
+.nav-top-link {
+	padding: 0.5em 1.5em;
+	opacity: 0.9;
+}
+
+.search-bar {
+	border-radius: 50px;
+	background-color: #676767;
+	background-color: #565656;
+	background-image: url(images/search-icon.png);
+	background-repeat: no-repeat;
+	background-size: 15px;
+	background-position: 5%;
+	padding: 0.5em;
+	outline: none;
+	border: none;
+	width: 10em;
+	padding-left: 2em;
+	color: white;
+}
+
+.apple-logo {
+	width: 20px;
+}
