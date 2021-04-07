@@ -1,0 +1,148 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    font-size: 1.5rem;
+    
+    padding: 1.1em;
+}
+
+.grid {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    gap: .5em;
+    color: white;
+    font-weight: 700;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.grid-item {
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+}
+
+.red {background-color: red;}
+.blue{ background-color: blue;}
+.green{background-color: green;}
+.purple{background-color: purple;}
+.hotpink {background-color: hotpink;}
+
+.layout-1 {
+    grid-template-rows: repeat(3, 3.5em);
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 2em;
+}
+
+.layout-1 .red {grid-column: span 2;}
+.layout-1 .blue {grid-column: span 2;}
+.layout-1 .green {grid-column: span 1;}
+.layout-1 .purple {grid-column: span 3;}
+.layout-1 .hotpink {grid-column: span 4;}
+
+
+.layout-2 {
+    grid-template-rows: repeat(3, 5em);
+    grid-template-rows: repeat(3, 9em);
+    grid-template-columns: repeat(4, 1fr);
+}
+
+
+.layout-2 .red {
+    grid-row: 1;
+    grid-column: 1/5;
+}
+
+.layout-2 .blue {
+    grid-row: 2/4;
+    grid-column: 1/3;
+}
+.layout-2 .green {
+    grid-row: 2/3;
+    grid-column: 3/5;
+}
+.layout-2 .purple {
+    grid-row: 3/4;
+    grid-column: 3/4;
+}
+.layout-2 .purple-3 {
+    grid-row: 3/4;
+    grid-column: 4/5;
+}
+
+
+
+
+/* ?            Responsive Layout                */
+
+.grid-container {
+    display: grid;
+    gap: .8em;
+}
+
+.grid-item-responsive {
+    padding: .5em;
+    text-align: left;
+    place-items: unset;
+    color: #ededee;
+    border-radius: 5px;
+    font-family: serif;
+}
+
+
+.header {
+    background-color: #838484;
+}
+
+.sidebar {
+    background-color: #393a3a;
+}
+
+.content {
+    background-color: #393a3a;
+}
+
+.sidebar-2 {
+    background-color: #b5b5b5;
+    color: #393a3a;
+}
+
+.footer {
+    background-color: #838484;
+}
+
+
+@media (min-width: 450px) {
+    .header, 
+    .sidebar-2, 
+    .footer{
+        grid-column: 1/3;
+    }
+    .sidebar{
+        grid-column: 1;
+    }
+    .content{
+        grid-column: 2;
+    }
+}
+
+@media (min-width: 700px) {
+    .grid-container{
+        max-width: 850px;
+        margin: 0 auto;
+    }
+
+    .header, 
+    .footer {
+        grid-column: 1/4;
+    }
+    .sidebar-2{
+        grid-column: 3;
+    }
+}
