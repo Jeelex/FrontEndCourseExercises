@@ -1,8 +1,15 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .logo {
   width: 400px;
 }
 
-.logo path {
+.logo path,
+.logo-sticky-nav path {
   fill: white;
 }
 
@@ -59,5 +66,18 @@ li:hover {
 }
 
 .logo-image{
-  width:  30px;
+  width: 30px;
+}
+
+.sticky-nav {
+  bottom: -100px;
+
+}
+
+.logo-sticky-nav {
+  width: 100px;
+}
+
+header {
+  z-index: 100;
 }
