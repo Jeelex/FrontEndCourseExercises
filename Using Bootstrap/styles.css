@@ -25,6 +25,7 @@
 li:hover {
   color: #f72210 !important;
 }
+
 .debate-p {
   font-size: 0.7rem;
 }
@@ -55,4 +56,8 @@ li:hover {
 
 .footer-nav2 li:hover {
   color: black !important;
+}
+
+.logo-image{
+  width:  30px;
 }
