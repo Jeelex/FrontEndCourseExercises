@@ -1,18 +1,22 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 .row {
+	// max-width: 90%;
+	// margin: 0 auto;
 	display: grid;
-	grid-template-columns: repeat(12, 1fr);
+	grid-template-columns: repeat(auto-fit, 60px);
 	grid-template-rows: 1fr;
-	gap: 10px;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
 	border: 2px solid magenta;
 }
 
 .column {
-	width: 60px;
+	text-align: center;
 	background-color: yellowgreen;
 }
