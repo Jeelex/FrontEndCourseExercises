@@ -1,17 +1,41 @@
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+@import "./variables";
+@import "./cssReset";
+
+@mixin containerProps($max-width) {
+	max-width: $max-width;
+	margin: 0 auto;
+	border: 2px solid blue;
+}
+
+.container {
+	@include containerProps(960px);
+}
+
+// .container-small {
+// }
+.container-medium {
+	@include containerProps($medium);
+}
+.container-large {
+	@include containerProps($large);
+}
+.container-xxl {
+	@include containerProps($xxl);
+}
+.container-full {
+	@include containerProps($full);
 }
 
 .row {
-	// max-width: 90%;
-	// margin: 0 auto;
+	// width: 100%;
 	display: grid;
+	// grid-template-columns: repeat(12, 1fr);
+	grid-template-columns: repeat(12, 60px);
+	// grid-template-columns: 200px 3em;
+	// grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
 	grid-template-columns: repeat(auto-fit, 60px);
 	grid-template-rows: 1fr;
-	justify-content: center;
-	align-items: center;
+	// grid-template-rows: repeat(auto-fit, minmax(60px, 1fr));
 	gap: 20px;
 	border: 2px solid magenta;
 }
@@ -19,4 +43,99 @@
 .column {
 	text-align: center;
 	background-color: yellowgreen;
+}
+
+@mixin columnSpan($spanNumber) {
+	grid-column: span $spanNumber;
+}
+
+.col-1 {
+	@include columnSpan(1);
+}
+.col-2 {
+	@include columnSpan(2);
+}
+.col-3 {
+	@include columnSpan(3);
+}
+.col-4 {
+	@include columnSpan(4);
+}
+.col-5 {
+	@include columnSpan(5);
+}
+.col-6 {
+	@include columnSpan(6);
+}
+.col-7 {
+	@include columnSpan(7);
+}
+.col-8 {
+	@include columnSpan(8);
+}
+.col-9 {
+	@include columnSpan(9);
+}
+.col-10 {
+	@include columnSpan(10);
+}
+.col-11 {
+	@include columnSpan(11);
+}
+.col-12 {
+	@include columnSpan(12);
+}
+
+// font size
+@mixin fontSize($fontSize) {
+	font-size: $fontSize;
+}
+.font-p {
+	@include fontSize(1rem);
+}
+.font-h3 {
+	@include fontSize(1.17rem);
+}
+.font-h2 {
+	@include fontSize(1.5rem);
+}
+.font-h1 {
+	@include fontSize(2rem);
+}
+
+@mixin justifyContentProp($justifyContentProperty) {
+	display: flex;
+	justify-content: $justifyContentProperty;
+}
+
+.justify-center {
+	@include justifyContentProp(center);
+}
+
+.justify-end {
+	@include justifyContentProp(flex-end);
+}
+
+.align-center {
+	// display: flex;
+	align-items: center;
+}
+
+//navbar
+
+header {
+	background-color: $secondColor;
+}
+
+ul {
+	list-style: none;
+
+	li {
+		padding: 0.8em;
+
+		a {
+			text-decoration: none;
+			color: $firstColor;
+		}
+	}
 }
