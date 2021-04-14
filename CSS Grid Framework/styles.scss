@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.row {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: 1fr;
+	gap: 10px;
+	border: 2px solid magenta;
+}
+
+.column {
+	width: 60px;
+	background-color: yellowgreen;
+}

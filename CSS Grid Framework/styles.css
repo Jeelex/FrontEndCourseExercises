@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[12];
+      grid-template-columns: repeat(12, 1fr);
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  gap: 10px;
+  border: 2px solid magenta;
+}
+
+.column {
+  width: 60px;
+  background-color: yellowgreen;
+}
+/*# sourceMappingURL=styles.css.map */
