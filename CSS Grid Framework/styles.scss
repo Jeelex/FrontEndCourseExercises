@@ -10,7 +10,6 @@
 .container {
 	@include containerProps(960px);
 }
-
 // .container-small {
 // }
 // .container-medium {
@@ -42,7 +41,7 @@
 
 .column {
 	text-align: center;
-	background-color: yellowgreen;
+	// background-color: yellowgreen;
 }
 
 @mixin columnSpan($spanNumber) {
@@ -235,9 +234,18 @@
 	@include color($blueColor);
 }
 
+// images
+.img-fluid {
+	width: 100%;
+	// height: auto;
+	height: 220px;
+	object-fit: cover;
+	margin: 0.5em;
+}
+
 //navbar
 header {
-	background-color: $secondColor;
+	background-color: $grey-brownColor;
 }
 
 header ul {
@@ -248,7 +256,7 @@ header ul {
 
 		a {
 			text-decoration: none;
-			color: $firstColor;
+			color: $whiteColor;
 		}
 	}
 }
