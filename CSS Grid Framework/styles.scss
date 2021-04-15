@@ -4,7 +4,7 @@
 @mixin containerProps($max-width) {
 	max-width: $max-width;
 	margin: 0 auto;
-	border: 2px solid blue;
+	// border: 2px solid blue;
 }
 
 .container {
@@ -37,7 +37,7 @@
 	grid-template-rows: 1fr;
 	// grid-template-rows: repeat(auto-fit, minmax(60px, 1fr));
 	gap: 20px;
-	border: 2px solid magenta;
+	// border: 2px solid magenta;
 }
 
 .column {
@@ -103,6 +103,23 @@
 	@include fontSize(2rem);
 }
 
+@mixin fontWeight($fontWeight) {
+	font-weight: $fontWeight;
+}
+.fw-400 {
+	@include fontWeight(400);
+}
+.fw-500 {
+	@include fontWeight(500);
+}
+.fw-700 {
+	@include fontWeight(700);
+}
+.fw-900 {
+	@include fontWeight(900);
+}
+
+// justify content
 @mixin justifyContentProp($justifyContentProperty) {
 	display: flex;
 	justify-content: $justifyContentProperty;
@@ -119,13 +136,106 @@
 	@include justifyContentProp(flex-end);
 }
 
-.align-center {
+// align-items
+@mixin alignItemsProp($alignItemsProperty) {
 	display: flex;
-	align-items: center;
+	align-items: $alignItemsProperty;
+}
+.align-center {
+	@include alignItemsProp(center);
+}
+.align-start {
+	@include alignItemsProp(flex-start);
+}
+.align-end {
+	@include alignItemsProp(flex-end);
+}
+.align-baseline {
+	@include alignItemsProp(baseline);
+}
+
+// margin & padding
+@mixin padding($padding) {
+	padding: $padding;
+}
+.p-1 {
+	@include padding(1em);
+}
+.p-2 {
+	@include padding(2em);
+}
+.p-3 {
+	@include padding(3em);
+}
+
+@mixin paddingTop($paddingTopValue) {
+	padding-top: $paddingTopValue;
+}
+.pt-1 {
+	@include paddingTop(1em);
+}
+.pt-2 {
+	@include paddingTop(2em);
+}
+.pt-3 {
+	@include paddingTop(3em);
+}
+
+@mixin paddingLeft($paddingLeftValue) {
+	padding-left: $paddingLeftValue;
+}
+.pl-1 {
+	@include paddingLeft(1em);
+}
+.pl-2 {
+	@include paddingLeft(2em);
+}
+.pl-3 {
+	@include paddingLeft(3em);
+}
+
+@mixin paddingBottom($paddingBottomValue) {
+	padding-bottom: $paddingBottomValue;
+}
+.pb-1 {
+	@include paddingBottom(1em);
+}
+.pb-2 {
+	@include paddingBottom(2em);
+}
+.pb-3 {
+	@include paddingBottom(3em);
+}
+
+// colors
+@mixin color($color) {
+	color: $color;
+}
+.color-white {
+	@include color($whiteColor);
+}
+.color-grey-brown {
+	@include color($grey-brownColor);
+}
+.color-blue {
+	@include color($blueColor);
+}
+
+// background colors
+@mixin color($color) {
+	color: $color;
+}
+.bg-white {
+	@include color($whiteColor);
+}
+.bg-grey-brown {
+	@include color($grey-brownColor);
+}
+.bg-blue {
+	@include color($blueColor);
 }
 
 //navbar
-
 header {
 	background-color: $secondColor;
 }
@@ -144,5 +254,5 @@ header ul {
 }
 
 header ul li:hover {
-	background-color: #585858;
+	background-color: $footerColor;
 }
