@@ -13,18 +13,18 @@
 
 // .container-small {
 // }
-.container-medium {
-	@include containerProps($medium);
-}
-.container-large {
-	@include containerProps($large);
-}
-.container-xxl {
-	@include containerProps($xxl);
-}
-.container-full {
-	@include containerProps($full);
-}
+// .container-medium {
+// 	@include containerProps($medium);
+// }
+// .container-large {
+// 	@include containerProps($large);
+// }
+// .container-xxl {
+// 	@include containerProps($xxl);
+// }
+// .container-full {
+// 	@include containerProps($full);
+// }
 
 .row {
 	// width: 100%;
@@ -108,6 +108,9 @@
 	justify-content: $justifyContentProperty;
 }
 
+.justify-start {
+	@include justifyContentProp(flex-start);
+}
 .justify-center {
 	@include justifyContentProp(center);
 }
@@ -117,7 +120,7 @@
 }
 
 .align-center {
-	// display: flex;
+	display: flex;
 	align-items: center;
 }
 
@@ -127,7 +130,7 @@ header {
 	background-color: $secondColor;
 }
 
-ul {
+header ul {
 	list-style: none;
 
 	li {
@@ -138,4 +141,8 @@ ul {
 			color: $firstColor;
 		}
 	}
+}
+
+header ul li:hover {
+	background-color: #585858;
 }
