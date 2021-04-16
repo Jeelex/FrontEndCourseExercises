@@ -86,6 +86,10 @@
 @mixin fontSize($fontSize) {
 	font-size: $fontSize;
 }
+.font-p-sm {
+	@include fontSize(0.8rem);
+}
+
 .font-p {
 	@include fontSize(1rem);
 }
@@ -113,41 +117,6 @@
 }
 .fw-900 {
 	@include fontWeight(900);
-}
-
-// justify content
-@mixin justifyContentProp($justifyContentProperty) {
-	display: flex;
-	justify-content: $justifyContentProperty;
-}
-
-.justify-start {
-	@include justifyContentProp(flex-start);
-}
-.justify-center {
-	@include justifyContentProp(center);
-}
-
-.justify-end {
-	@include justifyContentProp(flex-end);
-}
-
-// align-items
-@mixin alignItemsProp($alignItemsProperty) {
-	display: flex;
-	align-items: $alignItemsProperty;
-}
-.align-center {
-	@include alignItemsProp(center);
-}
-.align-start {
-	@include alignItemsProp(flex-start);
-}
-.align-end {
-	@include alignItemsProp(flex-end);
-}
-.align-baseline {
-	@include alignItemsProp(baseline);
 }
 
 // margin & padding
@@ -241,5 +210,62 @@
 	// height: auto;
 	height: 220px;
 	object-fit: cover;
-	margin: 0.5em;
+	// margin: 0.5em;
+}
+
+// display flex
+.d-flex {
+	display: flex;
+}
+
+.flex-column {
+	flex-direction: column;
+}
+
+// justify content
+@mixin justifyContentProp($justifyContentProperty) {
+	justify-content: $justifyContentProperty;
+}
+
+.justify-start {
+	@include justifyContentProp(flex-start);
+}
+.justify-center {
+	@include justifyContentProp(center);
+}
+
+.justify-end {
+	@include justifyContentProp(flex-end);
+}
+
+// align-items
+@mixin alignItemsProp($alignItemsProperty) {
+	align-items: $alignItemsProperty;
+}
+.align-center {
+	@include alignItemsProp(center);
+}
+.align-start {
+	@include alignItemsProp(flex-start);
+}
+.align-end {
+	@include alignItemsProp(flex-end);
+}
+.align-baseline {
+	@include alignItemsProp(baseline);
+}
+
+// gap
+@mixin gap($gapSize) {
+	gap: $gapSize;
+}
+.gap-10 {
+	@include gap(10px);
+}
+.gap-20 {
+	@include gap(20px);
+}
+
+.f-wrap {
+	flex-wrap: wrap;
 }
