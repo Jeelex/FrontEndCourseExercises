@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1) Type of function = Function Declaration
+      function add7(number) {
+        return number + 7
+      }
+
+      // 2) Type of function = Function Expression
+      const multiply = function (num1, num2) {
+        return num1 * num2
+      }
+
+      // 3) Type of function = Arrow Function
+      let capitalize = (str) => {
+        return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase()
+      }
+
+      // 4) Type of function = Function Declaration
+      function lastLetter(str) {
+        return str.charAt(str.length -1)
+        // takes a string and returns the very last letter of that string
+      }
+    </script>
+  </body>
+</html>
