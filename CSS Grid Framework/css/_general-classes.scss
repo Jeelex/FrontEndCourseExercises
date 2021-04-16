@@ -1,6 +1,3 @@
-@import "./variables";
-@import "./cssReset";
-
 @mixin containerProps($max-width) {
 	max-width: $max-width;
 	margin: 0 auto;
@@ -221,17 +218,21 @@
 }
 
 // background colors
-@mixin color($color) {
-	color: $color;
+@mixin bgColor($bgColor) {
+	background-color: $bgColor;
 }
 .bg-white {
-	@include color($whiteColor);
+	@include bgColor($whiteColor);
 }
 .bg-grey-brown {
-	@include color($grey-brownColor);
+	@include bgColor($grey-brownColor);
 }
 .bg-blue {
-	@include color($blueColor);
+	@include bgColor($blueColor);
+}
+
+.bg-light-gray {
+	@include bgColor($light-grey);
 }
 
 // images
@@ -241,26 +242,4 @@
 	height: 220px;
 	object-fit: cover;
 	margin: 0.5em;
-}
-
-//navbar
-header {
-	background-color: $grey-brownColor;
-}
-
-header ul {
-	list-style: none;
-
-	li {
-		padding: 0.8em;
-
-		a {
-			text-decoration: none;
-			color: $whiteColor;
-		}
-	}
-}
-
-header ul li:hover {
-	background-color: $footerColor;
 }

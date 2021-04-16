@@ -280,15 +280,19 @@ h6 {
 }
 
 .bg-white {
-  color: white;
+  background-color: white;
 }
 
 .bg-grey-brown {
-  color: #333;
+  background-color: #333;
 }
 
 .bg-blue {
-  color: #369;
+  background-color: #369;
+}
+
+.bg-light-gray {
+  background-color: #EEEEEE;
 }
 
 .img-fluid {
@@ -318,5 +322,15 @@ header ul li a {
 
 header ul li:hover {
   background-color: #585858;
+}
+
+footer {
+  background-color: #585858;
+}
+
+footer ul li a,
+footer h3,
+footer p {
+  color: white;
 }
 /*# sourceMappingURL=styles.css.map */
