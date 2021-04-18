@@ -1,0 +1,370 @@
+@mixin containerProps($max-width) {
+	max-width: $max-width;
+	margin: 0 auto;
+}
+
+.container {
+	@include containerProps(960px);
+}
+
+.row {
+	display: grid;
+	grid-template-columns: repeat(12, 60px);
+	grid-template-columns: repeat(auto-fit, 60px);
+	grid-template-rows: 1fr;
+	gap: 20px;
+}
+
+@mixin columnSpan($spanNumber) {
+	grid-column: span $spanNumber;
+}
+
+.col-1 {
+	@include columnSpan(1);
+}
+.col-2 {
+	@include columnSpan(2);
+}
+.col-3 {
+	@include columnSpan(3);
+}
+.col-4 {
+	@include columnSpan(4);
+}
+.col-5 {
+	@include columnSpan(5);
+}
+.col-6 {
+	@include columnSpan(6);
+}
+.col-7 {
+	@include columnSpan(7);
+}
+.col-8 {
+	@include columnSpan(8);
+}
+.col-9 {
+	@include columnSpan(9);
+}
+.col-10 {
+	@include columnSpan(10);
+}
+.col-11 {
+	@include columnSpan(11);
+}
+.col-12 {
+	@include columnSpan(12);
+}
+
+// font size
+@mixin fontSize($fontSize) {
+	font-size: $fontSize;
+}
+.font-p-sm {
+	@include fontSize(0.9rem);
+}
+
+.font-p {
+	@include fontSize(1rem);
+}
+.font-h3 {
+	@include fontSize(1.17rem);
+}
+.font-h2-sm {
+	@include fontSize(1.3rem);
+}
+.font-h2 {
+	@include fontSize(1.5rem);
+}
+.font-h1 {
+	@include fontSize(2rem);
+}
+
+@mixin fontWeight($fontWeight) {
+	font-weight: $fontWeight;
+}
+.fw-400 {
+	@include fontWeight(400);
+}
+.fw-500 {
+	@include fontWeight(500);
+}
+.fw-700 {
+	@include fontWeight(700);
+}
+.fw-900 {
+	@include fontWeight(900);
+}
+
+// text align
+@mixin textAlign($textAlign) {
+	text-align: $textAlign;
+}
+.text-center {
+	@include textAlign(center);
+}
+.text-right {
+	@include textAlign(right);
+}
+
+// margin & padding
+@mixin margin($margin) {
+	margin: $margin;
+}
+.m-1 {
+	@include margin(1em);
+}
+.m-2 {
+	@include margin(2em);
+}
+.m-3 {
+	@include margin(3em);
+}
+
+@mixin marginBottom($marginBottomValue) {
+	margin-bottom: $marginBottomValue;
+}
+.mb-05 {
+	@include marginBottom(0.5em);
+}
+.mb-1 {
+	@include marginBottom(1em);
+}
+.mb-2 {
+	@include marginBottom(2em);
+}
+.mb-3 {
+	@include marginBottom(3em);
+}
+.mb-4 {
+	@include marginBottom(4em);
+}
+
+@mixin marginRight($marginRightValue) {
+	margin-right: $marginRightValue;
+}
+.mr-05 {
+	@include marginRight(0.5em);
+}
+.mr-3px {
+	@include marginRight(3px);
+}
+.mr-1 {
+	@include marginRight(1em);
+}
+.mr-2 {
+	@include marginRight(2em);
+}
+.mr-3 {
+	@include marginRight(3em);
+}
+.mr-4 {
+	@include marginRight(4em);
+}
+
+@mixin padding($padding) {
+	padding: $padding;
+}
+.p-1 {
+	@include padding(1em);
+}
+.p-2 {
+	@include padding(2em);
+}
+.p-3 {
+	@include padding(3em);
+}
+
+@mixin paddingTop($paddingTopValue) {
+	padding-top: $paddingTopValue;
+}
+.pt-1 {
+	@include paddingTop(1em);
+}
+.pt-2 {
+	@include paddingTop(2em);
+}
+.pt-3 {
+	@include paddingTop(3em);
+}
+
+@mixin paddingLeft($paddingLeftValue) {
+	padding-left: $paddingLeftValue;
+}
+.pl-1 {
+	@include paddingLeft(1em);
+}
+.pl-2 {
+	@include paddingLeft(2em);
+}
+.pl-3 {
+	@include paddingLeft(3em);
+}
+
+@mixin paddingBottom($paddingBottomValue) {
+	padding-bottom: $paddingBottomValue;
+}
+.pb-3px {
+	@include paddingBottom(3px);
+}
+.pb-05 {
+	@include paddingBottom(0.5em);
+}
+.pb-1 {
+	@include paddingBottom(1em);
+}
+.pb-2 {
+	@include paddingBottom(2em);
+}
+.pb-3 {
+	@include paddingBottom(3em);
+}
+.pb-4 {
+	@include paddingBottom(4em);
+}
+
+// colors
+@mixin color($color) {
+	color: $color;
+}
+.color-white {
+	@include color($whiteColor);
+}
+.color-grey-brown {
+	@include color($grey-brownColor);
+}
+.color-blue {
+	@include color($blueColor);
+}
+.color-grey-ccc {
+	@include color($footerLinksColor);
+}
+.color-grey-999 {
+	@include color($footerParagraphColor);
+}
+
+// background colors
+@mixin bgColor($bgColor) {
+	background-color: $bgColor;
+}
+.bg-white {
+	@include bgColor($whiteColor);
+}
+.bg-grey-brown {
+	@include bgColor($grey-brownColor);
+}
+.bg-blue {
+	@include bgColor($blueColor);
+}
+
+.bg-light-gray {
+	@include bgColor($light-gray);
+}
+
+// images
+.img-fluid {
+	width: 100%;
+	// height: auto;
+	height: 220px;
+	object-fit: cover;
+}
+.img-icon {
+	width: 12px;
+}
+
+// display flex
+.d-flex {
+	display: flex;
+}
+
+.flex-column {
+	flex-direction: column;
+}
+
+// justify content
+@mixin justifyContentProp($justifyContentProperty) {
+	justify-content: $justifyContentProperty;
+}
+.justify-start {
+	@include justifyContentProp(flex-start);
+}
+.justify-center {
+	@include justifyContentProp(center);
+}
+.justify-end {
+	@include justifyContentProp(flex-end);
+}
+.justify-between {
+	@include justifyContentProp(space-between);
+}
+
+// align-items
+@mixin alignItemsProp($alignItemsProperty) {
+	align-items: $alignItemsProperty;
+}
+.align-center {
+	@include alignItemsProp(center);
+}
+.align-start {
+	@include alignItemsProp(flex-start);
+}
+.align-end {
+	@include alignItemsProp(flex-end);
+}
+.align-baseline {
+	@include alignItemsProp(baseline);
+}
+
+// gap
+@mixin gap($gapSize) {
+	gap: $gapSize;
+}
+.gap-10 {
+	@include gap(10px);
+}
+.gap-20 {
+	@include gap(20px);
+}
+
+.f-wrap {
+	flex-wrap: wrap;
+}
+
+// border
+.border-bottom {
+	border-bottom: solid;
+}
+.border-grey-dark {
+	border-color: #00000070;
+}
+.border-grey-light {
+	border-color: #00000038;
+}
+
+.border-1 {
+	border-width: 1px;
+}
+
+// a links
+a {
+	text-decoration: none;
+}
+
+// buttons
+.btn {
+	// height: 20px;
+	// outline: none;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+	box-sizing: border-box;
+	padding: 1px 8px 1px 6px;
+	background-color: #1b95e0;
+	color: #fff;
+	border: 1px solid #1b95e0;
+	border-radius: 3px;
+	font-weight: 500;
+	cursor: pointer;
+}
+
+.btn:hover {
+	background-color: #2382bd;
+}

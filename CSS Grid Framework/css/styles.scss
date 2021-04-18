@@ -1,0 +1,47 @@
+@import "./variables";
+@import "./cssReset";
+@import "./general-classes";
+
+//header
+header {
+	background-color: $grey-brownColor;
+}
+
+header ul {
+	list-style: none;
+
+	li {
+		padding-top: 0.8em;
+		padding-bottom: 0.8em;
+		margin-left: 1em;
+
+		a {
+			text-decoration: none;
+			color: $whiteColor;
+			padding: 0.6em;
+		}
+	}
+}
+
+header ul li:hover {
+	background-color: $footerColor;
+}
+
+main a:hover {
+	color: $hoverColor;
+}
+
+// footer
+footer {
+	background-color: $footerColor;
+}
+
+footer h3,
+footer p {
+	color: $whiteColor;
+}
+
+footer h3 a:hover,
+footer ul li a:hover {
+	color: $whiteColor;
+}
