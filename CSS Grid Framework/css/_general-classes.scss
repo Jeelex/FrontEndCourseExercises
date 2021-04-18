@@ -95,6 +95,9 @@
 .font-h3 {
 	@include fontSize(1.17rem);
 }
+.font-h2-sm {
+	@include fontSize(1.3rem);
+}
 .font-h2 {
 	@include fontSize(1.5rem);
 }
@@ -118,21 +121,47 @@
 	@include fontWeight(900);
 }
 
-
 // text align
 @mixin textAlign($textAlign) {
 	text-align: $textAlign;
 }
-.text-center{
+.text-center {
 	@include textAlign(center);
 }
-.text-right{
+.text-right {
 	@include textAlign(right);
 }
 
-
-
 // margin & padding
+@mixin margin($margin) {
+	margin: $margin;
+}
+.m-1 {
+	@include margin(1em);
+}
+.m-2 {
+	@include margin(2em);
+}
+.m-3 {
+	@include margin(3em);
+}
+
+@mixin marginBottom($marginBottomValue) {
+	margin-bottom: $marginBottomValue;
+}
+.mb-1 {
+	@include marginBottom(1em);
+}
+.mb-2 {
+	@include marginBottom(2em);
+}
+.mb-3 {
+	@include marginBottom(3em);
+}
+.mb-4 {
+	@include marginBottom(4em);
+}
+
 @mixin padding($padding) {
 	padding: $padding;
 }
