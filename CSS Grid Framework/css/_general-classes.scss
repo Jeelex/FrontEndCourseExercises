@@ -79,7 +79,7 @@
 	font-size: $fontSize;
 }
 .font-p-sm {
-	@include fontSize(0.8rem);
+	@include fontSize(0.9rem);
 }
 
 .font-p {
@@ -164,6 +164,9 @@
 .mr-05 {
 	@include marginRight(0.5em);
 }
+.mr-3px {
+	@include marginRight(3px);
+}
 .mr-1 {
 	@include marginRight(1em);
 }
@@ -219,6 +222,12 @@
 @mixin paddingBottom($paddingBottomValue) {
 	padding-bottom: $paddingBottomValue;
 }
+.pb-3px {
+	@include paddingBottom(3px);
+}
+.pb-05 {
+	@include paddingBottom(0.5em);
+}
 .pb-1 {
 	@include paddingBottom(1em);
 }
@@ -245,6 +254,12 @@
 .color-blue {
 	@include color($blueColor);
 }
+.color-grey-ccc {
+	@include color($footerLinksColor);
+}
+.color-grey-999 {
+	@include color($footerParagraphColor);
+}
 
 // background colors
 @mixin bgColor($bgColor) {
@@ -261,7 +276,7 @@
 }
 
 .bg-light-gray {
-	@include bgColor($light-grey);
+	@include bgColor($light-gray);
 }
 
 // images
@@ -288,16 +303,17 @@
 @mixin justifyContentProp($justifyContentProperty) {
 	justify-content: $justifyContentProperty;
 }
-
 .justify-start {
 	@include justifyContentProp(flex-start);
 }
 .justify-center {
 	@include justifyContentProp(center);
 }
-
 .justify-end {
 	@include justifyContentProp(flex-end);
+}
+.justify-between {
+	@include justifyContentProp(space-between);
 }
 
 // align-items
@@ -332,6 +348,41 @@
 	flex-wrap: wrap;
 }
 
-.list-style-initial {
-	list-style: initial;
+// .list-style-initial {
+// 	list-style: initial;
+// }
+
+// border
+.border-bottom {
+	border-bottom: solid;
+}
+.border-grey-dark {
+	border-color: #00000070;
+}
+.border-grey-light {
+	border-color: #00000038;
+}
+
+.border-1 {
+	border-width: 1px;
+}
+
+// a links
+a {
+	text-decoration: none;
+}
+
+// buttons
+.btn {
+	// height: 20px;
+	// outline: none;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+	box-sizing: border-box;
+	padding: 1px 8px 1px 6px;
+	background-color: #1b95e0;
+	color: #fff;
+	border: 1px solid #1b95e0;
+	border-radius: 3px;
+	font-weight: 500;
+	cursor: pointer;
 }

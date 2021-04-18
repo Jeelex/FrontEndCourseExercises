@@ -11,11 +11,13 @@ header ul {
 	list-style: none;
 
 	li {
-		padding: 0.8em;
+		padding-top: .8em;
+		padding-bottom: .8em;
 
 		a {
 			text-decoration: none;
 			color: $whiteColor;
+			padding: .5em;
 		}
 	}
 }
@@ -35,7 +37,7 @@ footer {
 	background-color: $footerColor;
 }
 
-footer ul li a,
+// footer ul li a,
 footer h3,
 footer p {
 	color: $whiteColor;

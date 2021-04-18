@@ -11,7 +11,7 @@
 	<body>
 		<header class="">
 			<nav class="container row">
-				<img class="col-2" src="images/logo.png" />
+				<a href="#"><img class="col-2" src="images/logo.png" /></a>
 				<ul class="col-10 d-flex justify-end align-center">
 					<li class="col-1"><a href="#">LIVE</a></li>
 					<li class="col-1"><a href="#">SHOWS</a></li>
@@ -130,20 +130,61 @@
 
 				<!-- right 3 columns -->
 				<aside class="aside col-3 pl-3">
-					<div>
-						<h4 class="mb-05">Subscribe to 5by5</h4>
-						<ul class="pl-1 ">
-							<li class="mb-05">
-								<img alt="Itunes" class="mr-05" src="images/icons/itunes-bd055379d4375512b1b5b33f13fda9e1.png">
-								5by5 on iTunes</li>
-							<li class="mb-05">
-								<img alt="Rss" class="mr-05" src="images/icons/rss-e2e36a8b90bbc6730306fb653f3a9c2f.png">
-								Master RSS Feed</li>
-							<li class="mb-05">
-								<img alt="Pc_icon_small@2x" class="mr-05 img-icon" src="images/icons/pc_icon_small@2x-215c2dd8305ef48d3b730bc61a473a75.png">
-								Pocket Casts</li>
+					<div class="mb-3">
+						<h4 class="mb-1 pb-3px border-grey-light border-1 border-bottom fw-700 font-p-sm color-grey ">Subscribe to 5by5</h4>
+						<ul class="">
+							<li class="mb-05 ">
+								<a class="color-blue" href="#">
+									<img alt="Itunes" class="mr-05" src="images/icons/itunes-bd055379d4375512b1b5b33f13fda9e1.png" />
+									5by5 on iTunes</a
+								>
+							</li>
+							<li class="mb-05 ">
+								<a class="color-blue" href="#">
+									<img alt="Rss" class="mr-05" src="images/icons/rss-e2e36a8b90bbc6730306fb653f3a9c2f.png" />
+									Master RSS Feed</a
+								>
+							</li>
+							<li class="mb-05 ">
+								<a class="color-blue" href="#">
+									<img alt="Pc_icon_small@2x" class="mr-05 img-icon" src="images/icons/pc_icon_small@2x-215c2dd8305ef48d3b730bc61a473a75.png" />
+									Pocket Casts</a
+								>
+							</li>
 						</ul>
 					</div>
+					
+					<div class="mb-3">
+						<h4 class="mb-1 pb-3px border-grey-light border-1 border-bottom fw-700 font-p-sm color-grey ">5by5 Apps</h4>
+						<ul class="">
+							<li class="mb-05 ">
+								<a class="color-blue" href="#">
+									<img alt="radio" class="mr-05 img-icon" src="images/icons/itunes_logo-bf740e29625ddaba65ac31d74a66916a.png" />
+									5by5 Radio for iOS</a
+								>
+							</li>
+							<li class="mb-05 ">
+								<a class="color-blue" href="#">
+									<img alt="Mac OS" class="mr-05 img-icon" src="images/icons/pencil_paintbrush-1560f35cdaeede2929db023c5af73cdd.png" />
+									5by5 for Mac OS X</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="mb-3">
+						<h4 class="mb-1 pb-3px border-grey-light border-1 border-bottom fw-700 font-p-sm color-grey ">Share</h4>
+						<button class="btn d-flex align-center">
+							<img class="img-icon mr-3px" src="images/icons/twitter.svg" alt="">
+							Tweet</button>
+					</div>
+
+					<div class="mb-3">
+						<h4 class="mb-1 pb-3px border-grey-light border-1 border-bottom fw-700 font-p-sm color-grey "></h4>
+						<p class="font-p-sm">
+							Bandwidth for April 2021 is sponsored by <a class="color-blue" href="http://cachefly.com" >CacheFly: The fastest, most reliable CDN in the business.</a>
+						</p>
+					</div>
+
 				</aside>
 				<!-- right 3 columns -->
 			</section>
@@ -154,34 +195,35 @@
 		<!--	FOOTER	-->
 		<footer>
 			<section class="container pt-2 pb-2">
-				<div class="row">
+				<div class="row mb-2">
 					<div class="col-12 footer__topics open">
-						<h3 class="footer-title font-h2-sm mb-3" id="topics">
+						<h3 class="footer-title font-h2-sm" id="topics">
 							5by5 makes podcasts for geeks, designers, developers, gamers, entrepreneurs, and people like you, with shows hosted by people including Dan Benjamin, Merlin Mann, Horace
-							Dediu, and Jeffrey Zeldman. Read more…
+							Dediu, and Jeffrey Zeldman. <a class="color-grey-ccc " href="#">Read more…</a>
 						</h3>
 					</div>
 				</div>
 
-				<div class="container">
-					<ul class="d-flex justify-center align-center footer-list">
-						<li class="footer-item"><a href="#">About</a></li>
-						<li class="footer-item"><a href="#">Shows</a></li>
-						<li class="footer-item"><a href="#">Subscribe</a></li>
-						<li class="footer-item"><a href="#">iTunes</a></li>
-						<li class="footer-item"><a href="#">Schedule</a></li>
-						<li class="footer-item"><a href="#">Contact</a></li>
-						<li class="footer-item"><a href="#">Donate</a></li>
-						<li class="footer-item"><a href="#">Advertise</a></li>
-						<li class="footer-item"><a href="#">Newsletter</a></li>
+				<div class="container row mb-2">
+					<ul class="col-12 d-flex justify-center align-center footer-list">
+						<li class="footer-item mr-1 "><a class="color-grey-ccc" href="#">About</a></li>
+						<li class="footer-item mr-1 "><a class="color-grey-ccc" href="#">Shows</a></li>
+						<li class="footer-item mr-1 "><a class="color-grey-ccc" href="#">Subscribe</a></li>
+						<li class="footer-item mr-1 "><a class="color-grey-ccc" href="#">iTunes</a></li>
+						<li class="footer-item mr-1 "><a class="color-grey-ccc" href="#">Schedule</a></li>
+						<li class="footer-item mr-1 "><a class="color-grey-ccc" href="#">Contact</a></li>
+						<li class="footer-item mr-1 "><a class="color-grey-ccc" href="#">Donate</a></li>
+						<li class="footer-item mr-1 "><a class="color-grey-ccc" href="#">Advertise</a></li>
+						<li class="footer-item"><a class="color-grey-ccc" href="#">Newsletter</a></li>
 					</ul>
 				</div>
-
-				<p class="d-flex justify-center align-center">Copyright © 2009–2021 by Dan Benjamin and 5by5 Productions LLC in Austin, Texas</p>
-				<div class="container d-flex justify-center align-center">
-					<img class="photo" src="images/footerlogo(2).png" alt="CacheFly" />
-					<img class="photo" src="images/footerlogo(1).png" alt="linode" />
-					<img class="photo" src="images/footerlogo(3).png" alt="MetaCDN" />
+				<div class="container row mb-1">
+					<p class="col-12 d-flex justify-center align-center color-grey-999 font-p-sm">Copyright © 2009–2021 by Dan Benjamin and 5by5 Productions LLC in Austin, Texas</p>
+				</div>
+				<div class="container row d-flex justify-center align-center">
+					<img class="col-2 photo" src="images/footerlogo(2).png" alt="CacheFly" />
+					<img class="col-2 photo" src="images/footerlogo(1).png" alt="linode" />
+					<img class="col-2 photo" src="images/footerlogo(3).png" alt="MetaCDN" />
 				</div>
 			</section>
 		</footer>
