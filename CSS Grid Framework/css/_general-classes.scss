@@ -6,20 +6,6 @@
 .container {
 	@include containerProps(960px);
 }
-// .container-small {
-// }
-// .container-medium {
-// 	@include containerProps($medium);
-// }
-// .container-large {
-// 	@include containerProps($large);
-// }
-// .container-xxl {
-// 	@include containerProps($xxl);
-// }
-// .container-full {
-// 	@include containerProps($full);
-// }
 
 .row {
 	display: grid;
@@ -28,10 +14,6 @@
 	grid-template-rows: 1fr;
 	gap: 20px;
 }
-
-// .column {
-// background-color: yellowgreen;
-// }
 
 @mixin columnSpan($spanNumber) {
 	grid-column: span $spanNumber;
@@ -348,7 +330,6 @@
 	flex-wrap: wrap;
 }
 
-
 // border
 .border-bottom {
 	border-bottom: solid;
@@ -369,7 +350,6 @@ a {
 	text-decoration: none;
 }
 
-
 // buttons
 .btn {
 	// height: 20px;
@@ -388,5 +368,3 @@ a {
 .btn:hover {
 	background-color: #2382bd;
 }
-
-
