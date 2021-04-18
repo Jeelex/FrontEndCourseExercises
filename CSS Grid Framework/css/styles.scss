@@ -37,8 +37,12 @@ footer {
 	background-color: $footerColor;
 }
 
-// footer ul li a,
 footer h3,
 footer p {
+	color: $whiteColor;
+}
+
+footer h3 a:hover,
+footer ul li a:hover {
 	color: $whiteColor;
 }

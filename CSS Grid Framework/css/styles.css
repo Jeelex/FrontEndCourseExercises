@@ -425,6 +425,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: #900;
+}
+
 .btn {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   -webkit-box-sizing: border-box;
@@ -467,6 +471,11 @@ footer {
 
 footer h3,
 footer p {
+  color: white;
+}
+
+footer h3 a:hover,
+footer ul li a:hover {
   color: white;
 }
 /*# sourceMappingURL=styles.css.map */
