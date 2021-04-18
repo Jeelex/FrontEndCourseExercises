@@ -438,6 +438,10 @@ a {
   cursor: pointer;
 }
 
+.btn:hover {
+  background-color: #2382bd;
+}
+
 header {
   background-color: #333;
 }
