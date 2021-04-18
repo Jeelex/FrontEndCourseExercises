@@ -180,6 +180,10 @@ h6 {
   margin: 3em;
 }
 
+.mb-05 {
+  margin-bottom: 0.5em;
+}
+
 .mb-1 {
   margin-bottom: 1em;
 }
@@ -194,6 +198,26 @@ h6 {
 
 .mb-4 {
   margin-bottom: 4em;
+}
+
+.mr-05 {
+  margin-right: 0.5em;
+}
+
+.mr-1 {
+  margin-right: 1em;
+}
+
+.mr-2 {
+  margin-right: 2em;
+}
+
+.mr-3 {
+  margin-right: 3em;
+}
+
+.mr-4 {
+  margin-right: 4em;
 }
 
 .p-1 {
@@ -283,6 +307,10 @@ h6 {
      object-fit: cover;
 }
 
+.img-icon {
+  width: 12px;
+}
+
 .d-flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -349,6 +377,10 @@ h6 {
 .f-wrap {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.list-style-initial {
+  list-style: initial;
 }
 
 header {

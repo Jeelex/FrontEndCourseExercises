@@ -1,7 +1,6 @@
 @mixin containerProps($max-width) {
 	max-width: $max-width;
 	margin: 0 auto;
-	// border: 2px solid blue;
 }
 
 .container {
@@ -23,22 +22,16 @@
 // }
 
 .row {
-	// width: 100%;
 	display: grid;
-	// grid-template-columns: repeat(12, 1fr);
 	grid-template-columns: repeat(12, 60px);
-	// grid-template-columns: 200px 3em;
-	// grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
 	grid-template-columns: repeat(auto-fit, 60px);
 	grid-template-rows: 1fr;
-	// grid-template-rows: repeat(auto-fit, minmax(60px, 1fr));
 	gap: 20px;
-	// border: 2px solid magenta;
 }
 
-.column {
-	// background-color: yellowgreen;
-}
+// .column {
+// background-color: yellowgreen;
+// }
 
 @mixin columnSpan($spanNumber) {
 	grid-column: span $spanNumber;
@@ -149,6 +142,9 @@
 @mixin marginBottom($marginBottomValue) {
 	margin-bottom: $marginBottomValue;
 }
+.mb-05 {
+	@include marginBottom(0.5em);
+}
 .mb-1 {
 	@include marginBottom(1em);
 }
@@ -160,6 +156,25 @@
 }
 .mb-4 {
 	@include marginBottom(4em);
+}
+
+@mixin marginRight($marginRightValue) {
+	margin-right: $marginRightValue;
+}
+.mr-05 {
+	@include marginRight(0.5em);
+}
+.mr-1 {
+	@include marginRight(1em);
+}
+.mr-2 {
+	@include marginRight(2em);
+}
+.mr-3 {
+	@include marginRight(3em);
+}
+.mr-4 {
+	@include marginRight(4em);
 }
 
 @mixin padding($padding) {
@@ -255,7 +270,9 @@
 	// height: auto;
 	height: 220px;
 	object-fit: cover;
-	// margin: 0.5em;
+}
+.img-icon {
+	width: 12px;
 }
 
 // display flex
@@ -313,4 +330,8 @@
 
 .f-wrap {
 	flex-wrap: wrap;
+}
+
+.list-style-initial {
+	list-style: initial;
 }
