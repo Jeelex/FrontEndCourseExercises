@@ -425,10 +425,6 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  color: #900;
-}
-
 .btn {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   -webkit-box-sizing: border-box;
@@ -463,6 +459,10 @@ header ul li a {
 
 header ul li:hover {
   background-color: #585858;
+}
+
+main a:hover {
+  color: #900;
 }
 
 footer {
