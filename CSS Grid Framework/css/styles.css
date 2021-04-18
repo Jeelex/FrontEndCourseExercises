@@ -208,6 +208,10 @@ h6 {
   padding-bottom: 3em;
 }
 
+.pb-4 {
+  padding-bottom: 4em;
+}
+
 .color-white {
   color: white;
 }

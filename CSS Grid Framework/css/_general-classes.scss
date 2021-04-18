@@ -171,6 +171,9 @@
 .pb-3 {
 	@include paddingBottom(3em);
 }
+.pb-4 {
+	@include paddingBottom(4em);
+}
 
 // colors
 @mixin color($color) {
