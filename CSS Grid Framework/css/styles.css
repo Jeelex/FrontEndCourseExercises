@@ -451,14 +451,15 @@ header ul {
 }
 
 header ul li {
-  padding-top: .8em;
-  padding-bottom: .8em;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  margin-left: 1em;
 }
 
 header ul li a {
   text-decoration: none;
   color: white;
-  padding: .5em;
+  padding: 0.6em;
 }
 
 header ul li:hover {
