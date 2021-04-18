@@ -37,7 +37,6 @@
 }
 
 .column {
-	text-align: center;
 	// background-color: yellowgreen;
 }
 
@@ -118,6 +117,20 @@
 .fw-900 {
 	@include fontWeight(900);
 }
+
+
+// text align
+@mixin textAlign($textAlign) {
+	text-align: $textAlign;
+}
+.text-center{
+	@include textAlign(center);
+}
+.text-right{
+	@include textAlign(right);
+}
+
+
 
 // margin & padding
 @mixin padding($padding) {

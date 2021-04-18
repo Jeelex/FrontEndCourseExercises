@@ -72,10 +72,6 @@ h6 {
   gap: 20px;
 }
 
-.column {
-  text-align: center;
-}
-
 .col-1 {
   grid-column: span 1;
 }
@@ -158,6 +154,14 @@ h6 {
 
 .fw-900 {
   font-weight: 900;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .p-1 {
