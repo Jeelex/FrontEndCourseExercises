@@ -1,5 +1,3 @@
-let myLibrary = [];
-
 function Book(title, author, pages, hasBeenRead) {
 	this.title = title;
 	this.author = author;
@@ -24,6 +22,15 @@ console.log(newBook2.info());
 console.log(newBook3.info());
 console.log(newBook4.info());
 
-function addBookToLibrary() {
-	// do stuff here
+
+let myLibrary = [];
+
+function addBookToLibrary(selectedBook) {
+  //TODO function must take user’s input and store the new book objects into an array.
+  
+  return myLibrary.push(selectedBook);
 }
+addBookToLibrary(newBook1);
+addBookToLibrary(newBook2);
+
+  console.log(myLibrary);
