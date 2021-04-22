@@ -14,9 +14,15 @@ function Book(title, author, pages, hasBeenRead) {
 	};
 }
 
-const myBook = new Book("Harry Potter", "J. K. Rowling", 495, true);
+const newBook1 = new Book("Harry Potter", "J. K. Rowling", 395, true);
+const newBook2 = new Book("The Lord of the Rings", "J. R. R. Tolkien", 595, false);
+const newBook3 = new Book("The Count of Monte Cristo", "Alexandre Dumas", 385, false);
+const newBook4 = new Book("Don Quixote", "	Miguel de Cervantes", 483, true);
 
-console.log(myBook.info());
+console.log(newBook1.info());
+console.log(newBook2.info());
+console.log(newBook3.info());
+console.log(newBook4.info());
 
 function addBookToLibrary() {
 	// do stuff here
