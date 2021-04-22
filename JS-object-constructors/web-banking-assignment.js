@@ -2,7 +2,8 @@
 
 function Account(fullname) {
 	this.fullname = fullname;
-
+	Account.IBAN++;
+	this.IBAN = "GR000" + Account.IBAN;
 	this.balance = 0;
 	this.deposit = function (amount) {
 		return this.balance = this.balance + amount;
@@ -21,17 +22,14 @@ function Account(fullname) {
 	};
 }
 
+Account.IBAN = 10003;
 
 
 const newAccount = new Account("Kostas Minaidis");
-// New account created for: Kostas Minaidis
-// IBAN: GR00010003
 
-console.log({ newAccount });
 
-console.log( newAccount.getBalance() ); // 0
+newAccount.getBalance(); // 0
 newAccount.deposit(100);
-console.log( newAccount.getBalance() ); // 100
-console.log(newAccount.withdraw(50));
-// newAccount.withdraw(50);
-console.log( newAccount.getBalance() ); // 50
+newAccount.getBalance(); // 100
+newAccount.withdraw(50);
+newAccount.getBalance(); // 50
