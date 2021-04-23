@@ -11,13 +11,14 @@
 			integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
 			crossorigin="anonymous"
 		/>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" />
 		<title>Project: Library</title>
 	</head>
-	<body class="vh-100 d-flex flex-column justify-content-between">
+	<!-- <body class="vh-100 d-flex flex-column justify-content-between"> -->
+	<body>
 		<!-- <input type="search" name="search-input" id="search-input"> -->
 		<!-- <button id="searchBtn">NEW BOOK</button> -->
-		<header class="container-lg">
+		<header class="container-fluid">
 			<nav class="navbar navbar-expand-md navbar-light bg-light">
 				<div class="container-fluid">
 					<a class="navbar-brand" href="#">Project: Library</a>
@@ -41,31 +42,112 @@
 			</nav>
 		</header>
 
-		<main class="container-lg">
-			<section class="row">
-				<div class="input-group mb-3">
-					<input type="text" class="form-control" aria-label="Text input with dropdown button" />
-					<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
-					<ul class="dropdown-menu dropdown-menu-end">
-						<li><a class="dropdown-item" href="#">Action</a></li>
-						<li><a class="dropdown-item" href="#">Another action</a></li>
-						<li><a class="dropdown-item" href="#">Something else here</a></li>
-						<li><hr class="dropdown-divider" /></li>
-						<li><a class="dropdown-item" href="#">Separated link</a></li>
-					</ul>
+		<main class="container-fluid mt-4">
+			<section class="container row justify-content-between">
+				<h1 class="col-9">Add Books to your Library!</h1>
+				<button type="button" class="col-3 btn btn-primary btn-lg">ADD NEW BOOK!</button>
+			</section>
+
+			<section class="mt-4 row justify-content-evenly">
+				<div class="col-xl-2 col-lg-3 col-md-5 col-sm-5 card text-white bg-dark mb-3 pb-3 mx-1">
+					<h5 class="card-header">Harry Potter</h5>
+					<div class="card-body">
+						<h5 class="card-text">by J. K. Rowling</h5>
+						<p class="card-text">392 pages</p>
+					</div>
+					<button type="button" class="btn my-1 btn-success">Read</button>
+					<button type="button" class="btn my-1 btn-warning">Not read</button>
+					<button type="button" class="btn my-1 btn-danger">Remove</button>
+				</div>
+
+				<div class="col-xl-2 col-lg-3 col-md-5 col-sm-5 card text-white bg-dark mb-3 pb-3 mx-1">
+					<h5 class="card-header">Harry Potter</h5>
+					<div class="card-body">
+						<h5 class="card-text">by J. K. Rowling</h5>
+						<p class="card-text">392 pages</p>
+					</div>
+					<button type="button" class="btn my-1 btn-success">Read</button>
+					<button type="button" class="btn my-1 btn-warning">Not read</button>
+					<button type="button" class="btn my-1 btn-danger">Remove</button>
+				</div>
+
+				<div class="col-xl-2 col-lg-3 col-md-5 col-sm-5 card text-white bg-dark mb-3 pb-3 mx-1">
+					<h5 class="card-header">Harry Potter</h5>
+					<div class="card-body">
+						<h5 class="card-text">by J. K. Rowling</h5>
+						<p class="card-text">392 pages</p>
+					</div>
+					<button type="button" class="btn my-1 btn-success">Read</button>
+					<button type="button" class="btn my-1 btn-warning">Not read</button>
+					<button type="button" class="btn my-1 btn-danger">Remove</button>
+				</div>
+
+				<div class="col-xl-2 col-lg-3 col-md-5 col-sm-5 card text-white bg-dark mb-3 pb-3">
+					<h5 class="card-header">Harry Potter</h5>
+					<div class="card-body">
+						<h5 class="card-text">by J. K. Rowling</h5>
+						<p class="card-text">392 pages</p>
+					</div>
+					<button type="button" class="btn my-1 btn-success">Read</button>
+					<button type="button" class="btn my-1 btn-warning">Not read</button>
+					<button type="button" class="btn my-1 btn-danger">Remove</button>
+				</div>
+
+				<div class="col-xl-2 col-lg-3 col-md-5 col-sm-5 card text-white bg-dark mb-3 pb-3">
+					<h5 class="card-header">Harry Potter</h5>
+					<div class="card-body">
+						<h5 class="card-text">by J. K. Rowling</h5>
+						<p class="card-text">392 pages</p>
+					</div>
+					<button type="button" class="btn my-1 btn-success">Read</button>
+					<button type="button" class="btn my-1 btn-warning">Not read</button>
+					<button type="button" class="btn my-1 btn-danger">Remove</button>
+				</div>
+
+				<div class="col-xl-2 col-lg-3 col-md-5 col-sm-5 card text-white bg-dark mb-3 pb-3">
+					<h5 class="card-header">Harry Potter</h5>
+					<div class="card-body">
+						<h5 class="card-text">by J. K. Rowling</h5>
+						<p class="card-text">392 pages</p>
+					</div>
+					<button type="button" class="btn my-1 btn-success">Read</button>
+					<button type="button" class="btn my-1 btn-warning">Not read</button>
+					<button type="button" class="btn my-1 btn-danger">Remove</button>
 				</div>
 			</section>
 
+			<!-- <section class="row mt-3">
+
+				<div class="row">
+					<div class="col">
+						<input type="text" class="form-control" placeholder="Title" aria-label="Title">
+					</div>
+					<div class="col">
+						<input type="text" class="form-control" placeholder="Author" aria-label="Author">
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div class="row">
+					<div class="col">
+						<input type="text" class="form-control" placeholder="Page No" aria-label="Page No">
+					</div>
+					<div class="col">
+						<input type="text" class="form-control" placeholder="Author" aria-label="Author">
+					</div>
+				</div>
+				
+			</section> -->
 		</main>
 
-		<footer class="footer py-3 bg-light">
+		<!-- <footer class="footer py-3 bg-light">
 			<div class="container d-flex justify-content-center">
 				<span class="text-muted">&copy;  jeelex 2021.</span>
 				<i class="bi bi-github mx-4"></i>
 				<i class="bi bi-mailbox"></i>
 			</div>
-		</footer>
-
+		</footer> -->
 
 		<script src="index.js"></script>
 	</body>

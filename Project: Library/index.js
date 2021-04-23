@@ -1,3 +1,8 @@
+const libraryDiv = document.getElementById("library-div");
+
+
+
+
 function Book(title, author, pages, hasBeenRead) {
 	this.title = title;
 	this.author = author;
@@ -17,10 +22,10 @@ const newBook2 = new Book("The Lord of the Rings", "J. R. R. Tolkien", 595, fals
 const newBook3 = new Book("The Count of Monte Cristo", "Alexandre Dumas", 385, false);
 const newBook4 = new Book("Don Quixote", "	Miguel de Cervantes", 483, true);
 
-console.log(newBook1.info());
-console.log(newBook2.info());
-console.log(newBook3.info());
-console.log(newBook4.info());
+// console.log(newBook1.info());
+// console.log(newBook2.info());
+// console.log(newBook3.info());
+// console.log(newBook4.info());
 
 
 let myLibrary = [];
@@ -33,4 +38,4 @@ function addBookToLibrary(selectedBook) {
 addBookToLibrary(newBook1);
 addBookToLibrary(newBook2);
 
-  console.log(myLibrary);
+  // console.log(myLibrary);
