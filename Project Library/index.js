@@ -1,7 +1,3 @@
-const libraryDiv = document.getElementById("library-div");
-
-
-
 
 function Book(title, author, pages, hasBeenRead) {
 	this.title = title;
@@ -32,6 +28,7 @@ let myLibrary = [];
 
 function addBookToLibrary(selectedBook) {
   //TODO function must take user’s input and store the new book objects into an array.
+
   
   return myLibrary.push(selectedBook);
 }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="" />
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<section class="container d-flex justify-content-between">
+			<h1>Add Books to your Library!</h1>
+			<button type="button" class="btn btn-primary">NEW BOOK!</button>
+		</section>
+
+		<form action="">
+			<input type="text" class="form-control" id="Title" placeholder="Title" />
+
+			<div>
+				<input type="text" class="form-control" id="Author" placeholder="Author" />
+			</div>
+
+			<div>
+				<input type="text" class="form-control" id="Page No" placeholder="Page No" />
+			</div>
+
+			<div>
+				<input type="checkbox" id="autoSizingCheck" />
+				<label for="autoSizingCheck"> Read </label>
+			</div>
+
+			<div>
+				<button type="submit">Add Book!</button>
+			</div>
+		</form>
+
+
+		<table>
+			<tr>
+				<th>Book Title</th>
+				<th>Author</th>
+				<th>Page No</th>
+				<th>Have your read it?</th>
+			</tr>
+			<tr>
+				<td>Harry Potter</td>
+				<td>J. K. Rowling</td>
+				<td>392</td>
+				<td><input type="checkbox" id="autoSizingCheck" />
+					<label for="autoSizingCheck"> Read </label></td>
+			</tr>
+		</table>
+
+		<script src="index.js"></script>
+	</body>
+</html>
