@@ -68,7 +68,7 @@ function render() {
 			<td>${bookAuthor.value}</td>
 			<td>${bookPages.value}</td>
 			<td>${read}</td>
-			<td><button class="btn-remove-book">REMOVE</button></td>
+			<td><button data-book class="btn-remove-book">REMOVE</button></td>
 			</tr>
 		`;
 
@@ -100,8 +100,25 @@ function clearForm() {
 // removing book
 
 tableLibrary.addEventListener("click", (e) => {
-	if (e.target.tagName === "BUTTON"){
-		e.target.parentNode.parentNode.remove();
+	if (e.target.tagName === "BUTTON") {
+		// e.target.parentNode.parentNode.remove();
+		// TODO remove book from myLibrary array
+		const bookToFind = myLibrary.find((item) => {
+			item.title === "Harry Potter";
+			// console.log(item.title);
+		});
+		console.log(bookToFind);
 	}
-
 });
+
+// for (const bookItem of myLibrary) {
+// 	for (const book in Object) {
+// 		// if (book) {
+// 			console.log(book);
+// 			// const element = object[book];
+
+// 		// }
+// 	}
+// }
+
+// myLibrary.forEach(item => console.log(item.title))
