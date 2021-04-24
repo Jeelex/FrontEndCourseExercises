@@ -23,7 +23,7 @@
 			</div>
 
 			<div>
-				<input type="text" id="page-no" placeholder="page-no" required aria-required="true"/>
+				<input type="number" id="page-no" placeholder="page-no" required aria-required="true"/>
 			</div>
 
 			<div>
@@ -36,7 +36,7 @@
 			<!-- </div> -->
 		</form>
 
-		<table>
+		<table id="table-library">
 			<tr>
 				<th>Book Title</th>
 				<th>Author</th>
@@ -47,7 +47,10 @@
 				<td>Harry Potter</td>
 				<td>J. K. Rowling</td>
 				<td>392</td>
-				<td><input type="checkbox" id="checkboxInTable" /> <label for="checkboxInTable"> Read </label></td>
+				<td>
+					<input type="checkbox" id="checkboxInTable"/>
+					<label for="checkboxInTable"> Read </label>
+				</td>
 			</tr>
 		</table>
 
