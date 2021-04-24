@@ -15,23 +15,23 @@
 
 		<form class="display-none" id="form">
 			<div>
-				<input type="text" id="title" placeholder="title" required aria-required="true"/>
+				<input type="text" id="title" placeholder="title" required aria-required="true" />
 			</div>
 
 			<div>
-				<input type="text" id="author" placeholder="author" required aria-required="true"/>
+				<input type="text" id="author" placeholder="author" />
 			</div>
-
+			<!-- required aria-required="true" -->
 			<div>
-				<input type="number" id="page-no" placeholder="page-no" required aria-required="true"/>
+				<input type="number" id="page-no" placeholder="page-no" />
 			</div>
-
+			<!-- required aria-required="true" -->
 			<div>
 				<input type="checkbox" id="checkbox-add-new-book" />
 				<label for="checkbox-add-new-book"> Read </label>
 			</div>
 
-				<button id="btn-add-book" type="submit">Add Book!</button>
+			<button id="btn-add-book" type="submit">Add Book!</button>
 		</form>
 
 		<table id="table-library">
@@ -46,6 +46,7 @@
 				<td>J. K. Rowling</td>
 				<td>392</td>
 				<td>Yes</td>
+				<td><button class="btn-remove-book">REMOVE</button></td>
 			</tr>
 		</table>
 

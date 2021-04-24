@@ -1,24 +1,21 @@
-const form = document.getElementById("form");
-const bookTitle = document.getElementById("title");
-const bookAuthor = document.getElementById("author");
-const bookPages = document.getElementById("page-no");
-const bookStatus = document.getElementById("checkbox-add-new-book");
-const btnNewBook = document.getElementById("btn-new-book");
-const btnAddBook = document.getElementById("btn-add-book");
-const tableLibrary = document.getElementById("table-library");
+function $(selector) {
+  return document.querySelector(selector);
+};
 
-// console.log(btnNewBook);
+const form = $("#form");
+const bookTitle = $("#title");
+const bookAuthor = $("#author");
+const bookPages = $("#page-no");
+const bookStatus = $("#checkbox-add-new-book");
+const btnNewBook = $("#btn-new-book");
+const btnAddBook = $("#btn-add-book");
+const tableLibrary = $("#table-library");
+const btnRemoveBook = document.querySelectorAll(".btn-remove-book");
 
-form.addEventListener("submit", (e) => {
-	e.preventDefault();
-	addBookToLibrary();
-	render();
-});
+// console.log(btns);
+	
 
-btnNewBook.addEventListener("click", () => {
-	form.classList.remove("display-none");
-	form.classList.add("display-block");
-});
+
 
 function Book(title, author, pages, hasBeenRead) {
 	this.title = title;
@@ -45,18 +42,19 @@ const newBook1 = new Book("Harry Potter", "J. K. Rowling", 395, true);
 // console.log(newBook4.info());
 
 let myLibrary = [];
+myLibrary.push(newBook1);
 
+
+// adding new book to the Library array
 function addBookToLibrary() {
 	const newBook = new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookStatus.checked);
 
 	myLibrary.push(newBook);
 	return;
 }
-// addBookToLibrary(newBook);
-// addBookToLibrary(newBook2);
 
-// console.log(myLibrary);
 
+// adding new book to the Dom
 function render() {
 	let read = "No";
 	if (bookStatus.checked) {
@@ -68,8 +66,30 @@ function render() {
 			<td>${bookAuthor.value}</td>
 			<td>${bookPages.value}</td>
 			<td>${read}</td>
+			<td><button class="btn-remove-book">REMOVE</button></td>
 			</tr>
 		`;
 
 	tableLibrary.insertAdjacentHTML("beforeend", html);
 }
+
+
+// displaying form (modal)
+btnNewBook.addEventListener("click", () => {
+	form.classList.remove("display-none");
+	form.classList.add("display-block");
+});
+
+
+// displaying book to list
+form.addEventListener("submit", (e) => {
+e.preventDefault();
+addBookToLibrary();
+render();
+});
+
+
+// removing book
+btnRemoveBook.forEach((btn) => btn.addEventListener("click", () => {
+console.log("remove btns work!");
+}));
