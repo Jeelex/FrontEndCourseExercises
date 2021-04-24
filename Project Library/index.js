@@ -3,20 +3,21 @@ const bookTitle = document.getElementById("title");
 const bookAuthor = document.getElementById("author");
 const bookPages = document.getElementById("page-no");
 const bookStatus = document.getElementById("checkbox-add-new-book");
+const btnNewBook = document.getElementById("btn-new-book");
 const btnAddBook = document.getElementById("btn-add-book");
 const tableLibrary = document.getElementById("table-library");
 
-// console.log(checkboxAddNewBook);
+// console.log(btnNewBook);
 
 form.addEventListener("submit", (e) => {
 	e.preventDefault();
-	// console.log(e.target);
-	// console.log(bookTitle.value);
-	// console.log(bookAuthor.value);
-	// console.log(bookPages.value);
-	// console.log( bookStatus.checked);
 	addBookToLibrary();
 	render();
+});
+
+btnNewBook.addEventListener("click", () => {
+	form.classList.remove("display-none");
+	form.classList.add("display-block");
 });
 
 function Book(title, author, pages, hasBeenRead) {
@@ -56,28 +57,19 @@ function addBookToLibrary() {
 
 // console.log(myLibrary);
 
-
 function render() {
-	// myLibrary.forEach(book => {
 	let read = "No";
-
-	if (bookStatus.checked){
-			read = "Yes" ;
-		}
-
-
-		const html = ` 
+	if (bookStatus.checked) {
+		read = "Yes";
+	}
+	const html = ` 
 			<tr>
 			<td>${bookTitle.value}</td>
 			<td>${bookAuthor.value}</td>
 			<td>${bookPages.value}</td>
 			<td>${read}</td>
 			</tr>
-		`
+		`;
 
-		tableLibrary.insertAdjacentHTML("beforeend", html);
-		
-	// })
-
-
+	tableLibrary.insertAdjacentHTML("beforeend", html);
 }

@@ -10,10 +10,10 @@
 	<body>
 		<section class="container d-flex justify-content-between">
 			<h1>Add Books to your Library!</h1>
-			<!-- <button type="button" class="btn btn-primary">NEW BOOK!</button> -->
+			<button id="btn-new-book" type="button">NEW BOOK!</button>
 		</section>
 
-		<form id="form">
+		<form class="display-none" id="form">
 			<div>
 				<input type="text" id="title" placeholder="title" required aria-required="true"/>
 			</div>
@@ -31,9 +31,7 @@
 				<label for="checkbox-add-new-book"> Read </label>
 			</div>
 
-			<!-- <div> -->
 				<button id="btn-add-book" type="submit">Add Book!</button>
-			<!-- </div> -->
 		</form>
 
 		<table id="table-library">
@@ -47,10 +45,7 @@
 				<td>Harry Potter</td>
 				<td>J. K. Rowling</td>
 				<td>392</td>
-				<td>
-					<input type="checkbox" id="checkboxInTable"/>
-					<label for="checkboxInTable"> Read </label>
-				</td>
+				<td>Yes</td>
 			</tr>
 		</table>
 
