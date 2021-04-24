@@ -12,8 +12,9 @@ const bookStatus = $("#checkbox-add-new-book");
 const btnNewBook = $("#btn-new-book");
 const btnAddBook = $("#btn-add-book");
 const tableLibrary = $("#table-library");
-const btnsRemoveBook = document.querySelectorAll(".btn-remove-book");
-// const btnsRemoveBook = document.getElementsByClassName("btn-remove-book");
+const tableRows = document.getElementsByTagName("tr");
+// const btnsRemoveBook = document.querySelectorAll(".btn-remove-book");
+const btnsRemoveBook = document.getElementsByClassName("btn-remove-book");
 
 // console.log(btnsRemoveBook);
 
@@ -99,5 +100,8 @@ function clearForm() {
 // removing book
 
 tableLibrary.addEventListener("click", (e) => {
-	console.log(e.target);
+	if (e.target.tagName === "BUTTON"){
+		e.target.parentNode.parentNode.remove();
+	}
+
 });
