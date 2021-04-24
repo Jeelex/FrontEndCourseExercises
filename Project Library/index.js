@@ -1,3 +1,21 @@
+const form = document.getElementById("form");
+const bookTitle = document.getElementById("title");
+const bookAuthor = document.getElementById("author");
+const bookPages = document.getElementById("page-no");
+const bookStatus = document.getElementById("checkbox-add-new-book");
+const btnAddBook = document.getElementById("btn-add-book");
+
+// console.log(checkboxAddNewBook);
+
+form.addEventListener("submit", (e) => {
+	e.preventDefault();
+	// console.log(e.target);
+	// console.log(bookTitle.value);
+	// console.log(bookAuthor.value);
+	// console.log(bookPages.value);
+	// console.log(bookStatus.value);
+	addBookToLibrary();
+});
 
 function Book(title, author, pages, hasBeenRead) {
 	this.title = title;
@@ -14,25 +32,42 @@ function Book(title, author, pages, hasBeenRead) {
 }
 
 const newBook1 = new Book("Harry Potter", "J. K. Rowling", 395, true);
-const newBook2 = new Book("The Lord of the Rings", "J. R. R. Tolkien", 595, false);
-const newBook3 = new Book("The Count of Monte Cristo", "Alexandre Dumas", 385, false);
-const newBook4 = new Book("Don Quixote", "	Miguel de Cervantes", 483, true);
+// const newBook2 = new Book("The Lord of the Rings", "J. R. R. Tolkien", 595, false);
+// const newBook3 = new Book("The Count of Monte Cristo", "Alexandre Dumas", 385, false);
+// const newBook4 = new Book("Don Quixote", "	Miguel de Cervantes", 483, true);
 
 // console.log(newBook1.info());
 // console.log(newBook2.info());
 // console.log(newBook3.info());
 // console.log(newBook4.info());
 
-
 let myLibrary = [];
 
-function addBookToLibrary(selectedBook) {
-  //TODO function must take user’s input and store the new book objects into an array.
+function addBookToLibrary() {
+	const newBook = new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookStatus.value);
 
-  
-  return myLibrary.push(selectedBook);
+	myLibrary.push(newBook);
+	return;
 }
-addBookToLibrary(newBook1);
-addBookToLibrary(newBook2);
+// addBookToLibrary(newBook);
+// addBookToLibrary(newBook2);
 
-  // console.log(myLibrary);
+// console.log(myLibrary);
+
+
+function render() {
+
+
+	const html = ` 
+		<tr>
+			<td>${bookTitle.value}</td>
+			<td>${bookAuthor.value}</td>
+			<td>${bookPages.value}</td>
+			<td>
+				<input type="checkbox" id="checkboxInTable" />
+				<label for="checkboxInTable"> Read </label>
+				${bookStatus.value}
+			</td>
+		</tr>
+	`
+}

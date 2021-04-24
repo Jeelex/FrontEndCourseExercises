@@ -3,37 +3,38 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="description" content="" />
+		<meta name="description" content="Project Library for Social Hackers Academy" />
 		<link rel="stylesheet" type="text/css" href="styles.css" />
-		<title>Document</title>
+		<title>Project Library</title>
 	</head>
 	<body>
 		<section class="container d-flex justify-content-between">
 			<h1>Add Books to your Library!</h1>
-			<button type="button" class="btn btn-primary">NEW BOOK!</button>
+			<!-- <button type="button" class="btn btn-primary">NEW BOOK!</button> -->
 		</section>
 
-		<form action="">
-			<input type="text" class="form-control" id="Title" placeholder="Title" />
-
+		<form id="form">
 			<div>
-				<input type="text" class="form-control" id="Author" placeholder="Author" />
+				<input type="text" id="title" placeholder="title" required aria-required="true"/>
 			</div>
 
 			<div>
-				<input type="text" class="form-control" id="Page No" placeholder="Page No" />
+				<input type="text" id="author" placeholder="author" required aria-required="true"/>
 			</div>
 
 			<div>
-				<input type="checkbox" id="autoSizingCheck" />
-				<label for="autoSizingCheck"> Read </label>
+				<input type="text" id="page-no" placeholder="page-no" required aria-required="true"/>
 			</div>
 
 			<div>
-				<button type="submit">Add Book!</button>
+				<input type="checkbox" id="checkbox-add-new-book" />
+				<label for="checkbox-add-new-book"> Read </label>
 			</div>
+
+			<!-- <div> -->
+				<button id="btn-add-book" type="submit">Add Book!</button>
+			<!-- </div> -->
 		</form>
-
 
 		<table>
 			<tr>
@@ -46,8 +47,7 @@
 				<td>Harry Potter</td>
 				<td>J. K. Rowling</td>
 				<td>392</td>
-				<td><input type="checkbox" id="autoSizingCheck" />
-					<label for="autoSizingCheck"> Read </label></td>
+				<td><input type="checkbox" id="checkboxInTable" /> <label for="checkboxInTable"> Read </label></td>
 			</tr>
 		</table>
 
