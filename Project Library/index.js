@@ -49,10 +49,7 @@ function addBookToLibrary() {
 	const newBook = new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookStatus.checked);
 
 	myLibrary.push(newBook);
-	// console.log(myLibrary);
-	render(newBook);
-
-	// return;
+	render();
 }
 
 // adding new book to the Dom
@@ -78,41 +75,6 @@ function render() {
 	tableLibrary.appendChild(newBook);
 }
 
-// function render(element) {
-// 	// myLibrary.forEach((book) => {
-
-// 	for (let i = 0; i < myLibrary.length; i++) {
-		
-// 		if (myLibrary[i] === element) {
-// 			console.log("book included!");
-// 			break;
-// 		}
-		
-// 		let read = "No";
-// 		if (myLibrary[i].hasBeenRead) {
-// 			read = "Yes";
-// 		}
-// 		let newBook = document.createElement("tr");
-// 		newBook.innerHTML = `
-// 			<tr>
-// 			<td>${myLibrary[i].title}</td>
-// 			<td>${myLibrary[i].author}</td>
-// 			<td>${myLibrary[i].pages}</td>
-// 			<td>${read}</td>
-// 			<td><button class="btn-remove-book">REMOVE</button></td>
-// 			</tr>
-// 		`;
-
-// 		// tableLibrary.insertAdjacentHTML("beforeend", html);
-// 		tableLibrary.appendChild(newBook);
-// 	}
-// 	// });
-// }
-
-// myLibrary.forEach((book) => {
-// 	console.log(book.title);
-// });
-
 // displaying form (modal)
 btnNewBook.addEventListener("click", () => {
 	form.classList.remove("display-none");
@@ -123,8 +85,16 @@ btnNewBook.addEventListener("click", () => {
 form.addEventListener("submit", (e) => {
 	e.preventDefault();
 	addBookToLibrary();
-	// console.log(btnsRemoveBook);
+	clearForm();
 });
+
+// clearing form
+function clearForm() {
+	bookTitle.value = "";
+	bookAuthor.value = "";
+	bookPages.value = "";
+	bookStatus.checked = "";
+}
 
 // removing book
 // const btnsRemoveBookArray = Array.from(btnsRemoveBook);
