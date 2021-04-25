@@ -11,8 +11,8 @@ const bookPages = $("#page-no");
 const bookStatus = $("#checkbox-add-new-book");
 const btnNewBook = $("#btn-new-book");
 const btnAddBook = $("#btn-add-book");
-const tableLibrary = $("#table-library");
-const tableRows = document.getElementsByTagName("tr");
+const tableBody = $("#table-library > tbody");
+// const tableRows = document.getElementsByTagName("tr");
 // const btnsRemoveBook = document.querySelectorAll(".btn-remove-book");
 const btnsRemoveBook = document.getElementsByClassName("btn-remove-book");
 
@@ -63,17 +63,17 @@ function render() {
 	let newBook = document.createElement("tr");
 
 	newBook.innerHTML = `
-			<tr>
-			<td>${bookTitle.value}</td>
-			<td>${bookAuthor.value}</td>
-			<td>${bookPages.value}</td>
-			<td>${read}</td>
-			<td><button data-book class="btn-remove-book">REMOVE</button></td>
+			<tr data-title="${bookTitle.value}">
+				<td>${bookTitle.value}</td>
+				<td>${bookAuthor.value}</td>
+				<td>${bookPages.value}</td>
+				<td>${read}</td>
+				<td><button class="btn-remove-book">REMOVE</button></td>
 			</tr>
 		`;
 
 	// tableLibrary.insertAdjacentHTML("beforeend", html);
-	tableLibrary.appendChild(newBook);
+	tableBody.appendChild(newBook);
 }
 
 // displaying form (modal)
@@ -99,16 +99,19 @@ function clearForm() {
 
 // removing book
 
-tableLibrary.addEventListener("click", (e) => {
-	if (e.target.tagName === "BUTTON") {
-		// e.target.parentNode.parentNode.remove();
+tableBody.addEventListener("click", (e) => {
+	if (!e.target.classList.contains("btn-remove-book")) {
+		return;
+	}
+	console.log(e.target.closest("tr"));
+	// e.target.closest("tr").remove();
 		// TODO remove book from myLibrary array
 		const bookToFind = myLibrary.find((item) => {
 			item.title === "Harry Potter";
 			// console.log(item.title);
 		});
 		console.log(bookToFind);
-	}
+	
 });
 
 // for (const bookItem of myLibrary) {
@@ -122,3 +125,14 @@ tableLibrary.addEventListener("click", (e) => {
 // }
 
 // myLibrary.forEach(item => console.log(item.title))
+
+// let value = el.getAttribute("data-state");
+{
+	/* <button data-id="435432343">♡</button> */
+}
+
+// myLibrary[1].title
+
+// for (let item of myLibrary) {
+// 	console.log(item.title);
+// }
