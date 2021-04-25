@@ -50,7 +50,7 @@ myLibrary.push(newBook1);
 function addBookToLibrary() {
 	const newBook = new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookStatus.checked);
 	myLibrary.push(newBook);
-	render(myLibrary);
+	// render(myLibrary);
 }
 
 // displaying form (modal)
@@ -63,51 +63,24 @@ btnNewBook.addEventListener("click", () => {
 form.addEventListener("submit", (e) => {
 	e.preventDefault();
 	addBookToLibrary();
-	// render(myLibrary);
+	render(myLibrary);
 	clearForm();
 });
 
 // adding new book to the Dom
-// function render() {
-// 	let read = "No";
-// 	if (bookStatus.checked) {
-// 		read = "Yes";
-// 	}
-
-// 	let newBook = document.createElement("tr");
-
-// 	newBook.innerHTML = `
-// 			<tr data-title="${bookTitle.value}">
-// 				<td>${bookTitle.value}</td>
-// 				<td>${bookAuthor.value}</td>
-// 				<td>${bookPages.value}</td>
-// 				<td>${read}</td>
-// 				<td><button class="btn-remove-book">REMOVE</button></td>
-// 			</tr>
-// 		`;
-
-// 	// tableLibrary.insertAdjacentHTML("beforeend", html);
-// 	tableBody.appendChild(newBook);
-// }
-
 function render(array) {
 	tableBody.innerHTML = "";
-	let read = "No";
-	if (bookStatus.checked) {
-		read = "Yes";
-	}
-
+	
 	for (let book of array) {
 		let row = `<tr data-title="${book.title}">
 				<td>${book.title}</td>
 				<td>${book.author}</td>
 				<td>${book.pages}</td>
-				<td>${read}</td>
+				<td>${book.hasBeenRead ? "Yes" : "No"} </td>
 				<td><button class="btn-remove-book">REMOVE</button></td>
 			</tr>`;
 		
 	tableBody.insertAdjacentHTML("beforeend", row);
-		// tableBody.innerHTML += row;
 	}
 }
 
@@ -121,6 +94,7 @@ function clearForm() {
 	bookStatus.checked = "";
 }
 
+
 // removing book
 
 tableBody.addEventListener("click", (e) => {
@@ -132,9 +106,9 @@ tableBody.addEventListener("click", (e) => {
 	// TODO remove book from myLibrary array
 	const bookToFind = myLibrary.find((item) => {
 		item.title === "Harry Potter";
-		// console.log(item.title);
+		console.log(item);
 	});
-	console.log(bookToFind);
+	// console.log(bookToFind);
 });
 
 // for (const bookItem of myLibrary) {
@@ -147,15 +121,7 @@ tableBody.addEventListener("click", (e) => {
 // 	}
 // }
 
-// myLibrary.forEach(item => console.log(item.title))
 
 // let value = el.getAttribute("data-state");
 
 	/* <button data-id="435432343">♡</button> */
-
-
-// myLibrary[1].title
-
-// for (let item of myLibrary) {
-// 	console.log(item.title);
-// }
