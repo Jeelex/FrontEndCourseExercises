@@ -12,6 +12,7 @@ const bookStatus = $("#checkbox-add-new-book");
 const btnNewBook = $("#btn-new-book");
 const btnAddBook = $("#btn-add-book");
 const tableBody = $("#table-library > tbody");
+const table = $("#table-library");
 // const tableRows = document.getElementsByTagName("tr");
 // const btnsRemoveBook = document.querySelectorAll(".btn-remove-book");
 const btnsRemoveBook = document.getElementsByClassName("btn-remove-book");
@@ -48,32 +49,8 @@ myLibrary.push(newBook1);
 // adding new book to the Library array
 function addBookToLibrary() {
 	const newBook = new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookStatus.checked);
-
 	myLibrary.push(newBook);
-	render();
-}
-
-// adding new book to the Dom
-function render() {
-	let read = "No";
-	if (bookStatus.checked) {
-		read = "Yes";
-	}
-
-	let newBook = document.createElement("tr");
-
-	newBook.innerHTML = `
-			<tr data-title="${bookTitle.value}">
-				<td>${bookTitle.value}</td>
-				<td>${bookAuthor.value}</td>
-				<td>${bookPages.value}</td>
-				<td>${read}</td>
-				<td><button class="btn-remove-book">REMOVE</button></td>
-			</tr>
-		`;
-
-	// tableLibrary.insertAdjacentHTML("beforeend", html);
-	tableBody.appendChild(newBook);
+	render(myLibrary);
 }
 
 // displaying form (modal)
@@ -86,8 +63,55 @@ btnNewBook.addEventListener("click", () => {
 form.addEventListener("submit", (e) => {
 	e.preventDefault();
 	addBookToLibrary();
+	// render(myLibrary);
 	clearForm();
 });
+
+// adding new book to the Dom
+// function render() {
+// 	let read = "No";
+// 	if (bookStatus.checked) {
+// 		read = "Yes";
+// 	}
+
+// 	let newBook = document.createElement("tr");
+
+// 	newBook.innerHTML = `
+// 			<tr data-title="${bookTitle.value}">
+// 				<td>${bookTitle.value}</td>
+// 				<td>${bookAuthor.value}</td>
+// 				<td>${bookPages.value}</td>
+// 				<td>${read}</td>
+// 				<td><button class="btn-remove-book">REMOVE</button></td>
+// 			</tr>
+// 		`;
+
+// 	// tableLibrary.insertAdjacentHTML("beforeend", html);
+// 	tableBody.appendChild(newBook);
+// }
+
+function render(array) {
+	tableBody.innerHTML = "";
+	let read = "No";
+	if (bookStatus.checked) {
+		read = "Yes";
+	}
+
+	for (let book of array) {
+		let row = `<tr data-title="${book.title}">
+				<td>${book.title}</td>
+				<td>${book.author}</td>
+				<td>${book.pages}</td>
+				<td>${read}</td>
+				<td><button class="btn-remove-book">REMOVE</button></td>
+			</tr>`;
+		
+	tableBody.insertAdjacentHTML("beforeend", row);
+		// tableBody.innerHTML += row;
+	}
+}
+
+
 
 // clearing form
 function clearForm() {
@@ -105,13 +129,12 @@ tableBody.addEventListener("click", (e) => {
 	}
 	console.log(e.target.closest("tr"));
 	// e.target.closest("tr").remove();
-		// TODO remove book from myLibrary array
-		const bookToFind = myLibrary.find((item) => {
-			item.title === "Harry Potter";
-			// console.log(item.title);
-		});
-		console.log(bookToFind);
-	
+	// TODO remove book from myLibrary array
+	const bookToFind = myLibrary.find((item) => {
+		item.title === "Harry Potter";
+		// console.log(item.title);
+	});
+	console.log(bookToFind);
 });
 
 // for (const bookItem of myLibrary) {
@@ -127,9 +150,9 @@ tableBody.addEventListener("click", (e) => {
 // myLibrary.forEach(item => console.log(item.title))
 
 // let value = el.getAttribute("data-state");
-{
+
 	/* <button data-id="435432343">♡</button> */
-}
+
 
 // myLibrary[1].title
 
