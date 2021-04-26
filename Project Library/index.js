@@ -17,6 +17,7 @@ function $(selector) {
 	return document.querySelector(selector);
 }
 
+// Book Object constructor
 function Book(title, author, pages, status) {
 	this.title = title;
 	this.author = author;
@@ -110,19 +111,12 @@ function removeBookFromLibrary(libraryArray, bookTitle) {
 	}
 }
 
-//TODO Add a button on each book’s display to change its read status.
-// To facilitate this you will want to create the function that toggles a book’s read status on your Book prototype instance.
-
-// status
-
-// myLibrary[0].status = false
+// Changing the book status in the DOM and inside myLibrary
 tableBody.addEventListener("click", (e) => {
 	if (!e.target.classList.contains("btn-status")) {
 		return;
 	}
-	// e.target.closest("tr").
 	let currentBtn = e.target;
-	console.log(currentBtn);
 	let currentBookTitle = e.target.closest("tr").dataset.bookTitle;
 	toggleBookStatus(myLibrary, currentBookTitle, currentBtn);
 });
@@ -133,7 +127,7 @@ function toggleBookStatus(libraryArray, bookTitle, currentElement) {
 			console.log("book title: " + book.title);
 			console.log("book status BEFORE: " + book.status);
 			book.toggleStatus();
-			
+
 			currentElement.innerText = book.status ? "Read" : "Unread";
 			currentElement.classList.remove(`${book.status ? "btn-status-unread" : "btn-status-read"}`);
 			currentElement.classList.add(`${book.status ? "btn-status-read" : "btn-status-unread"}`);
