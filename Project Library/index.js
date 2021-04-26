@@ -1,9 +1,5 @@
 "use strict";
 
-function $(selector) {
-	return document.querySelector(selector);
-}
-
 const form = $("#form");
 const bookTitle = $("#title");
 const bookAuthor = $("#author");
@@ -12,12 +8,17 @@ const bookStatus = $("#checkbox-add-new-book");
 const btnNewBook = $("#btn-new-book");
 const btnAddBook = $("#btn-add-book");
 const tableBody = $("#table-library > tbody");
-const table = $("#table-library");
-// const tableRows = document.getElementsByTagName("tr");
-// const btnsRemoveBook = document.querySelectorAll(".btn-remove-book");
 const btnsRemoveBook = document.getElementsByClassName("btn-remove-book");
+// const table = $("#table-library");
+// const btnsRemoveBook = document.querySelectorAll(".btn-remove-book");
 
-// console.log(btnsRemoveBook);
+
+
+// helper function for document.querySelector()
+function $(selector) {
+	return document.querySelector(selector);
+}
+
 
 function Book(title, author, pages, hasBeenRead) {
 	this.title = title;
@@ -32,25 +33,15 @@ function Book(title, author, pages, hasBeenRead) {
 		}
 	};
 }
-
 const newBook1 = new Book("Harry Potter", "J. K. Rowling", 395, true);
-// const newBook2 = new Book("The Lord of the Rings", "J. R. R. Tolkien", 595, false);
-// const newBook3 = new Book("The Count of Monte Cristo", "Alexandre Dumas", 385, false);
-// const newBook4 = new Book("Don Quixote", "	Miguel de Cervantes", 483, true);
-
-// console.log(newBook1.info());
-// console.log(newBook2.info());
-// console.log(newBook3.info());
-// console.log(newBook4.info());
-
 let myLibrary = [];
 myLibrary.push(newBook1);
 
+
 // adding new book to the Library array
-function addBookToLibrary() {
+function addBookToLibrary(array) {
 	const newBook = new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookStatus.checked);
-	myLibrary.push(newBook);
-	// render(myLibrary);
+	array.push(newBook);
 }
 
 // displaying form (modal)
@@ -62,14 +53,14 @@ btnNewBook.addEventListener("click", () => {
 // displaying book to list
 form.addEventListener("submit", (e) => {
 	e.preventDefault();
-	addBookToLibrary();
-	render(myLibrary);
+	addBookToLibrary(myLibrary);
+	render(myLibrary, tableBody);
 	clearForm();
 });
 
 // adding new book to the Dom
-function render(array) {
-	tableBody.innerHTML = "";
+function render(array, parentDiv) {
+	parentDiv.innerHTML = "";
 
 	for (let i = 0; i < array.length; i++) {
 		let row = `<tr data-book-title="${array[i].title}">
@@ -80,7 +71,7 @@ function render(array) {
 				<td><button class="btn-remove-book">REMOVE</button></td>
 			</tr>`;
 
-		tableBody.insertAdjacentHTML("beforeend", row);
+		parentDiv.insertAdjacentHTML("beforeend", row);
 	}
 }
 
@@ -92,7 +83,7 @@ function clearForm() {
 	bookStatus.checked = "";
 }
 
-// removing book
+// removing book from Library and from the DOM
 tableBody.addEventListener("click", (e) => {
 	if (!e.target.classList.contains("btn-remove-book")) {
 		return;
@@ -116,18 +107,3 @@ function removeBookFromLibrary(libraryArray, bookToRemove) {
 	}
 }
 
-// || libraryArray === null
-
-// for (const bookItem of myLibrary) {
-// 	for (const book in Object) {
-// 		// if (book) {
-// 			console.log(book);
-// 			// const element = object[book];
-
-// 		// }
-// 	}
-// }
-
-// let value = el.getAttribute("data-state");
-
-/* <button data-id="435432343">♡</button> */

@@ -23,3 +23,8 @@ td {
 .display-block {
 	display: block;
 }
+
+
+.btn-remove-book {
+	background-color: hotpink;
+}
