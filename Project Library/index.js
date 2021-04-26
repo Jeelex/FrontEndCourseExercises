@@ -39,8 +39,8 @@ let myLibrary = [];
 myLibrary.push(newBook1);
 
 // adding new book to the Library array
-function addBookToLibrary(array) {
-	const newBook = new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookStatus.checked);
+function addBookToLibrary(title, author, pages, status, array) {
+	const newBook = new Book(title.value, author.value, pages.value, status.checked);
 	array.push(newBook);
 }
 
@@ -53,10 +53,10 @@ btnNewBook.addEventListener("click", () => {
 // adding book in DOM list
 form.addEventListener("submit", (e) => {
 	e.preventDefault();
-	addBookToLibrary(myLibrary);
+	addBookToLibrary(bookTitle, bookAuthor, bookPages, bookStatus, myLibrary);
 	render(myLibrary, tableBody);
+	saveLibraryToLocalStorage("myLibrary", myLibrary);
 	clearForm();
-	saveArrayToLocalStorage("myLibrary", myLibrary);
 });
 
 // rendering new book from myLibrary array to the Dom
@@ -79,6 +79,7 @@ function render(array, parentDiv) {
 		parentDiv.insertAdjacentHTML("beforeend", row);
 	}
 }
+
 
 // clearing form
 function clearForm() {
@@ -120,7 +121,7 @@ tableBody.addEventListener("click", (e) => {
 	let currentBtn = e.target;
 	let currentBookTitle = e.target.closest("tr").dataset.bookTitle;
 	toggleBookStatus(myLibrary, currentBookTitle, currentBtn);
-	saveArrayToLocalStorage("myLibrary", myLibrary);
+	saveLibraryToLocalStorage("myLibrary", myLibrary);
 });
 
 function toggleBookStatus(libraryArray, bookTitle, currentElement) {
@@ -135,10 +136,9 @@ function toggleBookStatus(libraryArray, bookTitle, currentElement) {
 }
 
 
-//  TODO Set up a function that saves the whole library array to localStorage every time a new book is created
-function saveArrayToLocalStorage(arrayName, array) {
-	let arrayStringified = JSON.stringify(array);
-	localStorage.setItem(arrayName, arrayStringified);
+// saving library to localStorage
+function saveLibraryToLocalStorage(arrayName, array) {
+	localStorage.setItem(arrayName, JSON.stringify(array));
 }
 
 
@@ -148,17 +148,18 @@ function reloadLocalStorage(arrayName) {
 	if (localStorage.length === 0) {
 		return;
 	}
-	let arrayDestringified = JSON.parse(localStorage[arrayName]);
+	let arrayDestringified = JSON.parse(localStorage.getItem(arrayName));
 	console.log(arrayDestringified);
-	// return arrayDestringified;
-	// myLibrary.push(arrayDestringified)
+	
+	myLibrary = arrayDestringified;
 }
-reloadLocalStorage("myLibrary");
-// console.log("myLibrary BEFORE: " + myLibrary);
-// myLibrary.push(reloadLocalStorage("myLibrary"))
+
+
+// addBookToLibrary(bookTitle, bookAuthor, bookPages, bookStatus, myLibrary);
+
 console.log(myLibrary);
 
-
+render(myLibrary, tableBody);
 
 
 //  Storage.getItem()
