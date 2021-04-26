@@ -59,7 +59,7 @@ form.addEventListener("submit", (e) => {
 	saveArrayToLocalStorage("myLibrary", myLibrary);
 });
 
-// rednering new book from myLibrary array to the Dom
+// rendering new book from myLibrary array to the Dom
 function render(array, parentDiv) {
 	parentDiv.innerHTML = "";
 
@@ -120,19 +120,16 @@ tableBody.addEventListener("click", (e) => {
 	let currentBtn = e.target;
 	let currentBookTitle = e.target.closest("tr").dataset.bookTitle;
 	toggleBookStatus(myLibrary, currentBookTitle, currentBtn);
+	saveArrayToLocalStorage("myLibrary", myLibrary);
 });
 
 function toggleBookStatus(libraryArray, bookTitle, currentElement) {
 	for (let book of libraryArray) {
 		if (book.title === bookTitle) {
-			console.log("book title: " + book.title);
-			console.log("book status BEFORE: " + book.status);
 			book.toggleStatus();
-
 			currentElement.innerText = book.status ? "Read" : "Unread";
 			currentElement.classList.remove(`${book.status ? "btn-status-unread" : "btn-status-read"}`);
 			currentElement.classList.add(`${book.status ? "btn-status-read" : "btn-status-unread"}`);
-			console.log("book status AFTER: " + book.status);
 		}
 	}
 }
@@ -147,14 +144,22 @@ function saveArrayToLocalStorage(arrayName, array) {
 
 
 // TODO and another function that looks for that array in localStorage when your app is first loaded. (make sure your app doesn’t crash if the array isn’t there!)
-function checkLocalStorage(arrayName) {
+function reloadLocalStorage(arrayName) {
 	if (localStorage.length === 0) {
 		return;
 	}
 	let arrayDestringified = JSON.parse(localStorage[arrayName]);
 	console.log(arrayDestringified);
+	// return arrayDestringified;
+	// myLibrary.push(arrayDestringified)
 }
-checkLocalStorage("myLibrary");
+reloadLocalStorage("myLibrary");
+// console.log("myLibrary BEFORE: " + myLibrary);
+// myLibrary.push(reloadLocalStorage("myLibrary"))
+console.log(myLibrary);
+
+
+
 
 //  Storage.getItem()
 //  Storage.removeItem()
