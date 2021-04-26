@@ -71,16 +71,18 @@ form.addEventListener("submit", (e) => {
 function render(array) {
 	tableBody.innerHTML = "";
 	
-	for (let book of array) {
-		let row = `<tr data-title="${book.title}">
-				<td>${book.title}</td>
-				<td>${book.author}</td>
-				<td>${book.pages}</td>
-				<td>${book.hasBeenRead ? "Yes" : "No"} </td>
+
+	for (let i = 0; i < array.length; i++) {
+		let row = `<tr data-index="${i}">
+				<td>${array[i].title}</td>
+				<td>${array[i].author}</td>
+				<td>${array[i].pages}</td>
+				<td>${array[i].hasBeenRead ? "Yes" : "No"} </td>
 				<td><button class="btn-remove-book">REMOVE</button></td>
 			</tr>`;
 		
 	tableBody.insertAdjacentHTML("beforeend", row);
+		
 	}
 }
 
@@ -96,13 +98,13 @@ function clearForm() {
 
 
 // removing book
-
 tableBody.addEventListener("click", (e) => {
 	if (!e.target.classList.contains("btn-remove-book")) {
 		return;
 	}
 	console.log(e.target.closest("tr"));
 	// e.target.closest("tr").remove();
+
 	// TODO remove book from myLibrary array
 	const bookToFind = myLibrary.find((item) => {
 		item.title === "Harry Potter";
