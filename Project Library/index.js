@@ -12,21 +12,21 @@ const btnsRemoveBook = document.getElementsByClassName("btn-remove-book");
 // const table = $("#table-library");
 // const btnsRemoveBook = document.querySelectorAll(".btn-remove-book");
 
-
-
 // helper function for document.querySelector()
 function $(selector) {
 	return document.querySelector(selector);
 }
 
-
-function Book(title, author, pages, hasBeenRead) {
+function Book(title, author, pages, status) {
 	this.title = title;
 	this.author = author;
 	this.pages = pages;
-	this.hasBeenRead = hasBeenRead;
+	this.status = status;
+	this.toggleStatus = function () {
+		this.status = !this.status;
+	};
 	this.info = function () {
-		if (!hasBeenRead) {
+		if (!status) {
 			return `${this.title} by ${this.author}, ${this.pages} pages, has not been read yet`;
 		} else {
 			return `${this.title} by ${this.author}, ${this.pages} pages, has been read`;
@@ -36,7 +36,6 @@ function Book(title, author, pages, hasBeenRead) {
 const newBook1 = new Book("Harry Potter", "J. K. Rowling", 395, true);
 let myLibrary = [];
 myLibrary.push(newBook1);
-
 
 // adding new book to the Library array
 function addBookToLibrary(array) {
@@ -67,7 +66,11 @@ function render(array, parentDiv) {
 				<td>${array[i].title}</td>
 				<td>${array[i].author}</td>
 				<td>${array[i].pages}</td>
-				<td>${array[i].hasBeenRead ? "Yes" : "No"} </td>
+				<td>
+					<button class="${array[i].status ? "btn-status-read" : "btn-status-unread"}">
+						${array[i].status ? "Read" : "Unread"}
+					</button>
+				</td>
 				<td><button class="btn-remove-book">REMOVE</button></td>
 			</tr>`;
 
@@ -107,3 +110,12 @@ function removeBookFromLibrary(libraryArray, bookToRemove) {
 	}
 }
 
+//TODO Add a button on each book’s display to change its read status.
+// To facilitate this you will want to create the function that toggles a book’s read status on your Book prototype instance.
+
+// status
+
+// function toggleBookStatus() {
+// 	this.status = !this.status;
+// }
+// myLibrary[0].status = false

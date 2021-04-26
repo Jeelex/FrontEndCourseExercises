@@ -28,3 +28,9 @@ td {
 .btn-remove-book {
 	background-color: hotpink;
 }
+.btn-status-read {
+	background-color: cornflowerblue;
+}
+.btn-status-unread {
+	background-color: lightcoral;
+}
