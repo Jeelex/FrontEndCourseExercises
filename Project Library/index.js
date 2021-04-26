@@ -70,23 +70,19 @@ form.addEventListener("submit", (e) => {
 // adding new book to the Dom
 function render(array) {
 	tableBody.innerHTML = "";
-	
 
 	for (let i = 0; i < array.length; i++) {
-		let row = `<tr data-index="${i}">
+		let row = `<tr data-book-title="${array[i].title}">
 				<td>${array[i].title}</td>
 				<td>${array[i].author}</td>
 				<td>${array[i].pages}</td>
 				<td>${array[i].hasBeenRead ? "Yes" : "No"} </td>
 				<td><button class="btn-remove-book">REMOVE</button></td>
 			</tr>`;
-		
-	tableBody.insertAdjacentHTML("beforeend", row);
-		
+
+		tableBody.insertAdjacentHTML("beforeend", row);
 	}
 }
-
-
 
 // clearing form
 function clearForm() {
@@ -96,22 +92,31 @@ function clearForm() {
 	bookStatus.checked = "";
 }
 
-
 // removing book
 tableBody.addEventListener("click", (e) => {
 	if (!e.target.classList.contains("btn-remove-book")) {
 		return;
 	}
-	console.log(e.target.closest("tr"));
-	// e.target.closest("tr").remove();
+	e.target.closest("tr").remove();
 
-	// TODO remove book from myLibrary array
-	const bookToFind = myLibrary.find((item) => {
-		item.title === "Harry Potter";
-		console.log(item);
-	});
-	// console.log(bookToFind);
+	let book = e.target.closest("tr").dataset.bookTitle;
+	removeBookFromLibrary(myLibrary, book);
 });
+
+function removeBookFromLibrary(libraryArray, bookToRemove) {
+	if (libraryArray.length === 0) {
+		return;
+	}
+
+	for (let book of libraryArray) {
+		if (book.title === bookToRemove) {
+			let bookToRemoveIndex = libraryArray.indexOf(book);
+			libraryArray.splice(bookToRemoveIndex, 1);
+		}
+	}
+}
+
+// || libraryArray === null
 
 // for (const bookItem of myLibrary) {
 // 	for (const book in Object) {
@@ -123,7 +128,6 @@ tableBody.addEventListener("click", (e) => {
 // 	}
 // }
 
-
 // let value = el.getAttribute("data-state");
 
-	/* <button data-id="435432343">♡</button> */
+/* <button data-id="435432343">♡</button> */
