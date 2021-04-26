@@ -50,15 +50,16 @@ btnNewBook.addEventListener("click", () => {
 	form.classList.add("display-block");
 });
 
-// displaying book to list
+// adding book in DOM list
 form.addEventListener("submit", (e) => {
 	e.preventDefault();
 	addBookToLibrary(myLibrary);
 	render(myLibrary, tableBody);
 	clearForm();
+	saveArrayToLocalStorage("myLibrary", myLibrary);
 });
 
-// adding new book to the Dom
+// rednering new book from myLibrary array to the Dom
 function render(array, parentDiv) {
 	parentDiv.innerHTML = "";
 
@@ -135,3 +136,34 @@ function toggleBookStatus(libraryArray, bookTitle, currentElement) {
 		}
 	}
 }
+
+
+//  TODO Set up a function that saves the whole library array to localStorage every time a new book is created
+function saveArrayToLocalStorage(arrayName, array) {
+	let arrayStringified = JSON.stringify(array);
+	localStorage.setItem(arrayName, arrayStringified);
+}
+
+
+
+// TODO and another function that looks for that array in localStorage when your app is first loaded. (make sure your app doesn’t crash if the array isn’t there!)
+function checkLocalStorage(arrayName) {
+	if (localStorage.length === 0) {
+		return;
+	}
+	let arrayDestringified = JSON.parse(localStorage[arrayName]);
+	console.log(arrayDestringified);
+}
+checkLocalStorage("myLibrary");
+
+//  Storage.getItem()
+//  Storage.removeItem()
+//  Storage.clear()
+//  Storage.key()
+//  Storage.setItem(key, value)
+
+//  localStorage.setItem("objectName", objectStringified)
+
+// JSON.stringify()
+// JSON.parse()
+
