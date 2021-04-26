@@ -67,7 +67,7 @@ function render(array, parentDiv) {
 				<td>${array[i].author}</td>
 				<td>${array[i].pages}</td>
 				<td>
-					<button class="${array[i].status ? "btn-status-read" : "btn-status-unread"}">
+					<button class="${array[i].status ? "btn-status btn-status-read" : "btn-status btn-status-unread"}">
 						${array[i].status ? "Read" : "Unread"}
 					</button>
 				</td>
@@ -93,17 +93,17 @@ tableBody.addEventListener("click", (e) => {
 	}
 	e.target.closest("tr").remove();
 
-	let book = e.target.closest("tr").dataset.bookTitle;
-	removeBookFromLibrary(myLibrary, book);
+	let currentBookTitle = e.target.closest("tr").dataset.bookTitle;
+	removeBookFromLibrary(myLibrary, currentBookTitle);
 });
 
-function removeBookFromLibrary(libraryArray, bookToRemove) {
+function removeBookFromLibrary(libraryArray, bookTitle) {
 	if (libraryArray.length === 0) {
 		return;
 	}
 
 	for (let book of libraryArray) {
-		if (book.title === bookToRemove) {
+		if (book.title === bookTitle) {
 			let bookToRemoveIndex = libraryArray.indexOf(book);
 			libraryArray.splice(bookToRemoveIndex, 1);
 		}
@@ -115,7 +115,29 @@ function removeBookFromLibrary(libraryArray, bookToRemove) {
 
 // status
 
-// function toggleBookStatus() {
-// 	this.status = !this.status;
-// }
 // myLibrary[0].status = false
+tableBody.addEventListener("click", (e) => {
+	if (!e.target.classList.contains("btn-status")) {
+		return;
+	}
+	// e.target.closest("tr").
+	let currentBtn = e.target;
+	console.log(currentBtn);
+	let currentBookTitle = e.target.closest("tr").dataset.bookTitle;
+	toggleBookStatus(myLibrary, currentBookTitle, currentBtn);
+});
+
+function toggleBookStatus(libraryArray, bookTitle, currentElement) {
+	for (let book of libraryArray) {
+		if (book.title === bookTitle) {
+			console.log("book title: " + book.title);
+			console.log("book status BEFORE: " + book.status);
+			book.toggleStatus();
+			
+			currentElement.innerText = book.status ? "Read" : "Unread";
+			currentElement.classList.remove(`${book.status ? "btn-status-unread" : "btn-status-read"}`);
+			currentElement.classList.add(`${book.status ? "btn-status-read" : "btn-status-unread"}`);
+			console.log("book status AFTER: " + book.status);
+		}
+	}
+}
