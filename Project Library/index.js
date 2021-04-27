@@ -2,9 +2,10 @@
 
 const form = $("#form");
 const bookTitle = $("#title");
+// const bookTitleValue = bookTitle.value;
 const bookAuthor = $("#author");
-const bookPages = $("#page-no");
-const bookStatus = $("#checkbox-add-new-book");
+const bookPages = $("#pages");
+const bookStatus = $("#status");
 const btnNewBook = $("#btn-new-book");
 const btnAddBook = $("#btn-add-book");
 const tableBody = $("#table-library > tbody");
@@ -34,13 +35,13 @@ function Book(title, author, pages, status) {
 		}
 	};
 }
-const newBook1 = new Book("Harry Potter", "J. K. Rowling", 395, true);
+// const newBook1 = new Book("Harry Potter", "J. K. Rowling", 395, true);
 let myLibrary = [];
-myLibrary.push(newBook1);
+// myLibrary.push(newBook1);
 
 // adding new book to the Library array
 function addBookToLibrary(title, author, pages, status, array) {
-	const newBook = new Book(title.value, author.value, pages.value, status.checked);
+	const newBook = new Book(title, author, pages, status);
 	array.push(newBook);
 }
 
@@ -53,7 +54,12 @@ btnNewBook.addEventListener("click", () => {
 // adding book in DOM list
 form.addEventListener("submit", (e) => {
 	e.preventDefault();
-	addBookToLibrary(bookTitle, bookAuthor, bookPages, bookStatus, myLibrary);
+	const targetTitle = e.target.title.value;
+	const targetAuthor = e.target.author.value;
+	const targetPages = e.target.pages.value;
+	const targetStatus = e.target.status.checked;
+
+	addBookToLibrary(targetTitle, targetAuthor, targetPages, targetStatus, myLibrary);
 	render(myLibrary, tableBody);
 	saveLibraryToLocalStorage("myLibrary", myLibrary);
 	clearForm();
@@ -62,7 +68,6 @@ form.addEventListener("submit", (e) => {
 // rendering new book from myLibrary array to the Dom
 function render(array, parentDiv) {
 	parentDiv.innerHTML = "";
-
 	for (let i = 0; i < array.length; i++) {
 		let row = `<tr data-book-title="${array[i].title}">
 				<td>${array[i].title}</td>
@@ -79,7 +84,6 @@ function render(array, parentDiv) {
 		parentDiv.insertAdjacentHTML("beforeend", row);
 	}
 }
-
 
 // clearing form
 function clearForm() {
@@ -135,32 +139,34 @@ function toggleBookStatus(libraryArray, bookTitle, currentElement) {
 	}
 }
 
-
 // saving library to localStorage
 function saveLibraryToLocalStorage(arrayName, array) {
 	localStorage.setItem(arrayName, JSON.stringify(array));
 }
 
-
-
 // TODO and another function that looks for that array in localStorage when your app is first loaded. (make sure your app doesn’t crash if the array isn’t there!)
-function reloadLocalStorage(arrayName) {
+function reloadLocalStorage() {
 	if (localStorage.length === 0) {
-		return;
+		const newBook1 = new Book("Harry Potter", "J. K. Rowling", 395, true);
+		myLibrary.push(newBook1);
+	} else {
+		let arrayDestringified = JSON.parse(localStorage.getItem("myLibrary"));
+		console.log("arrayDestringified", arrayDestringified);
+		
+		arrayDestringified.forEach((element) => {
+			addBookToLibrary(element.title, element.author, element.pages, element.status, myLibrary);
+		});
 	}
-	let arrayDestringified = JSON.parse(localStorage.getItem(arrayName));
-	console.log(arrayDestringified);
-	
-	myLibrary = arrayDestringified;
-}
 
+}
+reloadLocalStorage();
+// reloadLocalStorage("myLibrary");
 
 // addBookToLibrary(bookTitle, bookAuthor, bookPages, bookStatus, myLibrary);
 
-console.log(myLibrary);
+console.log("myLibrary", myLibrary);
 
 render(myLibrary, tableBody);
-
 
 //  Storage.getItem()
 //  Storage.removeItem()
@@ -172,4 +178,3 @@ render(myLibrary, tableBody);
 
 // JSON.stringify()
 // JSON.parse()
-
