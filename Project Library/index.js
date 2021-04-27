@@ -1,19 +1,14 @@
 "use strict";
 
 let myLibrary = [];
-const form = $("#form");
-const bookTitle = $("#title");
-const bookAuthor = $("#author");
-const bookPages = $("#pages");
-const bookStatus = $("#status");
-const btnNewBook = $("#btn-new-book");
-const btnAddBook = $("#btn-add-book");
-const tableBody = $("#table-library > tbody");
-
-// helper function for document.querySelector()
-function $(selector) {
-	return document.querySelector(selector);
-}
+const form = document.querySelector("#form");
+const bookTitle = document.querySelector("#title");
+const bookAuthor = document.querySelector("#author");
+const bookPages = document.querySelector("#pages");
+const bookStatus = document.querySelector("#status");
+const btnNewBook = document.querySelector("#btn-new-book");
+const btnAddBook = document.querySelector("#btn-add-book");
+const tableBody = document.querySelector("#table-library > tbody");
 
 // Book Object constructor
 function Book(title, author, pages, status) {
@@ -48,15 +43,7 @@ btnNewBook.addEventListener("click", () => {
 	hideElement(btnNewBook);
 });
 
-function hideElement(element){
-	element.classList.add("hide");
-}
-hideElement(form);
 
-function displayElement(element){
-	element.classList.remove("hide");
-	form.classList.add("display-block");
-}
 
 
 // adding book in DOM list
@@ -77,20 +64,6 @@ const getFormInfo = (e) => {
 form.addEventListener("submit", getFormInfo);
 
 
-// const getFormInfo = () => form.addEventListener("submit", (e) => {
-// 	e.preventDefault();
-// 	const targetTitle = e.target.title.value;
-// 	const targetAuthor = e.target.author.value;
-// 	const targetPages = e.target.pages.value;
-// 	const targetStatus = e.target.status.checked;
-
-// 	addBookToLibrary(targetTitle, targetAuthor, targetPages, targetStatus, myLibrary);
-// 	render(myLibrary, tableBody);
-// 	saveLibraryToLocalStorage("myLibrary", myLibrary);
-// 	clearForm();
-// });
-
-
 // rendering new book from myLibrary array to the Dom
 function render(array, parentDiv) {
 	parentDiv.innerHTML = "";
@@ -109,6 +82,18 @@ function render(array, parentDiv) {
 
 		parentDiv.insertAdjacentHTML("beforeend", row);
 	}
+}
+
+// hiding element from the page
+function hideElement(element){
+	element.classList.add("hide");
+}
+hideElement(form);
+
+// displaying element to the page
+function displayElement(element){
+	element.classList.remove("hide");
+	form.classList.add("display-block");
 }
 
 // clearing form
