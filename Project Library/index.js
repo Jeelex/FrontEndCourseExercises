@@ -9,7 +9,6 @@ const bookStatus = $("#status");
 const btnNewBook = $("#btn-new-book");
 const btnAddBook = $("#btn-add-book");
 const tableBody = $("#table-library > tbody");
-const btnsRemoveBook = document.getElementsByClassName("btn-remove-book");
 
 // helper function for document.querySelector()
 function $(selector) {
@@ -48,7 +47,7 @@ btnNewBook.addEventListener("click", () => {
 });
 
 // adding book in DOM list
-form.addEventListener("submit", (e) => {
+const getFormInfo = (e) => {
 	e.preventDefault();
 	const targetTitle = e.target.title.value;
 	const targetAuthor = e.target.author.value;
@@ -59,7 +58,23 @@ form.addEventListener("submit", (e) => {
 	render(myLibrary, tableBody);
 	saveLibraryToLocalStorage("myLibrary", myLibrary);
 	clearForm();
-});
+};
+form.addEventListener("submit", getFormInfo);
+
+
+// const getFormInfo = () => form.addEventListener("submit", (e) => {
+// 	e.preventDefault();
+// 	const targetTitle = e.target.title.value;
+// 	const targetAuthor = e.target.author.value;
+// 	const targetPages = e.target.pages.value;
+// 	const targetStatus = e.target.status.checked;
+
+// 	addBookToLibrary(targetTitle, targetAuthor, targetPages, targetStatus, myLibrary);
+// 	render(myLibrary, tableBody);
+// 	saveLibraryToLocalStorage("myLibrary", myLibrary);
+// 	clearForm();
+// });
+
 
 // rendering new book from myLibrary array to the Dom
 function render(array, parentDiv) {
@@ -70,11 +85,11 @@ function render(array, parentDiv) {
 				<td>${array[i].author}</td>
 				<td>${array[i].pages}</td>
 				<td>
-					<button class="${array[i].status ? "btn-status btn-status-read" : "btn-status btn-status-unread"}">
-						${array[i].status ? "Read" : "Unread"}
+					<button class="${array[i].status ? "btn-status btn-success" : "btn-status btn-warning"} btn">
+						${array[i].status ? "Read!" : "Unread"}
 					</button>
 				</td>
-				<td><button class="btn-remove-book">REMOVE</button></td>
+				<td><button class="btn btn-danger btn-remove-book">REMOVE</button></td>
 			</tr>`;
 
 		parentDiv.insertAdjacentHTML("beforeend", row);
@@ -87,6 +102,8 @@ function clearForm() {
 	bookAuthor.value = "";
 	bookPages.value = "";
 	bookStatus.checked = "";
+	btnNewBook.classList.add("display-none");
+	btnNewBook.classList.remove("display-block");
 }
 
 // removing book from Library and from the DOM
@@ -130,8 +147,8 @@ function toggleBookStatus(libraryArray, bookTitle, currentElement) {
 		if (book.title === bookTitle) {
 			book.toggleStatus();
 			currentElement.innerText = book.status ? "Read" : "Unread";
-			currentElement.classList.remove(`${book.status ? "btn-status-unread" : "btn-status-read"}`);
-			currentElement.classList.add(`${book.status ? "btn-status-read" : "btn-status-unread"}`);
+			currentElement.classList.remove(`${book.status ? "btn-warning" : "btn-success"}`);
+			currentElement.classList.add(`${book.status ? "btn-success" : "btn-warning"}`);
 		}
 	}
 }

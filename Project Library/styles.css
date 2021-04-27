@@ -1,36 +1,7 @@
-body{
-  text-align: left;
-}
-
-th,
-td {
-	padding: 1em 3em;
-}
-
-/* #table-library {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-} */
-
-/* #form {
-	display: none;
-} */
-
-.display-none {
-	display: none;
+/* .display-none {
+	display: none!important;
 }
 .display-block {
 	display: block;
-}
+} */
 
-
-.btn-remove-book {
-	background-color: hotpink;
-}
-.btn-status-read {
-	background-color: cornflowerblue;
-}
-.btn-status-unread {
-	background-color: lightcoral;
-}
