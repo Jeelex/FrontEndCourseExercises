@@ -42,9 +42,22 @@ function addBookToLibrary(title, author, pages, status, array) {
 
 // displaying form (modal)
 btnNewBook.addEventListener("click", () => {
-	form.classList.remove("display-none");
+	// form.classList.remove("hide");
+	displayElement(form);
 	form.classList.add("display-block");
+	hideElement(btnNewBook);
 });
+
+function hideElement(element){
+	element.classList.add("hide");
+}
+hideElement(form);
+
+function displayElement(element){
+	element.classList.remove("hide");
+	form.classList.add("display-block");
+}
+
 
 // adding book in DOM list
 const getFormInfo = (e) => {
@@ -58,6 +71,8 @@ const getFormInfo = (e) => {
 	render(myLibrary, tableBody);
 	saveLibraryToLocalStorage("myLibrary", myLibrary);
 	clearForm();
+	hideElement(form);
+	displayElement(btnNewBook);
 };
 form.addEventListener("submit", getFormInfo);
 
@@ -102,8 +117,6 @@ function clearForm() {
 	bookAuthor.value = "";
 	bookPages.value = "";
 	bookStatus.checked = "";
-	btnNewBook.classList.add("display-none");
-	btnNewBook.classList.remove("display-block");
 }
 
 // removing book from Library and from the DOM
