@@ -28,12 +28,24 @@ function Book(title, author, pages, status) {
 	};
 }
 
-
 // adding new book to the Library array
 function addBookToLibrary(title, author, pages, status, array) {
 	const newBook = new Book(title, author, pages, status);
 	array.push(newBook);
 }
+
+// reload localStorage
+function reloadLocalStorage() {
+	if (localStorage.length === 0 || localStorage.myLibrary === "[]") {
+		addBookToLibrary("Harry Potter", "J. K. Rowling", 395, true, myLibrary);
+	} else {
+		let arrayDestringified = JSON.parse(localStorage.getItem("myLibrary"));
+		arrayDestringified.forEach((element) => {
+			addBookToLibrary(element.title, element.author, element.pages, element.status, myLibrary);
+		});
+	}
+}
+reloadLocalStorage();
 
 // displaying form (modal)
 btnNewBook.addEventListener("click", () => {
@@ -42,9 +54,6 @@ btnNewBook.addEventListener("click", () => {
 	form.classList.add("display-block");
 	hideElement(btnNewBook);
 });
-
-
-
 
 // adding book in DOM list
 const getFormInfo = (e) => {
@@ -62,7 +71,6 @@ const getFormInfo = (e) => {
 	displayElement(btnNewBook);
 };
 form.addEventListener("submit", getFormInfo);
-
 
 // rendering new book from myLibrary array to the Dom
 function render(array, parentDiv) {
@@ -83,15 +91,16 @@ function render(array, parentDiv) {
 		parentDiv.insertAdjacentHTML("beforeend", row);
 	}
 }
+render(myLibrary, tableBody);
 
 // hiding element from the page
-function hideElement(element){
+function hideElement(element) {
 	element.classList.add("hide");
 }
 hideElement(form);
 
 // displaying element to the page
-function displayElement(element){
+function displayElement(element) {
 	element.classList.remove("hide");
 	form.classList.add("display-block");
 }
@@ -155,17 +164,3 @@ function toggleBookStatus(libraryArray, bookTitle, currentElement) {
 function saveLibraryToLocalStorage(arrayName, array) {
 	localStorage.setItem(arrayName, JSON.stringify(array));
 }
-
-// reload localStorage
-function reloadLocalStorage() {
-	if (localStorage.length === 0 || localStorage.myLibrary === "[]") {
-		addBookToLibrary("Harry Potter", "J. K. Rowling", 395, true, myLibrary);
-	} else {
-		let arrayDestringified = JSON.parse(localStorage.getItem("myLibrary"));		
-		arrayDestringified.forEach((element) => {
-			addBookToLibrary(element.title, element.author, element.pages, element.status, myLibrary);
-		});
-	}
-}
-reloadLocalStorage();
-render(myLibrary, tableBody);
