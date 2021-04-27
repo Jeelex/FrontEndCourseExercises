@@ -1,8 +1,8 @@
 "use strict";
 
+let myLibrary = [];
 const form = $("#form");
 const bookTitle = $("#title");
-// const bookTitleValue = bookTitle.value;
 const bookAuthor = $("#author");
 const bookPages = $("#pages");
 const bookStatus = $("#status");
@@ -10,8 +10,6 @@ const btnNewBook = $("#btn-new-book");
 const btnAddBook = $("#btn-add-book");
 const tableBody = $("#table-library > tbody");
 const btnsRemoveBook = document.getElementsByClassName("btn-remove-book");
-// const table = $("#table-library");
-// const btnsRemoveBook = document.querySelectorAll(".btn-remove-book");
 
 // helper function for document.querySelector()
 function $(selector) {
@@ -35,9 +33,7 @@ function Book(title, author, pages, status) {
 		}
 	};
 }
-// const newBook1 = new Book("Harry Potter", "J. K. Rowling", 395, true);
-let myLibrary = [];
-// myLibrary.push(newBook1);
+
 
 // adding new book to the Library array
 function addBookToLibrary(title, author, pages, status, array) {
@@ -102,6 +98,7 @@ tableBody.addEventListener("click", (e) => {
 
 	let currentBookTitle = e.target.closest("tr").dataset.bookTitle;
 	removeBookFromLibrary(myLibrary, currentBookTitle);
+	saveLibraryToLocalStorage("myLibrary", myLibrary);
 });
 
 function removeBookFromLibrary(libraryArray, bookTitle) {
@@ -144,37 +141,16 @@ function saveLibraryToLocalStorage(arrayName, array) {
 	localStorage.setItem(arrayName, JSON.stringify(array));
 }
 
-// TODO and another function that looks for that array in localStorage when your app is first loaded. (make sure your app doesn’t crash if the array isn’t there!)
+// reload localStorage
 function reloadLocalStorage() {
-	if (localStorage.length === 0) {
-		const newBook1 = new Book("Harry Potter", "J. K. Rowling", 395, true);
-		myLibrary.push(newBook1);
+	if (localStorage.length === 0 || localStorage.myLibrary === "[]") {
+		addBookToLibrary("Harry Potter", "J. K. Rowling", 395, true, myLibrary);
 	} else {
-		let arrayDestringified = JSON.parse(localStorage.getItem("myLibrary"));
-		console.log("arrayDestringified", arrayDestringified);
-		
+		let arrayDestringified = JSON.parse(localStorage.getItem("myLibrary"));		
 		arrayDestringified.forEach((element) => {
 			addBookToLibrary(element.title, element.author, element.pages, element.status, myLibrary);
 		});
 	}
-
 }
 reloadLocalStorage();
-// reloadLocalStorage("myLibrary");
-
-// addBookToLibrary(bookTitle, bookAuthor, bookPages, bookStatus, myLibrary);
-
-console.log("myLibrary", myLibrary);
-
 render(myLibrary, tableBody);
-
-//  Storage.getItem()
-//  Storage.removeItem()
-//  Storage.clear()
-//  Storage.key()
-//  Storage.setItem(key, value)
-
-//  localStorage.setItem("objectName", objectStringified)
-
-// JSON.stringify()
-// JSON.parse()
