@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+	background-color: rgb(149, 198, 243);
+  display: grid;
+  place-content: center;
+  place-items: center;
+  height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* text-align: center; */
+}
+
+.player-name-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1em;
+}
+
+.display-text {
+  font-size: 3rem;
+}
+
+button {
+	padding: .5em;
+	font-size: 1.5rem;
+	color: bisque;
+	background-color: rgb(31, 73, 150);
+  border-radius: 5px;
+}
+
+button:hover,
+button:focus,
+.grid div:hover {
+  cursor: pointer;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 490px;
+  height: 490px;
+  gap: 5px;
+  background-color: black;
+}
+
+.grid div {
+  display: grid;
+  place-content: center;
+  width: 160px;
+  height: 160px;
+  background-color: white;
+  font-size: 150px;
+  color: peru;
+}
