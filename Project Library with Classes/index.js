@@ -10,22 +10,27 @@ const btnNewBook = document.querySelector("#btn-new-book");
 const btnAddBook = document.querySelector("#btn-add-book");
 const tableBody = document.querySelector("#table-library > tbody");
 
-// Book Object constructor
-function Book(title, author, pages, status) {
-	this.title = title;
-	this.author = author;
-	this.pages = pages;
-	this.status = status;
-	this.toggleStatus = function () {
+// Book Class constructor
+class Book {
+	constructor(title, author, pages, status) {
+		this.title = title;
+		this.author = author;
+		this.pages = pages;
+		this.status = status;
+	}
+
+	toggleStatus = function () {
 		this.status = !this.status;
 	};
-	this.info = function () {
-		if (!status) {
+
+	info = function () {
+		if (!this.status) {
 			return `${this.title} by ${this.author}, ${this.pages} pages, has not been read yet`;
 		} else {
 			return `${this.title} by ${this.author}, ${this.pages} pages, has been read`;
 		}
 	};
+
 }
 
 // adding new book to the Library array
