@@ -1,7 +1,19 @@
 "use strict";
 
 import { initialPageLoad } from "./initial-page-load.js";
+import { menu } from "./menu.js";
 
-const content = document.getElementById("content");
+const home = document.getElementById("content");
+const menuBtn = document.getElementById("menu-btn");
+console.log(menuBtn);
 
-content.appendChild(initialPageLoad());
+home.appendChild(initialPageLoad());
+
+
+menuBtn.addEventListener("click", () => {
+  console.log("hello");
+});
+
+// const visitMenu = () => {
+//   console.log("hello");
+// };
