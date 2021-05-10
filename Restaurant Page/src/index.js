@@ -1,19 +1,14 @@
 "use strict";
 
 import { initialPageLoad } from "./initial-page-load.js";
-import { menu } from "./menu.js";
+import { menuBtnClicked } from "./menu.js";
+import { homeBtnClicked } from "./home.js";
+import { contactBtnClicked } from "./contact.js";
 
-const home = document.getElementById("content");
-const menuBtn = document.getElementById("menu-btn");
-console.log(menuBtn);
+const content = document.getElementById("content");
 
-home.appendChild(initialPageLoad());
+content.appendChild(initialPageLoad());
 
-
-menuBtn.addEventListener("click", () => {
-  console.log("hello");
-});
-
-// const visitMenu = () => {
-//   console.log("hello");
-// };
+menuBtnClicked();
+homeBtnClicked();
+contactBtnClicked();

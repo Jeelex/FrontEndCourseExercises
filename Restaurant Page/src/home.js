@@ -1,6 +1,6 @@
-export function initialPageLoad() {
+function homePage() {
 	const element = document.createElement("div");
-  element.setAttribute("id", "home");
+	element.setAttribute("id", "home");
 
 	element.innerHTML = `
     <h1 class="title">My Restaurant</h1>
@@ -10,7 +10,7 @@ export function initialPageLoad() {
         <a class="nav-link active" id="home-btn" aria-current="page" href="#">Home</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="menu-btn" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Menu</a>
+        <a class="nav-link" id="menu-btn" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Menu</a>
         <ul class="dropdown-menu">
           <li><a class="dropdown-item" href="#">Action</a></li>
           <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -24,7 +24,7 @@ export function initialPageLoad() {
       </li>
     </ul>
     
-    <img class="img-fluid mt-5" src="../images/restaurant.jpg" alt="Restaurant">
+    <img class="img-fluid mt-5" src="../images/menu.jpg" alt="Restaurant">
     
     <p class="text mt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro facere ea deleniti perspiciatis odio consectetur!</p>
   `;
@@ -32,5 +32,18 @@ export function initialPageLoad() {
 	return element;
 }
 
+const homeBtnClicked = () => {
+	const homeBtn = document.getElementById("home-btn");
+	const content = document.getElementById("content");
+	const home = document.getElementById("home");
+	// const menu = document.getElementById("menu");
 
-export default initialPageLoad;
+	homeBtn.addEventListener("click", () => {
+		console.log("home btn works");
+		// content.removeChild(home);
+		// content.removeChild(menu);
+		content.appendChild(homePage());
+	});
+};
+
+export { homePage, homeBtnClicked };
