@@ -1,6 +1,6 @@
 function contactPage() {
 	const element = document.createElement("div");
-	element.setAttribute("id", "contact");
+	element.setAttribute("id", "current-section");
 
 	element.innerHTML = `
     <h1 class="title">My Restaurant</h1>
@@ -11,13 +11,6 @@ function contactPage() {
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link" id="menu-btn" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Menu</a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-          <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" href="#">Separated link</a></li>
-        </ul>
       </li>
       <li class="nav-item">
         <a class="nav-link active" id="contact-btn" href="#">Contact Us</a>
@@ -46,4 +39,13 @@ function contactPage() {
 // 	});
 // };
 
-export { contactPage, contactBtnClicked };
+const loadContact = () => {
+	const currentSection = document.getElementById("current-section");
+	console.log("contact btn works");
+	content.removeChild(currentSection);
+	// content.removeChild(contact);
+
+	content.appendChild(contactPage());
+};
+
+export { loadContact };

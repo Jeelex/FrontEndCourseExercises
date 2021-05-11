@@ -1,6 +1,6 @@
 function menuPage() {
 	const element = document.createElement("div");
-	element.setAttribute("id", "menu");
+	element.setAttribute("id", "current-section");
 
 	element.innerHTML = `
     <h1 class="title">My Restaurant</h1>
@@ -10,14 +10,7 @@ function menuPage() {
         <a class="nav-link" id="home-btn" aria-current="page" href="#">Home</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link active" id="menu-btn" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Menu</a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-          <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" href="#">Separated link</a></li>
-        </ul>
+        <a class="nav-link" id="menu-btn" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Menu</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" id="contact-btn" href="#">Contact Us</a>
@@ -32,29 +25,15 @@ function menuPage() {
 	return element;
 }
 
-const menuBtnClicked = () => {
-	const menuBtn = document.getElementById("menu-btn");
-	const content = document.getElementById("content");
-	const home = document.getElementById("home");
-	const contact = document.getElementById("contact");
-  const contactBtn = document.getElementById("contact-btn");
+const loadMenu = () => {
+  const menuBtn = document.getElementById("menu-btn");
+  menuBtn.classList.add("active");
 
 
-	menuBtn.addEventListener("click", () => {
-		console.log("menu btn works");
-		content.removeChild(home);
-		// content.removeChild(contact);
-		content.appendChild(menuPage());
-	});
+	const currentSection = document.getElementById("current-section");
+	console.log("menu btn works");
+	content.removeChild(currentSection);
+	content.appendChild(menuPage());
 };
 
-const loadMenu = () => {
-  console.log("menu btn works");
-		content.removeChild(home);
-		// content.removeChild(contact);
-		content.appendChild(menuPage());
-}
-
-
-
-export { menuPage , loadMenu,  menuBtnClicked };
+export { loadMenu };
