@@ -37,13 +37,24 @@ const menuBtnClicked = () => {
 	const content = document.getElementById("content");
 	const home = document.getElementById("home");
 	const contact = document.getElementById("contact");
+  const contactBtn = document.getElementById("contact-btn");
+
 
 	menuBtn.addEventListener("click", () => {
 		console.log("menu btn works");
 		content.removeChild(home);
-		content.removeChild(contact);
+		// content.removeChild(contact);
 		content.appendChild(menuPage());
 	});
 };
 
-export { menuPage, menuBtnClicked };
+const loadMenu = () => {
+  console.log("menu btn works");
+		content.removeChild(home);
+		// content.removeChild(contact);
+		content.appendChild(menuPage());
+}
+
+
+
+export { menuPage , loadMenu,  menuBtnClicked };

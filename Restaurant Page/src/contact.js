@@ -32,18 +32,18 @@ function contactPage() {
 	return element;
 }
 
-const contactBtnClicked = () => {
-	const contactBtn = document.getElementById("contact-btn");
-	const content = document.getElementById("content");
-	const home = document.getElementById("home");
-	// const menu = document.getElementById("menu");
+// const contactBtnClicked = () => {
+// 	const contactBtn = document.getElementById("contact-btn");
+// 	const content = document.getElementById("content");
+// 	const home = document.getElementById("home");
+// 	// const menu = document.getElementById("menu");
 
-	contactBtn.addEventListener("click", () => {
-		console.log("contact btn works");
-		content.removeChild(home);
-		// content.removeChild(menu);
-		content.appendChild(contactPage());
-	});
-};
+// 	contactBtn.addEventListener("click", () => {
+// 		console.log("contact btn works");
+// 		content.removeChild(home);
+// 		// content.removeChild(menu);
+// 		content.appendChild(contactPage());
+// 	});
+// };
 
 export { contactPage, contactBtnClicked };
