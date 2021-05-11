@@ -29,20 +29,3 @@ const loadHome = () => {
 };
 
 export default loadHome;
-
-// const homeBtnClicked = () => {
-// 	const homeBtn = document.getElementById("home-btn");
-// 	const content = document.getElementById("content");
-// 	const home = document.getElementById("home");
-// 	// const menu = document.getElementById("menu");
-
-// 	homeBtn.addEventListener("click", () => {
-// 		console.log("home btn works");
-// 		const currentSection = document.getElementById("current-section");
-// 		content.removeChild(currentSection);
-
-// 		content.appendChild(homePage());
-// 	});
-// };
-
-// export { homePage, homeBtnClicked };
