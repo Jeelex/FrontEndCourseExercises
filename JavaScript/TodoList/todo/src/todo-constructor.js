@@ -1,4 +1,4 @@
-function Todo(details) {
+export default function Todo(details) {
 	const { title, description, dueDate, priority } = details;
 	this.title = title || "unknown";
 	this.description = description || "unknown";
@@ -19,11 +19,5 @@ Todo.prototype.addToPage = function () {
         `;
 	table.appendChild(el);
 
-	// const btnSubmit = document.getElementById("submit-btn");
-	// btnSubmit.addEventListener("click", addToPage);
-
 	return "addToPage used!";
 };
-
-
-export default Todo;

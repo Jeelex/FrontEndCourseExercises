@@ -444,16 +444,20 @@ id) /*: string*/
 },{}],"5rkFb":[function(require,module,exports) {
 "use strict";
 var _btnsJs = require("./btns.js");
-var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
-var _btnsJsDefault = _parcelHelpers.interopDefault(_btnsJs);
-_btnsJsDefault.default();
+_btnsJs.addBtn();
+_btnsJs.editAndDeleteBtns();
 
-},{"./btns.js":"2a0J9","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y"}],"2a0J9":[function(require,module,exports) {
+},{"./btns.js":"2a0J9"}],"2a0J9":[function(require,module,exports) {
 var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
 _parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "addBtn", function () {
+  return addBtn;
+});
+_parcelHelpers.export(exports, "editAndDeleteBtns", function () {
+  return editAndDeleteBtns;
+});
 var _todoConstructorJs = require("./todo-constructor.js");
 var _todoConstructorJsDefault = _parcelHelpers.interopDefault(_todoConstructorJs);
-// const addBtn = () => {
 function addBtn() {
   const btnSubmit = document.getElementById("submit-btn");
   btnSubmit.addEventListener("click", e => {
@@ -470,8 +474,26 @@ function addBtn() {
     });
     newTodoCreated.addToPage();
   });
+  return "btnSubmit clicked!";
 }
-exports.default = addBtn;
+const editAndDeleteBtns = () => {
+  const tableBody = document.querySelector("#tasks");
+  tableBody.addEventListener("click", e => {
+    if (e.target.classList.contains("edit")) {
+      editItem();
+    }
+    if (e.target.classList.contains("delete")) {
+      removeItem();
+    }
+    function editItem() {
+      console.log("edit clicked!");
+    }
+    function removeItem() {
+      console.log("delete clicked!");
+      e.target.closest("tr").remove();
+    }
+  });
+};
 
 },{"./todo-constructor.js":"3bvJk","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y"}],"3bvJk":[function(require,module,exports) {
 var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
@@ -483,6 +505,7 @@ function Todo(details) {
   this.dueDate = dueDate || "unknown";
   this.priority = priority || "unknown";
 }
+exports.default = Todo;
 Todo.prototype.addToPage = function () {
   const el = document.createElement("tr");
   const table = document.getElementById("tasks");
@@ -495,11 +518,8 @@ Todo.prototype.addToPage = function () {
           <td><button class="delete">Delete</button></td>
         `;
   table.appendChild(el);
-  // const btnSubmit = document.getElementById("submit-btn");
-  // btnSubmit.addEventListener("click", addToPage);
   return "addToPage used!";
 };
-exports.default = Todo;
 
 },{"@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y"}],"5gA8y":[function(require,module,exports) {
 "use strict";

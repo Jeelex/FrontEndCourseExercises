@@ -1,7 +1,6 @@
 import Todo from "./todo-constructor.js";
 
-// const addBtn = () => {
-function addBtn(){
+export function addBtn(){
   const btnSubmit = document.getElementById("submit-btn");
 
   btnSubmit.addEventListener("click", (e) => {
@@ -19,6 +18,27 @@ function addBtn(){
     });
     newTodoCreated.addToPage();
   });
+  
+  return "btnSubmit clicked!"
 }
 
-export default addBtn;
+// TODO Edit btn
+// TODO Delete btn
+export const editAndDeleteBtns = () => {
+	const tableBody = document.querySelector("#tasks");
+	tableBody.addEventListener("click", (e) => {
+		if (e.target.classList.contains("edit")) {
+			editItem();
+		}
+		if (e.target.classList.contains("delete")) {
+			removeItem();
+		}
+		function editItem() {
+			console.log("edit clicked!");
+		}
+		function removeItem() {
+			console.log("delete clicked!");
+			e.target.closest("tr").remove();
+		}
+	});
+};

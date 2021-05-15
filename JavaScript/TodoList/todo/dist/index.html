@@ -15,33 +15,35 @@
 				<h1>My ToDo List</h1>
 
 				<form>
-					<div>
-						<label for="title">Todo</label>
-						<input type="text" id="title" name="input" autofocus="">
-					</div>
-					<div>
-						<label for="description">Description</label>
-						<input type="text" id="description" name="description">
-					</div>
+					<label for="title">Project</label>
+					<select name="project" id="project">
+						<option type="text" value="My Project">My Project</option>
+						<option type="text" value="Supermarket">Supermarket</option>
+					</select>
+					<label for="title">Todo</label>
+					<input type="text" id="title" name="input">
+					<label for="description">Description</label>
+					<input type="text" id="description" name="description">
+					<label for="dueDate">Due Date</label>
 					<input type="date" id="dueDate" name="dueDate">
-					<br>
+					<label for="priority">Priority</label>
 					<select name="priority" id="priority">
 						<option type="text" value="High">High</option>
 						<option type="text" value="Medium">Medium</option>
 						<option type="text" value="Low">Low</option>
 					</select>
-					<br>
 					<button type="submit" id="submit-btn">Add New Todo List</button>
 				</form>
 
-				<div class="todo-stats">
-					<div class="total-tasks">Total Tasks: <span>0</span></div>
-					<div class="completed-tasks">Completed Tasks: <span>0</span></div>
-					<div class="remaining-tasks">Remaining Tasks: <span>0</span></div>
-				</div>
+				<button id="my-project">My Project</button>
+				<button id="supermarket">Supermarket</button>
+				
 			</div>
-			<table id="tasks"></table>
+			<h2 id="project-title">My Project</h2>
+			<div class="table">
+				<table id="tasks"></table>
+			</div>
 		</div>
-		<script type="module" src="/index.3fafb3e2.js"></script>
+		<script src="/index.3fafb3e2.js"></script>
 	</body>
 </html>
