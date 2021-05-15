@@ -443,43 +443,63 @@ id) /*: string*/
 
 },{}],"5rkFb":[function(require,module,exports) {
 "use strict";
-var _sayHelloJs = require("./say-hello.js");
+var _btnsJs = require("./btns.js");
 var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
-var _sayHelloJsDefault = _parcelHelpers.interopDefault(_sayHelloJs);
-var _todoConstructorJs = require("./todo-constructor.js");
-var _todoConstructorJsDefault = _parcelHelpers.interopDefault(_todoConstructorJs);
-var _testJs = require("./test.js");
-var _testJsDefault = _parcelHelpers.interopDefault(_testJs);
-_sayHelloJsDefault.default();
-_testJsDefault.default();
-const btnSubmit = document.getElementById("submit-btn");
-// console.log("nTodo:", nTodo);
-// console.log(nTodo.addToPage());
-// const form = document.querySelector("form");
-// btnSubmit.addEventListener("click", addToPage);
-btnSubmit.addEventListener("click", e => {
-  e.preventDefault();
-  const title = document.getElementById("title").value;
-  const description = document.getElementById("description").value;
-  const dueDate = document.getElementById("dueDate").value;
-  const priority = document.getElementById("priority").value;
-  // console.log(title, description, dueDate, priority);
-  const newTodoCreated = new _todoConstructorJsDefault.default({
-    title: `${title}`,
-    description: `${description}`,
-    dueDate: `${dueDate}`,
-    priority: `${priority}`
-  });
-  newTodoCreated.addToPage();
-});
+var _btnsJsDefault = _parcelHelpers.interopDefault(_btnsJs);
+_btnsJsDefault.default();
 
-},{"./say-hello.js":"2FNJj","./todo-constructor.js":"3bvJk","./test.js":"20YiG","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y"}],"2FNJj":[function(require,module,exports) {
+},{"./btns.js":"2a0J9","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y"}],"2a0J9":[function(require,module,exports) {
 var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
 _parcelHelpers.defineInteropFlag(exports);
-function sayHello() {
-  console.log("sayHello(): hello there!");
+var _todoConstructorJs = require("./todo-constructor.js");
+var _todoConstructorJsDefault = _parcelHelpers.interopDefault(_todoConstructorJs);
+// const addBtn = () => {
+function addBtn() {
+  const btnSubmit = document.getElementById("submit-btn");
+  btnSubmit.addEventListener("click", e => {
+    e.preventDefault();
+    const title = document.getElementById("title").value;
+    const description = document.getElementById("description").value;
+    const dueDate = document.getElementById("dueDate").value;
+    const priority = document.getElementById("priority").value;
+    const newTodoCreated = new _todoConstructorJsDefault.default({
+      title: `${title}`,
+      description: `${description}`,
+      dueDate: `${dueDate}`,
+      priority: `${priority}`
+    });
+    newTodoCreated.addToPage();
+  });
 }
-exports.default = sayHello;
+exports.default = addBtn;
+
+},{"./todo-constructor.js":"3bvJk","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y"}],"3bvJk":[function(require,module,exports) {
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+function Todo(details) {
+  const {title, description, dueDate, priority} = details;
+  this.title = title || "unknown";
+  this.description = description || "unknown";
+  this.dueDate = dueDate || "unknown";
+  this.priority = priority || "unknown";
+}
+Todo.prototype.addToPage = function () {
+  const el = document.createElement("tr");
+  const table = document.getElementById("tasks");
+  el.innerHTML = `
+          <td>${this.title}</td>
+          <td>${this.description}</td>
+          <td>${this.dueDate}</td>
+          <td>${this.priority}</td>
+          <td><button class="edit">Edit</button></td>
+          <td><button class="delete">Delete</button></td>
+        `;
+  table.appendChild(el);
+  // const btnSubmit = document.getElementById("submit-btn");
+  // btnSubmit.addEventListener("click", addToPage);
+  return "addToPage used!";
+};
+exports.default = Todo;
 
 },{"@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y"}],"5gA8y":[function(require,module,exports) {
 "use strict";
@@ -523,42 +543,6 @@ exports.export = function (dest, destName, get) {
     get: get
   });
 };
-},{}],"3bvJk":[function(require,module,exports) {
-var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
-_parcelHelpers.defineInteropFlag(exports);
-function Todo(details) {
-  const {title, description, dueDate, priority} = details;
-  this.title = title || "unknown";
-  this.description = description || "unknown";
-  this.dueDate = dueDate || "unknown";
-  this.priority = priority || "unknown";
-}
-exports.default = Todo;
-Todo.prototype.addToPage = function () {
-  const el = document.createElement("tr");
-  const table = document.getElementById("tasks");
-  el.innerHTML = `
-          <td>${this.title}</td>
-          <td>${this.description}</td>
-          <td>${this.dueDate}</td>
-          <td>${this.priority}</td>
-          <td><button class="edit">Edit</button></td>
-          <td><button class="delete">Delete</button></td>
-        `;
-  table.appendChild(el);
-  // const btnSubmit = document.getElementById("submit-btn");
-  // btnSubmit.addEventListener("click", addToPage);
-  return "addToPage used!";
-};
-
-},{"@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y"}],"20YiG":[function(require,module,exports) {
-var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
-_parcelHelpers.defineInteropFlag(exports);
-function sayMaria() {
-  console.log("Maria hello!");
-}
-exports.default = sayMaria;
-
-},{"@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y"}]},["3Imd1","5rkFb"], "5rkFb", "parcelRequireada0")
+},{}]},["3Imd1","5rkFb"], "5rkFb", "parcelRequireada0")
 
 //# sourceMappingURL=index.3fafb3e2.js.map

@@ -1,12 +1,11 @@
 "use strict";
 
-import Todo from "./todo-constructor.js";
+// import Todo from "./todo-constructor.js";
 import addBtn from "./btns.js";
 
 
 addBtn();
 
-console.log("it works");
 
 
 // TODO Edit btn
