@@ -1,4 +1,4 @@
-export default function Todo(details) {
+function Todo(details) {
 	const { title, description, dueDate, priority } = details;
 	this.title = title || "unknown";
 	this.description = description || "unknown";
@@ -24,3 +24,6 @@ Todo.prototype.addToPage = function () {
 
 	return "addToPage used!";
 };
+
+
+export default Todo;
