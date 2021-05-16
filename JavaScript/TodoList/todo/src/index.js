@@ -20,4 +20,4 @@ editAndDeleteBtns();
 
 //TODO use localStorage
 
-//TODO separate your application logic in separate modules.
+// separate your application logic in separate modules.

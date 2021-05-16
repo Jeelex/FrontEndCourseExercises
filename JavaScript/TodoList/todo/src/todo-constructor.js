@@ -9,13 +9,16 @@ export default function Todo(details) {
 Todo.prototype.addToPage = function () {
 	const el = document.createElement("tr");
 	const table = document.getElementById("tasks");
+
+	table.setAttribute("class", "mx-auto");
+
 	el.innerHTML = `
-          <td>${this.title}</td>
-          <td>${this.description}</td>
-          <td>${this.dueDate}</td>
-          <td>${this.priority}</td>
-          <td><button class="edit">Edit</button></td>
-          <td><button class="delete">Delete</button></td>
+          <td class="text">${this.title}</td>
+          <td class="text">${this.description}</td>
+          <td class="text">${this.dueDate}</td>
+          <td class="text">${this.priority}</td>
+          <td class="text"><button type="button" class="edit btn btn-info">Edit</button></td>
+          <td class="text"><button type="button" class="delete btn btn-danger">Delete</button></td>
         `;
 	table.appendChild(el);
 
