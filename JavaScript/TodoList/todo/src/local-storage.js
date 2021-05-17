@@ -23,6 +23,7 @@ export function reloadLocalStorage() {
 		});
 		addProjectToArray(defaultTodo, myproject);
 		render(myproject, table);
+		changeProjectTitle(defaultTodo.project);
 	} else {
 		let myProjectDestringified = JSON.parse(localStorage.getItem("My Project"));
 		let supermarketDestringified = JSON.parse(localStorage.getItem("Supermarket"));
@@ -42,6 +43,7 @@ export function reloadLocalStorage() {
 				if (previousTodos.project === "My Project") {
 					addProjectToArray(previousTodos, myproject);
 					render(myproject, table);
+					changeProjectTitle(element.project);
 				} else {
 					addProjectToArray(previousTodos, supermarket);
 				}

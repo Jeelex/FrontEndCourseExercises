@@ -140,12 +140,12 @@
       this[globalName] = mainExports;
     }
   }
-})({"3Imd1":[function(require,module,exports) {
+})({"3dJBu":[function(require,module,exports) {
 var HMR_HOST = null;
 var HMR_PORT = 1234;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d751713988987e9331980363e24189ce";
-module.bundle.HMR_BUNDLE_ID = "0fa2489aa94c8731ee2aee9f3fafb3e2";
+module.bundle.HMR_BUNDLE_ID = "7bc4caa689a09afdf5304d77b4329412";
 // @flow
 /*global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE*/
 /*::
@@ -441,8 +441,7 @@ id) /*: string*/
   acceptedAssets[id] = true;
 }
 
-},{}],"5rkFb":[function(require,module,exports) {
-"use strict";
+},{}],"1JP15":[function(require,module,exports) {
 var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
 _parcelHelpers.defineInteropFlag(exports);
 _parcelHelpers.export(exports, "supermarket", function () {
@@ -451,30 +450,94 @@ _parcelHelpers.export(exports, "supermarket", function () {
 _parcelHelpers.export(exports, "myproject", function () {
   return myproject;
 });
-require("./todo-constructor.js");
-var _btnsJs = require("./btns.js");
-var _localStorageJs = require("./local-storage.js");
-var _arraysJs = require("./arrays.js");
-require("./dom.js");
+function t(t) {
+  const {project: e, title: r, description: o, dueDate: n, priority: c} = t;
+  (this.project = e || "unknown", this.title = r || "unknown", this.description = o || "unknown", this.dueDate = n || "unknown", this.priority = c || "unknown");
+}
+function e(t, e) {
+  return localStorage.setItem(t, JSON.stringify(e));
+}
+function r(t) {
+  document.querySelector("#project-title").innerText = t;
+}
+function o(t, e) {
+  e.innerHTML = "";
+  for (let r = 0; r < t.length; r++) {
+    let o;
+    switch (t[r].priority) {
+      case "High":
+        o = "btn-outline-danger";
+        break;
+      case "Medium":
+        o = "btn-outline-warning";
+        break;
+      case "Low":
+        o = "btn-outline-dark";
+    }
+    let n = `\n\t\t<tr data-todo-title="${t[r].title}" data-todo-project="${t[r].project}">\n    <td class="px-2">${t[r].title}</td>\n    <td class="px-2">${t[r].description}</td>\n    <td class="px-2">${t[r].dueDate}</td>\n    <td class="px-2 text-center ${o}">${t[r].priority}</td>\n    <td><button class="mx-1 btn btn-dark edit">Edit</button></td>\n    <td><button class="mx-1 btn btn-danger delete">Delete</button></td>\n    </tr>\n\t\t`;
+    e.insertAdjacentHTML("beforeend", n);
+  }
+}
+function n(t, e) {
+  e.push(t);
+}
 let supermarket = [];
 let myproject = [];
-_btnsJs.addTodo();
-_btnsJs.enableProjectBtns();
-_localStorageJs.reloadLocalStorage();
-_arraysJs.removeProjectFromArray();
-
-},{"./todo-constructor.js":"3bvJk","./btns.js":"2a0J9","./local-storage.js":"2PttN","./arrays.js":"7oSxz","./dom.js":"1n3Ex","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y"}],"3bvJk":[function(require,module,exports) {
-var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
-_parcelHelpers.defineInteropFlag(exports);
-function Todo(details) {
-  const {project, title, description, dueDate, priority} = details;
-  this.project = project || "unknown";
-  this.title = title || "unknown";
-  this.description = description || "unknown";
-  this.dueDate = dueDate || "unknown";
-  this.priority = priority || "unknown";
-}
-exports.default = Todo;
+(!(function () {
+  const c = document.getElementById("submit-btn"), i = document.getElementById("tasks");
+  c.addEventListener("click", c => {
+    c.preventDefault();
+    const a = document.getElementById("project").value, s = new t({
+      project: `${a}`,
+      title: `${document.getElementById("title").value}`,
+      description: `${document.getElementById("description").value}`,
+      dueDate: `${document.getElementById("dueDate").value}`,
+      priority: `${document.getElementById("priority").value}`
+    });
+    "supermarket" === a.toLowerCase() ? (n(s, supermarket), o(supermarket, i), r("Supermarket"), e("Supermarket", supermarket)) : (n(s, myproject), o(myproject, i), r("My Project"), e("My Project", myproject));
+  });
+})(), document.querySelector(".project-btns").addEventListener("click", t => {
+  const e = document.getElementById("tasks");
+  "supermarket" === t.target.textContent.toLowerCase().replace(/\s/g, "") ? (o(supermarket, e), r("Supermarket")) : (o(myproject, e), r("My Project"));
+}), (function () {
+  const e = document.getElementById("tasks");
+  if (0 === localStorage.length || "[]" === localStorage["My Project"]) {
+    const c = new t({
+      project: "My Project",
+      title: "Buy Mouse Pad",
+      description: "Logitech",
+      dueDate: "2021-08-10",
+      priority: "Medium"
+    });
+    (n(c, myproject), o(myproject, e), r(c.project));
+  } else {
+    [JSON.parse(localStorage.getItem("My Project")), JSON.parse(localStorage.getItem("Supermarket"))].forEach(c => {
+      c.forEach(c => {
+        const i = new t({
+          project: c.project,
+          title: c.title,
+          description: c.description,
+          dueDate: c.dueDate,
+          priority: c.priority
+        });
+        "My Project" === i.project ? (n(i, myproject), o(myproject, e), r(c.project)) : n(i, supermarket);
+      });
+    });
+  }
+})(), (function () {
+  function t(t, e, r) {
+    if (0 !== t.length) for (let o of t) if (o.project === e && o.title === r) {
+      let e = t.indexOf(o);
+      t.splice(e, 1);
+    }
+  }
+  document.getElementById("tasks").addEventListener("click", r => {
+    if (!r.target.classList.contains("delete")) return;
+    r.target.closest("tr").remove();
+    let o = r.target.closest("tr").dataset.todoProject, n = r.target.closest("tr").dataset.todoTitle;
+    "Supermarket" === o ? (t(supermarket, o, n), e("Supermarket", supermarket)) : (t(myproject, o, n), e("My Project", myproject));
+  });
+})());
 
 },{"@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y"}],"5gA8y":[function(require,module,exports) {
 "use strict";
@@ -518,214 +581,6 @@ exports.export = function (dest, destName, get) {
     get: get
   });
 };
-},{}],"2a0J9":[function(require,module,exports) {
-var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
-_parcelHelpers.defineInteropFlag(exports);
-_parcelHelpers.export(exports, "addTodo", function () {
-  return addTodo;
-});
-_parcelHelpers.export(exports, "enableProjectBtns", function () {
-  return enableProjectBtns;
-});
-var _todoConstructorJs = require("./todo-constructor.js");
-var _todoConstructorJsDefault = _parcelHelpers.interopDefault(_todoConstructorJs);
-var _arraysJs = require("./arrays.js");
-var _domJs = require("./dom.js");
-var _localStorageJs = require("./local-storage.js");
-var _indexJs = require("./index.js");
-function addTodo() {
-  const btnSubmit = document.getElementById("submit-btn");
-  const table = document.getElementById("tasks");
-  btnSubmit.addEventListener("click", e => {
-    e.preventDefault();
-    const project = document.getElementById("project").value;
-    const title = document.getElementById("title").value;
-    const description = document.getElementById("description").value;
-    const dueDate = document.getElementById("dueDate").value;
-    const priority = document.getElementById("priority").value;
-    const newTodoCreated = new _todoConstructorJsDefault.default({
-      project: `${project}`,
-      title: `${title}`,
-      description: `${description}`,
-      dueDate: `${dueDate}`,
-      priority: `${priority}`
-    });
-    if (project.toLowerCase() === "supermarket") {
-      _arraysJs.addProjectToArray(newTodoCreated, _indexJs.supermarket);
-      _domJs.render(_indexJs.supermarket, table);
-      _domJs.changeProjectTitle("Supermarket");
-      _localStorageJs.saveProjectToLocalStorage("Supermarket", _indexJs.supermarket);
-    } else {
-      _arraysJs.addProjectToArray(newTodoCreated, _indexJs.myproject);
-      _domJs.render(_indexJs.myproject, table);
-      _domJs.changeProjectTitle("My Project");
-      _localStorageJs.saveProjectToLocalStorage("My Project", _indexJs.myproject);
-    }
-  });
-}
-function enableProjectBtns() {
-  const myProjectBtns = document.querySelector(".project-btns");
-  myProjectBtns.addEventListener("click", e => {
-    const table = document.getElementById("tasks");
-    if (e.target.textContent.toLowerCase().replace(/\s/g, "") === "supermarket") {
-      _domJs.render(_indexJs.supermarket, table);
-      _domJs.changeProjectTitle("Supermarket");
-    } else {
-      _domJs.render(_indexJs.myproject, table);
-      _domJs.changeProjectTitle("My Project");
-    }
-  });
-}
+},{}]},["3dJBu","1JP15"], "1JP15", "parcelRequireada0")
 
-},{"./todo-constructor.js":"3bvJk","./arrays.js":"7oSxz","./dom.js":"1n3Ex","./local-storage.js":"2PttN","./index.js":"5rkFb","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y"}],"7oSxz":[function(require,module,exports) {
-var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
-_parcelHelpers.defineInteropFlag(exports);
-_parcelHelpers.export(exports, "addProjectToArray", function () {
-  return addProjectToArray;
-});
-_parcelHelpers.export(exports, "removeProjectFromArray", function () {
-  return removeProjectFromArray;
-});
-require("./todo-constructor.js");
-require("./btns.js");
-require("./dom.js");
-var _localStorageJs = require("./local-storage.js");
-var _indexJs = require("./index.js");
-function addProjectToArray(todo, array) {
-  array.push(todo);
-}
-function removeProjectFromArray() {
-  const table = document.getElementById("tasks");
-  table.addEventListener("click", e => {
-    if (!e.target.classList.contains("delete")) {
-      return;
-    }
-    e.target.closest("tr").remove();
-    let currentTodoProject = e.target.closest("tr").dataset.todoProject;
-    let currentTodoTitle = e.target.closest("tr").dataset.todoTitle;
-    if (currentTodoProject === "Supermarket") {
-      removeTodoFromProject(_indexJs.supermarket, currentTodoProject, currentTodoTitle);
-      _localStorageJs.saveProjectToLocalStorage("Supermarket", _indexJs.supermarket);
-    } else {
-      removeTodoFromProject(_indexJs.myproject, currentTodoProject, currentTodoTitle);
-      _localStorageJs.saveProjectToLocalStorage("My Project", _indexJs.myproject);
-    }
-  });
-  function removeTodoFromProject(projectName, TodoProject, TodoTitle) {
-    if (projectName.length === 0) {
-      return;
-    }
-    for (let todo of projectName) {
-      if (todo.project === TodoProject && todo.title === TodoTitle) {
-        let todoToRemoveIndex = projectName.indexOf(todo);
-        projectName.splice(todoToRemoveIndex, 1);
-      }
-    }
-  }
-}
-
-},{"./todo-constructor.js":"3bvJk","./btns.js":"2a0J9","./dom.js":"1n3Ex","./local-storage.js":"2PttN","./index.js":"5rkFb","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y"}],"1n3Ex":[function(require,module,exports) {
-var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
-_parcelHelpers.defineInteropFlag(exports);
-_parcelHelpers.export(exports, "changeProjectTitle", function () {
-  return changeProjectTitle;
-});
-_parcelHelpers.export(exports, "render", function () {
-  return render;
-});
-require("./todo-constructor.js");
-require("./btns.js");
-require("./local-storage.js");
-require("./arrays.js");
-require("./index.js");
-function changeProjectTitle(projectName) {
-  const projectTitle = document.querySelector("#project-title");
-  projectTitle.innerText = projectName;
-}
-function render(array, parentDiv) {
-  parentDiv.innerHTML = "";
-  for (let i = 0; i < array.length; i++) {
-    let priorityClass;
-    switch (array[i].priority) {
-      case "High":
-        priorityClass = "btn-outline-danger";
-        break;
-      case "Medium":
-        priorityClass = "btn-outline-warning";
-        break;
-      case "Low":
-        priorityClass = "btn-outline-dark";
-    }
-    let row = `
-		<tr data-todo-title="${array[i].title}" data-todo-project="${array[i].project}">
-    <td class="px-2">${array[i].title}</td>
-    <td class="px-2">${array[i].description}</td>
-    <td class="px-2">${array[i].dueDate}</td>
-    <td class="px-2 text-center ${priorityClass}">${array[i].priority}</td>
-    <td><button class="mx-1 btn btn-dark edit">Edit</button></td>
-    <td><button class="mx-1 btn btn-danger delete">Delete</button></td>
-    </tr>
-		`;
-    parentDiv.insertAdjacentHTML("beforeend", row);
-  }
-}
-
-},{"./todo-constructor.js":"3bvJk","./btns.js":"2a0J9","./local-storage.js":"2PttN","./arrays.js":"7oSxz","./index.js":"5rkFb","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y"}],"2PttN":[function(require,module,exports) {
-var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
-_parcelHelpers.defineInteropFlag(exports);
-_parcelHelpers.export(exports, "saveProjectToLocalStorage", function () {
-  return saveProjectToLocalStorage;
-});
-_parcelHelpers.export(exports, "reloadLocalStorage", function () {
-  return reloadLocalStorage;
-});
-var _todoConstructorJs = require("./todo-constructor.js");
-var _todoConstructorJsDefault = _parcelHelpers.interopDefault(_todoConstructorJs);
-require("./btns.js");
-var _arraysJs = require("./arrays.js");
-var _domJs = require("./dom.js");
-var _indexJs = require("./index.js");
-function saveProjectToLocalStorage(projectName, array) {
-  return localStorage.setItem(projectName, JSON.stringify(array));
-}
-function reloadLocalStorage() {
-  const table = document.getElementById("tasks");
-  if (localStorage.length === 0 || localStorage["My Project"] === "[]") {
-    const defaultTodo = new _todoConstructorJsDefault.default({
-      project: "My Project",
-      title: "Buy Mouse Pad",
-      description: "Logitech",
-      dueDate: "2021-08-10",
-      priority: "Medium"
-    });
-    _arraysJs.addProjectToArray(defaultTodo, _indexJs.myproject);
-    _domJs.render(_indexJs.myproject, table);
-    _domJs.changeProjectTitle(defaultTodo.project);
-  } else {
-    let myProjectDestringified = JSON.parse(localStorage.getItem("My Project"));
-    let supermarketDestringified = JSON.parse(localStorage.getItem("Supermarket"));
-    const myArraysDistringified = [myProjectDestringified, supermarketDestringified];
-    myArraysDistringified.forEach(array => {
-      array.forEach(element => {
-        const previousTodos = new _todoConstructorJsDefault.default({
-          project: element.project,
-          title: element.title,
-          description: element.description,
-          dueDate: element.dueDate,
-          priority: element.priority
-        });
-        if (previousTodos.project === "My Project") {
-          _arraysJs.addProjectToArray(previousTodos, _indexJs.myproject);
-          _domJs.render(_indexJs.myproject, table);
-          _domJs.changeProjectTitle(element.project);
-        } else {
-          _arraysJs.addProjectToArray(previousTodos, _indexJs.supermarket);
-        }
-      });
-    });
-  }
-}
-
-},{"./todo-constructor.js":"3bvJk","./btns.js":"2a0J9","./arrays.js":"7oSxz","./dom.js":"1n3Ex","./index.js":"5rkFb","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y"}]},["3Imd1","5rkFb"], "5rkFb", "parcelRequireada0")
-
-//# sourceMappingURL=index.3fafb3e2.js.map
+//# sourceMappingURL=index.b4329412.js.map
