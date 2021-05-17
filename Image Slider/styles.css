@@ -85,10 +85,8 @@ button:focus {
 	margin: 0 4px;
 }
 
-.carousel-nav-btn:hover,
-.carousel-nav-btn:focus {
+.carousel-nav-btn:hover {
 	background-color: hotpink;
-	color: black;
 }
 
 .current-slide-position {
