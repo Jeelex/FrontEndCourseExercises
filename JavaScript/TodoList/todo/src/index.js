@@ -1,23 +1,23 @@
 "use strict";
 
-// import Todo from "./todo-constructor.js";
-import { addBtn , editAndDeleteBtns } from "./btns.js";
+export let supermarket = [];
+export let myproject = [];
+
+import Todo from "./todo-constructor.js";
+import { addTodo, enableProjectBtns } from "./btns.js";
+import { saveProjectToLocalStorage, reloadLocalStorage } from "./local-storage.js";
+import { addProjectToArray, removeProjectFromArray } from "./arrays.js";
+import { changeProjectTitle, render } from "./dom.js";
 
 
-addBtn();
-editAndDeleteBtns();
+addTodo();
+enableProjectBtns();
+reloadLocalStorage();
+removeProjectFromArray();
 
 
 
 
 
 
-// TODO Users should be able to create new projects and choose which project their todos go into.
 
-// TODO When a user first opens the app, there should be some sort of 'default' project to which all of their todos are put.
-
-// view all todos in each project (probably just the title and duedate.. perhaps changing color for different priorities)
-
-//TODO use localStorage
-
-// separate your application logic in separate modules.
