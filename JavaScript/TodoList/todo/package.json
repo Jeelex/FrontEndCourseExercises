@@ -1,0 +1,17 @@
+{
+	"name": "todo",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.html",
+	"private": true,
+	"scripts": {
+		"start": "parcel serve ./src/index.html",
+		"build": "parcel build ./src/index.html"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"parcel": "^2.0.0-beta.2"
+	}
+}
