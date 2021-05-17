@@ -657,7 +657,7 @@ function render(array, parentDiv) {
         priorityClass = "btn-outline-dark";
     }
     let row = `
-		<tr data-todo-title="${array[i].title}" data-todo-project="${array[i].project}">
+		<tr class="border-0" data-todo-title="${array[i].title}" data-todo-project="${array[i].project}">
     <td class="px-2">${array[i].title}</td>
     <td class="px-2">${array[i].description}</td>
     <td class="px-2">${array[i].dueDate}</td>
@@ -690,7 +690,7 @@ function saveProjectToLocalStorage(projectName, array) {
 }
 function reloadLocalStorage() {
   const table = document.getElementById("tasks");
-  if (localStorage.length === 0 || localStorage["My Project"] === "[]") {
+  if (localStorage.length === 0 || localStorage["My Project"] === "[]" && localStorage["Supermarket"] === "[]") {
     const defaultTodo = new _todoConstructorJsDefault.default({
       project: "My Project",
       title: "Buy Mouse Pad",
@@ -701,6 +701,7 @@ function reloadLocalStorage() {
     _arraysJs.addProjectToArray(defaultTodo, _indexJs.myproject);
     _domJs.render(_indexJs.myproject, table);
     _domJs.changeProjectTitle(defaultTodo.project);
+    saveProjectToLocalStorage("My Project", _indexJs.myproject);
   } else {
     let myProjectDestringified = JSON.parse(localStorage.getItem("My Project"));
     let supermarketDestringified = JSON.parse(localStorage.getItem("Supermarket"));
