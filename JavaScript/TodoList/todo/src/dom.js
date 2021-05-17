@@ -27,7 +27,7 @@ export function render(array, parentDiv) {
 		}
 
 		let row = `
-		<tr data-todo-title="${array[i].title}" data-todo-project="${array[i].project}">
+		<tr class="border-0" data-todo-title="${array[i].title}" data-todo-project="${array[i].project}">
     <td class="px-2">${array[i].title}</td>
     <td class="px-2">${array[i].description}</td>
     <td class="px-2">${array[i].dueDate}</td>

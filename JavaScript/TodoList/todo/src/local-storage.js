@@ -13,7 +13,7 @@ export function saveProjectToLocalStorage(projectName, array) {
 export function reloadLocalStorage() {
 	const table = document.getElementById("tasks");
 
-	if (localStorage.length === 0 || localStorage["My Project"] === "[]") {
+	if (localStorage.length === 0 || (localStorage["My Project"] === "[]" && localStorage["Supermarket"] === "[]")) {
 		const defaultTodo = new Todo({
 			project: "My Project",
 			title: "Buy Mouse Pad",
@@ -24,6 +24,7 @@ export function reloadLocalStorage() {
 		addProjectToArray(defaultTodo, myproject);
 		render(myproject, table);
 		changeProjectTitle(defaultTodo.project);
+		saveProjectToLocalStorage("My Project", myproject);
 	} else {
 		let myProjectDestringified = JSON.parse(localStorage.getItem("My Project"));
 		let supermarketDestringified = JSON.parse(localStorage.getItem("Supermarket"));
