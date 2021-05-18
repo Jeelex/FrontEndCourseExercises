@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="title" content="Form Validation" />
+		<meta name="description" content="Form Validation for Social Hackers Academy" />
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+		<title>Form Validation</title>
+	</head>
+	<body>
+		<header>
+			<h1>Form Validation</h1>
+			<h2>Add your detail below!</h2>
+		</header>
+
+		<fieldset>
+			<form id="form">
+				<div>
+					<input type="text" id="fname" placeholder="Name" minlength="3" required aria-required="true" />
+				</div>
+
+				<div>
+					<input type="text" id="surname" placeholder="Surname" minlength="3" required aria-required="true" />
+				</div>
+
+				<div>
+					<input type="email" id="email" placeholder="Email" required aria-required="true" />
+				</div>
+
+				<button id="btn" type="submit">Submit!</button>
+			</form>
+		</fieldset>
+
+		<h3 id="validation-message"></h3>
+
+		<script src="./index.js"></script>
+	</body>
+</html>
