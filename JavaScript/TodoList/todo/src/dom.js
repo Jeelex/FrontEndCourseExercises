@@ -1,9 +1,3 @@
-import Todo from "./todo-constructor.js";
-import { addTodo, enableProjectBtns } from "./btns.js";
-import { saveProjectToLocalStorage, reloadLocalStorage } from "./local-storage.js";
-import { addProjectToArray, removeProjectFromArray } from "./arrays.js";
-import { supermarket, myproject } from "./index.js";
-
 export function changeProjectTitle(projectName) {
 	const projectTitle = document.querySelector("#project-title");
 	projectTitle.innerText = projectName;

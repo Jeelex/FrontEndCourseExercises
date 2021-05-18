@@ -1,9 +1,5 @@
-import Todo from "./todo-constructor.js";
-import { addTodo, enableProjectBtns } from "./btns.js";
-import { changeProjectTitle, render } from "./dom.js";
-import { saveProjectToLocalStorage, reloadLocalStorage } from "./local-storage.js";
-import { supermarket, myproject } from "./index.js";
-
+import { saveProjectToLocalStorage } from "./local-storage.js";
+import utils from "./utils.js";
 
 // adding new projects to the projects array
 export function addProjectToArray(todo, array) {
@@ -23,25 +19,24 @@ export function removeProjectFromArray() {
 		let currentTodoProject = e.target.closest("tr").dataset.todoProject;
 		let currentTodoTitle = e.target.closest("tr").dataset.todoTitle;
 
-
 		if (currentTodoProject === "Supermarket") {
-			removeTodoFromProject(supermarket, currentTodoProject, currentTodoTitle);
-			saveProjectToLocalStorage("Supermarket", supermarket);
+			removeTodoFromProject(utils.supermarket, currentTodoProject, currentTodoTitle);
+			saveProjectToLocalStorage("Supermarket", utils.supermarket);
 		} else {
-			removeTodoFromProject(myproject, currentTodoProject, currentTodoTitle);
-			saveProjectToLocalStorage("My Project", myproject);
+			removeTodoFromProject(utils.myproject, currentTodoProject, currentTodoTitle);
+			saveProjectToLocalStorage("My Project", utils.myproject);
 		}
 	});
+}
 
-	function removeTodoFromProject(projectName, TodoProject, TodoTitle) {
-		if (projectName.length === 0) {
-			return;
-		}
-		for (let todo of projectName) {
-			if (todo.project === TodoProject && todo.title === TodoTitle) {
-				let todoToRemoveIndex = projectName.indexOf(todo);
-				projectName.splice(todoToRemoveIndex, 1);
-			}
+function removeTodoFromProject(projectName, TodoProject, TodoTitle) {
+	if (projectName.length === 0) {
+		return;
+	}
+	for (let todo of projectName) {
+		if (todo.project === TodoProject && todo.title === TodoTitle) {
+			let todoToRemoveIndex = projectName.indexOf(todo);
+			projectName.splice(todoToRemoveIndex, 1);
 		}
 	}
 }

@@ -1,8 +1,7 @@
 import Todo from "./todo-constructor.js";
-import { addTodo, enableProjectBtns } from "./btns.js";
-import { addProjectToArray, removeProjectFromArray } from "./arrays.js";
+import { addProjectToArray } from "./arrays.js";
 import { changeProjectTitle, render } from "./dom.js";
-import { supermarket, myproject } from "./index.js";
+import utils from "./utils.js";
 
 // saving library to localStorage
 export function saveProjectToLocalStorage(projectName, array) {
@@ -21,10 +20,10 @@ export function reloadLocalStorage() {
 			dueDate: "2021-08-10",
 			priority: "Medium",
 		});
-		addProjectToArray(defaultTodo, myproject);
-		render(myproject, table);
+		addProjectToArray(defaultTodo, utils.myproject);
+		render(utils.myproject, table);
 		changeProjectTitle(defaultTodo.project);
-		saveProjectToLocalStorage("My Project", myproject);
+		saveProjectToLocalStorage("My Project", utils.myproject);
 	} else {
 		let myProjectDestringified = JSON.parse(localStorage.getItem("My Project"));
 		let supermarketDestringified = JSON.parse(localStorage.getItem("Supermarket"));
@@ -42,11 +41,11 @@ export function reloadLocalStorage() {
 				});
 
 				if (previousTodos.project === "My Project") {
-					addProjectToArray(previousTodos, myproject);
-					render(myproject, table);
+					addProjectToArray(previousTodos, utils.myproject);
+					render(utils.myproject, table);
 					changeProjectTitle(element.project);
 				} else {
-					addProjectToArray(previousTodos, supermarket);
+					addProjectToArray(previousTodos, utils.supermarket);
 				}
 			});
 		});
