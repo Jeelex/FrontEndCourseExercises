@@ -1,20 +1,13 @@
-/* input:invalid { */
-  /* border: 2px dashed red; */
-/* } */
-/* input:focus {
-  /* background-image: linear-gradient(hotpink, lightgreen); */
-	/* background-color: yellow; */
-/* } */ 
+input {
+	margin: .5em 0;
+	padding: 0.5em;
+	font-size: 1rem;
+}
 
 input:valid:required {
-  background-color: green;
-  color: white;
+	background-color: lightgreen;
 }
 
-.validation-text-wrong{
-  color: tomato;
-}
-
-.validation-text-ok {
-  color: darkgreen;
+input:invalid {
+  box-shadow: 0 0 5px 1px red;
 }
