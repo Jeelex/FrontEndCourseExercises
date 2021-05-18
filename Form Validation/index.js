@@ -1,42 +1,50 @@
 "use strict";
 
 const form = document.querySelector("#form");
-const fname = document.querySelector("#name");
+const fname = document.querySelector("#fname");
 const surname = document.querySelector("#surname");
 const email = document.querySelector("#email");
-const validationField = document.querySelector("#validation-message");
+// const nameValidationText = document.querySelector("#name-validation-message");
+// const surnameValidationText = document.querySelector("#surname-validation-message");
+// const emailValidationText = document.querySelector("#email-validation-message");
 const btn = document.querySelector("#btn");
 
-fname.addEventListener("input", (e) => {
+form.addEventListener("input", (e) => {
 	e.preventDefault();
-	displayMessage();
+	const validationText = document.querySelector("#validation-message");
+	const inputValue = e.target.id;
+	console.log(inputValue);
+	// console.log(e.target.placeholder);
+	console.log(e.target.id);
+	// displayMessage(e.target.id, validationText);
+	console.log(inputValue.checkValidity());
 });
 
-// ||
-// 			!surname.checkValidity() ||
-// 		  !email.checkValidity()
-
-function displayMessage() {
+function displayMessage(input, validationText) {
 	let txt = "";
-	if (!fname.validity.rangeUnderflow) {
-		console.log("too small");
-		txt = fname.validationMessage;
-		// validationField.innerHTML = "Value too small";
-	} else {
-		console.log("big enough");
-		txt = fname.validationMessage;
+	if (!input.checkValidity()) {
+		txt = input.validationMessage;
+		validationText.innerHTML = `${input}: ${txt}`;
+		validationText.classList.add("validation-text-wrong");
 	}
-	validationField.innerHTML = txt;
-}
+	// if (!fname.checkValidity()) {
+	// 	txt = fname.validationMessage;
+	// 	nameValidationText.innerHTML = `Name: ${txt}`;
+	// 	nameValidationText.classList.add("validation-text-wrong");
+	// }
 
-// function myFunction() {
-//   var inpObj = document.getElementById("id1");
-//   if (!inpObj.checkValidity()) {
-//     document.getElementById("demo").innerHTML = inpObj.validationMessage;
-//   } else {
-//     document.getElementById("demo").innerHTML = "Input OK";
-//   }
-// }
+	// if (!surname.checkValidity()) {
+	// 	txt = surname.validationMessage;
+	// 	surnameValidationText.innerHTML = `Surname: ${txt}`;
+	// 	surnnameValidationText.classList.add("validation-text-wrong");
+	// }
+
+	// if (!email.checkValidity()) {
+	// 	txt = email.validationMessage;
+	// 	emailValidationText.innerHTML = `Email: ${txt}`;
+	// 	emailValidationText.classList.add("validation-text-wrong");
+	// }
+}
 
 // Think about how you would set up the different form elements and their accompanying validators.
 //TODO What objects and functions will you need?

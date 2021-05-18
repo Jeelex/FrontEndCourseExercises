@@ -3,21 +3,21 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="title" content="Project Library" />
-		<meta name="image" property="og:image" content="library-icon.png" href="library-icon.png" />
-		<meta name="description" content="Project Library for Social Hackers Academy" />
+		<meta name="title" content="Form Validation" />
+		<meta name="description" content="Form Validation for Social Hackers Academy" />
 		<link rel="stylesheet" type="text/css" href="styles.css" />
 		<title>Form Validation</title>
 	</head>
-	<body class="container bg-light">
-		<section class="container mt-5 justify-content-center text-center">
+	<body>
+		<header>
 			<h1>Form Validation</h1>
-			<h2 class="mt-4">Add your detail below!</h2>
-		</section>
+			<h2>Add your detail below!</h2>
+		</header>
+
 		<fieldset>
 			<form id="form">
 				<div>
-					<input type="text" id="name" placeholder="Name" minlength="3" required aria-required="true" />
+					<input type="text" id="fname" placeholder="Name" minlength="3" required aria-required="true" />
 				</div>
 
 				<div>
@@ -25,7 +25,7 @@
 				</div>
 
 				<div>
-					<input type="email" id="email" placeholder="Email" />
+					<input type="email" id="email" placeholder="Email" required aria-required="true" />
 				</div>
 
 				<button id="btn" type="submit">Submit!</button>
