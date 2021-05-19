@@ -12,7 +12,7 @@
 async function getWeatherData(city) {
 	const response = await fetch(displayCityWeather(city));
 	const data = await response.json();
-  
+
   const cityName =           document.getElementById("city");
   const temp =               document.getElementById("temp");
   const humidity =           document.getElementById("humidity");
@@ -40,8 +40,6 @@ async function getWeatherData(city) {
 }
 getWeatherData("Athens");
 
-//TODO Write the functions that hit the API. You’re going to want
-//TODO functions that can take a location and return the weather data for that location. For now, just console.log() the information.
 
 function displayCityWeather(location) {
   return `http://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&APPID=3da58929e45b1d77b5f8aaf11691b250`
