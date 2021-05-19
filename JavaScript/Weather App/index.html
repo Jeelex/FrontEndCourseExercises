@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="description" content="" />
+		<meta name="description" content="Weather App for Social Hackers Academy" />
 		<link rel="stylesheet" type="text/css" href="./styles.css" />
 		<!-- <link rel="icon" type="image" href=""> -->
 		<title>Weather App</title>
@@ -15,9 +15,12 @@
 		</header>
 
 <main>
-  <form>
-    
+  <form id="form">
+    <div>
+      <input type="text" id="location" placeholder="Location" minlength="2" required aria-required="true" />
+    </div>
 
+    <button id="btn" type="submit">Submit!</button>
   </form>
 
     <div>

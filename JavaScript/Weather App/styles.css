@@ -1,0 +1,13 @@
+input {
+	margin: .5em 0;
+	padding: 0.5em;
+	font-size: 1rem;
+}
+
+input:valid:required {
+	background-color: lightgreen;
+}
+
+/* input:invalid {
+  box-shadow: 0 0 5px 1px red;
+} */
