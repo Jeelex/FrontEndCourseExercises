@@ -14,22 +14,25 @@
 			<h2>Search your location!</h2>
 		</header>
 
-		<main>
-			<form id="form">
-				<div>
-					<input type="text" id="location" placeholder="Location" minlength="2" required aria-required="true" />
+    <form id="form">
+      <div>
+        <input type="text" id="location" placeholder="Location" minlength="2" required aria-required="true" />
+      </div>
+      
+      <button id="btn" type="submit">Submit</button>
+    </form>
+    
+    <main>
+			<div class="flex-container">
+				<div class="location-container">
+					<h3 class="flex-item" id="city"></h3>
+					<h3 class="flex-item" id="country"></h3>
 				</div>
-
-				<button id="btn" type="submit">Submit!</button>
-			</form>
-
-			<div>
-				<h3 id="city"></h3>
-				<h3 id="country"></h3>
+        
+				<div class="flex-item" id="temp"></div>
+				<div class="flex-item" id="weather-description"></div>
+				<div class="flex-item" id="humidity"></div>
 			</div>
-			<div id="temp"></div>
-			<div id="humidity"></div>
-			<div id="weather-description"></div>
 		</main>
 		<script src="./index.js"></script>
 	</body>
