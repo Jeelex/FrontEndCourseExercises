@@ -1,14 +1,3 @@
-
-// API key 3da58929e45b1d77b5f8aaf11691b250
-
-// {mode: 'cors'}
-
-//? original weather API with MY API key:
-// http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=3da58929e45b1d77b5f8aaf11691b250
-
-
-
-
 async function getWeatherData(city) {
 	const response = await fetch(displayCityWeather(city));
 	const data = await response.json();
