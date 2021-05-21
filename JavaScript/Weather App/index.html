@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Weather App for Social Hackers Academy" />
+		<link rel="stylesheet" type="text/css" href="./styles.css" />
+		<!-- <link rel="icon" type="image" href=""> -->
+		<title>Weather App</title>
+	</head>
+	<body>
+		<header>
+			<h1>Weather in Celsius</h1>
+			<h2>Search your location!</h2>
+		</header>
+
+    <form id="form">
+      <div>
+        <input type="text" id="location" placeholder="Location" minlength="2" required aria-required="true" />
+      </div>
+      
+      <button id="btn" type="submit">Submit</button>
+    </form>
+    
+    <main>
+			<div class="flex-container">
+				<div class="location-container">
+					<h3 class="flex-item" id="city"></h3>
+					<h3 class="flex-item" id="country"></h3>
+				</div>
+        
+				<div class="flex-item" id="temp"></div>
+				<div class="flex-item" id="weather-description"></div>
+				<div class="flex-item" id="humidity"></div>
+			</div>
+		</main>
+		<script src="./index.js"></script>
+	</body>
+</html>
