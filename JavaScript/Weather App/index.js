@@ -1,43 +1,23 @@
 const form = document.getElementById("form");
-const submitBtn = document.getElementById("btn");
-
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+  const location = document.getElementById("location").value;
 
-  const cityName =           document.getElementById("city");
-  const temp =               document.getElementById("temp");
-  const humidity =           document.getElementById("humidity");
-  const weatherDescription = document.getElementById("weather-description");
-  const country =            document.getElementById("country");
-
-  console.log(cityName);
-  console.log(e.target.value);
-  // const userInput = e.target.value;
-  // getWeatherData(userInput);
+  getWeatherData(location);
 
 })
-
 
 
 async function getWeatherData(city) {
 	const response = await fetch(displayCityWeather(city));
 	const data = await response.json();
 
-  // const cityName =           document.getElementById("city");
-  // const temp =               document.getElementById("temp");
-  // const humidity =           document.getElementById("humidity");
-  // const weatherDescription = document.getElementById("weather-description");
-  // const country =            document.getElementById("country");
-  
-
-  // console.log("temp:", data.main.temp);
-  // console.log("feels_like:", data.main.feels_like);
-  // console.log("humidity:", data.main.humidity);
-  // console.log("city:", data.name);
-  // console.log("country:", data.sys.country);
-  // console.log("weather:", data.weather[0].main);
-  // console.log("weather description:", data.weather[0].description);
+  const cityName =           document.getElementById("city");
+  const temp =               document.getElementById("temp");
+  const humidity =           document.getElementById("humidity");
+  const weatherDescription = document.getElementById("weather-description");
+  const country =            document.getElementById("country");
   
 
   cityName.innerHTML = `${data.name}, `;
@@ -55,24 +35,4 @@ getWeatherData("Athens");
 
 function displayCityWeather(location) {
   return `http://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&APPID=3da58929e45b1d77b5f8aaf11691b250`
-}
-
-// function render(callback){
-//   const name = document.getElementById("name");
-//   const temp = document.getElementById("temp");
-
-//   getWeatherData("london");
-
-//   ccityName.innerText = data.name;
-
-// }
-// render();
-
-
-// content.innerHTML = data.main.temp_min + "&deg;" + "C"
-//   content.innerHTML += data.main.humidity + "&percnt;"
-
-
-function Weather () {
-  
 }
